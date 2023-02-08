@@ -1,7 +1,9 @@
 import logo from '../../images/logo.svg';
 import './App.css';
+import defaultClothingItems from '../../utils/defaultClothingItems.js';
 
 function App() {
+  console.log(defaultClothingItems);
   return (
     <div className='App'>
       <header className='App-header'>
