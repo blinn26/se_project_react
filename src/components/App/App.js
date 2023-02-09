@@ -1,20 +1,16 @@
 import logo from '../../images/logo.svg';
 import './App.css';
 import defaultClothingItems from '../../utils/defaultClothingItems.js';
+import { Header } from '../Header/Header';
 
 function App() {
   console.log(defaultClothingItems);
+  console.log(logo);
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Ben is weird <code>src/App.js</code> run for your life.
-        </p>
-        <a className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
-          This React Symbol Looks Like a Quarintine Logo
-        </a>
-      </header>
+      <Header />
+      <main className='main'>this is the main</main>
+      <footer className='footer'>This is the footer</footer>
     </div>
   );
 }
