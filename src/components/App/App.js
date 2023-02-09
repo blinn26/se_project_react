@@ -9,10 +9,10 @@ function App() {
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Ben is weird <code>src/App.js</code> run for your life.
         </p>
         <a className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
-          Learn React
+          This React Symbol Looks Like a Quarintine Logo
         </a>
       </header>
     </div>
