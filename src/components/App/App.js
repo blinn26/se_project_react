@@ -1,11 +1,10 @@
-import logo from '../../images/logo.svg';
 import './App.css';
 import defaultClothingItems from '../../utils/defaultClothingItems.js';
-import { Header } from '../Header/Header';
+import Header from '../Header/Header';
 
 function App() {
   console.log(defaultClothingItems);
-  console.log(logo);
+
   return (
     <div className='App'>
       <Header />

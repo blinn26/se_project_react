@@ -1,0 +1,15 @@
+.header {
+    background-color: red;
+    font-size: 25px;
+}
+
+.header__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logo {
+    /* background-image: url(../../images/wtwr°.svg); */
+}
