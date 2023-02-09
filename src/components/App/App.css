@@ -1,11 +1,14 @@
 .header {
   background-color: red;
+  font-size: 25px;
 }
 
 .main {
-  background-color: blue;
+  background-color: turquoise;
+  font-size: 25px;
 }
 
 .footer {
-  background-color: brown;
+  background-color: greenyellow;
+  font-size: 25px;
 }
