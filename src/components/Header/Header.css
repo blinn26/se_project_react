@@ -4,7 +4,10 @@
 }
 
 .header__container {
-    display: flex
+    display: flex;
+    align-items: baseline;
+
+    flex-direction: column;
 }
 
 .header__menu-bar {}
@@ -12,14 +15,16 @@
 .header__logo {
     width: 89px;
     height: 40px;
+    display: flex;
+    align-content: flex-start;
 }
 
-.header__avatar {
+
+.header__Avatar {
     width: 40px;
     height: 40px;
+    align-items: flex-end;
 
 }
 
-.header__date-place {
-    margin: 0;
-}
+.header__date-place {}
