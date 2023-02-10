@@ -8,16 +8,14 @@ const Header = () => {
   return (
     <header className='header'>
       <div className='header__container'>
-        <div className='header__logo'>
-          <img src={wtwr} alt='logo' />
-          <div className='header__menu-bar'>
-            <p className='header__date-placeholder'>
-              Terrence Tegegene
-              <div className='header__avatar'>
-                <img src={Avatar} alt='Avatar' />
-              </div>
-            </p>
-          </div>
+        <img className='header__logo' src={wtwr} alt='logo' />
+        <div className='header__menu-bar'>
+          <p className='header__date-placeholder'>
+            {/* {currentDate},{weatherData} */}
+            <div className='header__avatar'>
+              <img src={Avatar} alt='Avatar' />
+            </div>
+          </p>
         </div>
       </div>
     </header>

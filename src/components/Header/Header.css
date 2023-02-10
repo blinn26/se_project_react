@@ -9,7 +9,10 @@
 
 .header__menu-bar {}
 
-.header__logo {}
+.header__logo {
+    width: 89px;
+    height: 40px;
+}
 
 .header__avatar {
     width: 40px;
