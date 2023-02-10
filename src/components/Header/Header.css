@@ -1,15 +1,41 @@
 .header {
     background-color: red;
-    font-size: 25px;
+    margin: auto;
+
+
+
+
 }
 
 .header__container {
     display: flex;
-    flex-direction: column;
+    /*  width: 1360px;
+    height: 40px; */
+    align-items: baseline;
+
+}
+
+.header__menu-bar {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
 }
 
 .header__logo {
-    /* background-image: url(../../images/wtwr°.svg); */
+    width: 89px;
+    height: 40px;
+    /* flex-direction: column; */
+
+}
+
+.header__avatar {
+    width: 40px;
+    height: 40px;
+    /* flex-direction: row; */
+}
+
+.header__date-place {
+    margin: 0;
 }
