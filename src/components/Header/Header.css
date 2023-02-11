@@ -5,9 +5,6 @@
 
 .header__container {
     display: flex;
-    align-items: baseline;
-
-    flex-direction: column;
 }
 
 .header__menu-bar {}
@@ -20,10 +17,11 @@
 }
 
 
-.header__Avatar {
+.header__user-Avatar {
     width: 40px;
     height: 40px;
     align-items: flex-end;
+    border-radius: 50%;
 
 }
 
