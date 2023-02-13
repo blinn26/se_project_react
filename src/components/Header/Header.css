@@ -7,7 +7,9 @@
     display: flex;
 }
 
-.header__menu-bar {}
+.header__menu-bar {
+    margin-left: auto;
+}
 
 .header__logo {
     width: 89px;
@@ -25,4 +27,7 @@
 
 }
 
-.header__date-place {}
+.header__date-place {
+    margin-left: auto;
+    margin-right: auto;
+}
