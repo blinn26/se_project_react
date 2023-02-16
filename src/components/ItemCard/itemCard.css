@@ -1,0 +1,26 @@
+.card {
+    Width: 325px;
+    Height: 328px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    display: flex;
+}
+
+.card__name {
+
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 4px;
+}
+
+.card__tempature {}
+
+.card__image {
+    Width: 328px;
+    Height: 328px;
+    display: flex;
+    z-index: 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}

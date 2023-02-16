@@ -21,16 +21,16 @@ const Header = () => {
           {currentdate}
           {currentWeather}
         </div>
-        <div className='header__menu-bar'>
-          {/* <ToggleSwitch /> */}
-          <button className='header__plus-clothes' type='button' onClick={handleClickButton}>
-            + Add Clothes
-          </button>
-          <p className='header__user-name'>
-            Terrence Tegegne
-            <img src={Avatar} alt='Avatar' className='header__user-Avatar' />
-          </p>
-        </div>
+        {/* <div className='header__menu-bar'> */}
+        {/* <ToggleSwitch /> */}
+        <button className='header__plus-clothes' type='button' onClick={handleClickButton}>
+          + Add Clothes
+        </button>
+        <p className='header__user-name'>
+          Terrence Tegegne
+          <img src={Avatar} alt='Avatar' className='header__user-Avatar' />
+        </p>
+        {/* </div> */}
       </div>
     </header>
   );
