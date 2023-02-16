@@ -1,6 +1,5 @@
 .card {
-    Width: 325px;
-    Height: 328px;
+    flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     display: flex;
@@ -10,15 +9,15 @@
 
     align-items: center;
     justify-content: center;
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
     border-radius: 4px;
 }
 
 .card__tempature {}
 
 .card__image {
-    Width: 328px;
-    Height: 328px;
+    width: 328px;
+    height: 328px;
     display: flex;
     z-index: 0;
     border: 1px solid rgba(0, 0, 0, 0.3);

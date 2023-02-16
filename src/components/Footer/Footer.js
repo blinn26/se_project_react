@@ -6,9 +6,10 @@ export function Footer() {
   return (
     <footer className='footer'>
       <div className='footer__container'>
-        <div className='footer__name'> Made by Ben Linn</div>
-        <div className='footer__date'>{date}</div>
+        <p className='footer__name'> Made by Ben Linn</p>
+        <p className='footer__date'>{date}</p>
       </div>
     </footer>
   );
 }
+export default Footer;

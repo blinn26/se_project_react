@@ -1,19 +1,22 @@
 import './App.css';
 import defaultClothingItems from '../../utils/defaultClothingItems.js';
 import Header from '../Header/Header';
-import { Footer } from '../Footer/Footer';
+import Footer from '../Footer/Footer';
 import Main from '../Main/Main';
 
 function App() {
   console.log(defaultClothingItems);
   console.log(defaultClothingItems.length);
+  const onItemClick = (card) => {
+    console.log(card);
+  };
 
   return (
     <div className='App'>
       <Header />
-      <Main defaultClothingItems={defaultClothingItems} />
+      <Main defaultClothingItems={defaultClothingItems} onItemClick={onItemClick} />
 
-      <Footer className='footer'>This is the footer</Footer>
+      <Footer />
     </div>
   );
 }

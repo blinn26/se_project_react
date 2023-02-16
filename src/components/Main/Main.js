@@ -2,11 +2,11 @@ import React from 'react';
 import ItemCard from '../ItemCard/ItemCard';
 import './Main.css';
 
-const Main = ({ defaultClothingItems }) => {
+const Main = ({ defaultClothingItems, onItemClick }) => {
   return (
     <main class='main'>
       {defaultClothingItems.map((item) => (
-        <ItemCard item={item} key={item._id} />
+        <ItemCard item={item} key={item._id} onItemClick={onItemClick} />
       ))}
     </main>
   );
