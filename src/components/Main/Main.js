@@ -3,7 +3,6 @@ import ItemCard from '../ItemCard/ItemCard';
 import WeatherCard from '../WeatherCard/WeatherCard';
 import CurrentTemperatureUnitContext from '../../contexts/CurrentTemperatureUnitContext';
 import './Main.css';
-import defaultClothingItems from '../../utils/defaultClothingItems';
 
 function Main({ defaultClothingItems, onItemClick }) {
   const { currentTemperatureUnit, weatherData } = useContext(CurrentTemperatureUnitContext);
@@ -15,7 +14,7 @@ function Main({ defaultClothingItems, onItemClick }) {
   }
 
   return (
-    <main className='main'>
+    <Main className='main'>
       <WeatherCard />
       <section className='main__clothes'>
         <div className='main__info'>
@@ -30,7 +29,7 @@ function Main({ defaultClothingItems, onItemClick }) {
         </div>
         <ul className='main__items'>{defaultClothingItems ? cardFilter() : null}</ul>
       </section>
-    </main>
+    </Main>
   );
 }
 
