@@ -14,7 +14,7 @@ const Main = ({ cards, onCardClick, weatherType, defaultClothingItems, onItemCli
   }
 
   return (
-    <main className='main'>
+    <Main className='main'>
       <WeatherCard />
       <section className='main__clothes'>
         <div className='main__info'>
@@ -33,7 +33,7 @@ const Main = ({ cards, onCardClick, weatherType, defaultClothingItems, onItemCli
             : defaultClothingItems.map((item) => <ItemCard item={item} key={item._id} onItemClick={onItemClick} />)}
         </ul>
       </section>
-    </main>
+    </Main>
   );
 };
 
