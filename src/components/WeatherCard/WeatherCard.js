@@ -6,7 +6,7 @@ function WeatherCard() {
 
   return (
     <div className='weather-card'>
-      <div className='weather__temperature'>
+      <div className='weather-temperature'>
         {weatherData.temperature && weatherData.temperature[currentTemperatureUnit]}
       </div>
     </div>
