@@ -21,8 +21,6 @@ const Header = () => {
           {currentdate}
           {currentWeather}
         </div>
-        {/* <div className='header__menu-bar'> */}
-        {/* <ToggleSwitch /> */}
         <button className='header__plus-clothes' type='button' onClick={handleClickButton}>
           + Add Clothes
         </button>
@@ -30,9 +28,9 @@ const Header = () => {
           Terrence Tegegne
           <img src={Avatar} alt='Avatar' className='header__user-Avatar' />
         </p>
-        {/* </div> */}
       </div>
     </header>
   );
 };
+
 export default Header;
