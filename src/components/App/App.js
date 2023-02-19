@@ -16,7 +16,6 @@ function App() {
     <div className='App'>
       <Header />
       <main className='main'>
-        This is Main
         <div>
           {defaultClothingItems.map((item) => (
             <ItemCard item={item} key={item._id} onItemClick={onItemClick} />
