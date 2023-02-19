@@ -4,11 +4,11 @@ import './Main.css';
 
 const Main = ({ defaultClothingItems, onItemClick }) => {
   return (
-    <main class='main'>
+    <Main class='main'>
       {defaultClothingItems.map((item) => (
         <ItemCard item={item} key={item._id} onItemClick={onItemClick} />
       ))}
-    </main>
+    </Main>
   );
 };
 
