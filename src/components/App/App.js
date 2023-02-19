@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import defaultClothingItems from '../../utils/defaultClothingItems.js';
 import Header from '../Header/Header';
