@@ -1,5 +1,7 @@
 import React from 'react';
 import './ItemCard.css';
+import '../Main/Main';
+import '../App/App';
 
 const ItemCard = ({ item, onItemClick }) => {
   console.log(item._id);
