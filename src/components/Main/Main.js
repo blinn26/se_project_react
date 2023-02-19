@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import ItemCard from '../ItemCard/ItemCard';
 import './Main.css';
 
