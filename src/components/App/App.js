@@ -8,7 +8,6 @@ import { location } from '../../utils/constants';
 import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import ItemModal from '../ItemModal/ItemModal';
-import WeatherCard from '../WeatherCard/WeatherCard';
 
 const App = () => {
   const [weatherData, setWeatherData] = React.useState({});
