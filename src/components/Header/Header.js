@@ -1,8 +1,8 @@
 import React from 'react';
-import './Header.css';
+import '../Header/Header.css';
 import wtwr from '../../images/wtwr.svg';
-import Avatar from '../../images/Avatar.svg';
-/* import '.Navigation.css'; */
+import avatarDefault from '../../images/Avatar.svg';
+import '../Header/Navigation.css';
 
 const Header = ({ weatherData, handleAddClick }) => {
   if (!weatherData) return null;
