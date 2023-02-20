@@ -6,9 +6,10 @@ import { defaultClothingItems } from '../../utils/defaultClothingItems';
 import './App.css';
 import { location } from '../../utils/constants';
 import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
-import WeatherCard from '../WeatherCard/WeatherCard';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import ItemModal from '../ItemModal/ItemModal';
+import WeatherCard from '../WeatherCard/WeatherCard';
+
 const App = () => {
   const [weatherData, setWeatherData] = React.useState({});
   const [clothingItems, setClothingItems] = React.useState({});
