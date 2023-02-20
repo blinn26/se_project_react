@@ -1,12 +1,14 @@
 import React from 'react';
 import Main from '../Main/Main';
+import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { defaultClothingItems } from '../../utils/defaultClothingItems';
 import './App.css';
 import { location } from '../../utils/constants';
 import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
-import Weathercard from '../Weathercard/Weathercard';
-
+import WeatherCard from '../WeatherCard/WeatherCard';
+import ModalWithForm from '../ModalWithForm/ModalWithForm';
+import ItemModal from '../ItemModal/ItemModal';
 const App = () => {
   const [weatherData, setWeatherData] = React.useState({});
   const [clothingItems, setClothingItems] = React.useState({});
