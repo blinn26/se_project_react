@@ -3,7 +3,7 @@ import ItemCard from '../ItemCard/ItemCard';
 import './Main.css';
 import WeatherCard from '../WeatherCard/WeatherCard';
 
-function Main({ weatherData, cards, onCardClick }) {
+function Main({ weatherData, cards = [], onCardClick }) {
   const actualWeather = weatherData.tempature;
 
   const weatherType = () => {
@@ -30,11 +30,10 @@ function Main({ weatherData, cards, onCardClick }) {
           </div>
         </div>
         <ul className='main__items'>
-          {cards
-            .filter((card) => card.weather === weatherType())
-            .map((fileterCard) => (
-              <ItemCard key={fileterCard.id} card={fileterCard} onCardClick={onCardClick} />
-            ))}
+          {Array.isArray(cards) &&
+            cards
+              .filter((card) => card.weather === weatherType())
+              .map((filterCard) => <ItemCard key={filterCard.id} card={filterCard} onCardClick={onCardClick} />)}
         </ul>
       </section>
     </main>
