@@ -2,7 +2,7 @@ import React from 'react';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import { defaultClothingItems } from '../../utils/defaultClothingItems';
+import defaultClothingItems from '../../utils/defaultClothingItems';
 import './App.css';
 import { location } from '../../utils/constants';
 import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';

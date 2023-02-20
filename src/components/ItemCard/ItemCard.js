@@ -1,17 +1,19 @@
 import React from 'react';
 import './ItemCard.css';
-import '../Main/Main';
-import '../App/App';
-import '../../utils/defaultClothingItems';
 
-const ItemCard = ({ item, onItemClick }) => {
-  console.log(item._id);
+const ItemCard = ({ clothingItem, onItemClick }) => {
+  console.log(clothingItem._id);
 
   return (
     <div className='card'>
-      <div className='card__name'> {item.name}</div>
+      <div className='card__name'> {clothingItem.name}</div>
 
-      <img className='card__image' src={item.link} alt={item.name} onClick={() => onItemClick(item)} />
+      <img
+        className='card__image'
+        src={clothingItem.link}
+        alt={clothingItem.name}
+        onClick={() => onItemClick(clothingItem)}
+      />
     </div>
   );
 };
