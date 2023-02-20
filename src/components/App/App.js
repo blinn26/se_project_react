@@ -5,6 +5,7 @@ import { defaultClothingItems } from '../../utils/defaultClothingItems';
 import './App.css';
 import { location } from '../../utils/constants';
 import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
+import Weathercard from '../Weathercard/Weathercard';
 
 const App = () => {
   const [weatherData, setWeatherData] = React.useState({});
