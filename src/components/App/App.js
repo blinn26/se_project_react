@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -9,11 +9,15 @@ import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weathe
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import ItemModal from '../ItemModal/ItemModal';
 
+const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
+
 const App = () => {
-  const [weatherData, setWeatherData] = React.useState({});
-  const [clothingItems, setClothingItems] = React.useState({});
-  const [activeModal, setActiveModal] = React.useState();
-  const [selectCard, setSelectCard] = React.useState(null);
+  const [weatherData, setWeatherData] = useState({});
+  const [clothingItems, setClothingItems] = useState({});
+  const [activeModal, setActiveModal] = useState();
+  const [selectCard, setSelectCard] = useState(null);
+
+  /* const [temp, setTemp] = useState(''); */
 
   const handleCardClick = (card) => {
     setActiveModal('preview');
@@ -24,19 +28,20 @@ const App = () => {
     setActiveModal();
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (location.latitude && location.longitude) {
       // TODO: Replace this with an environment variable
-      const APIKey = '8bec312d909f4c92c9729d7ff0366d1f';
-      getForecastWeather({ latitude: location.latitude, longitude: location.longitude }, APIKey)
+      console.log(123131323);
+
+      getForecastWeather(location, APIKey)
         .then((data) => {
+          console.log(data);
+          setWeatherData(getForecastWeather(data));
           setWeatherData(filterDataFromWeatherApi(data));
         })
         .catch((err) => console.log(err));
     }
-  }, []);
 
-  React.useEffect(() => {
     setClothingItems(defaultClothingItems);
   }, []);
 
