@@ -1,7 +1,8 @@
-const getForecastWeather = async (location, APIkey) => {
-  const parsedLocation = `${location.latitude},{location.longitude}`;
+const APIkey = '8bec312d909f4c92c9729d7ff0366d1f';
+const getForecastWeather = async () => {
+  // lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}
   const res = await fetch(
-    `http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=8bec312d909f4c92c9729d7ff0366d1f=${parsedLocation}&appid=${APIkey}&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?lat=36.471&lon=-119.4432&appid=${APIkey}&units=metric`
   );
   if (res.ok) {
     return res.json();

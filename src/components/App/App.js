@@ -26,8 +26,9 @@ const App = () => {
 
   React.useEffect(() => {
     if (location.latitude && location.longitude) {
-      // app key
-      getForecastWeather(location.latitude, location.longitude)
+      // TODO: Replace this with an environment variable
+      const APIKey = '8bec312d909f4c92c9729d7ff0366d1f';
+      getForecastWeather({ latitude: location.latitude, longitude: location.longitude }, APIKey)
         .then((data) => {
           setWeatherData(filterDataFromWeatherApi(data));
         })

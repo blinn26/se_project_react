@@ -1,9 +1,10 @@
 .main {
     flex-wrap: wrap;
-    gap: 20px;
     display: flex;
 
+}
 
-    background-color: pink;
-
+.main__items {
+    display: flex;
+    gap: 20px;
 }
