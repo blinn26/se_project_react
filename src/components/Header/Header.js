@@ -1,19 +1,16 @@
 import React from 'react';
 import '../Header/Header.css';
-import wtwr from '../../images/wtwr.svg';
-import avatarDefault from '../../images/Avatar.svg';
 import '../Header/Navigation.css';
 
 const Header = ({ weatherData, handleAddClick }) => {
   if (!weatherData) return null;
   const currentDate = new Date().toLocaleDateString('default', { month: 'long', day: 'numeric', year: 'numeric' });
   const username = 'Ben Linn';
-  const avatar = '';
 
   return (
     <header className='header'>
       <div className='header__container'>
-        <img src={wtwr} alt='wtwr logo' className='header__logo' />
+        <img src='/images/wtwr.svg' alt='wtwr logo' className='header__logo' />
         <p className='header__date'>
           {currentDate}, {weatherData.city}
         </p>
@@ -29,13 +26,8 @@ const Header = ({ weatherData, handleAddClick }) => {
             <li>
               <div className='navigation__link'>
                 {username}
-                {avatar ? (
-                  <img className='navigation__user' src={avatar || avatarDefault} alt='user avatar default' />
-                ) : (
-                  <span className='navigation__user  navigation__user_type_none'>
-                    {username?.toUpperCase().charAt(0) || ''}
-                  </span>
-                )}
+                <img className='navigation__user' src='/images/Avatar.svg' alt='user avatar default' />
+                <span className='navigation__user  navigation__user_type_none'></span>
               </div>
             </li>
           </ul>
