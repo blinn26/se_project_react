@@ -1,21 +1,21 @@
 .header {
-    background-color: red
+    display: flex;
+
+
 }
 
 .header__container {
     display: flex;
     align-items: flex-end;
+    background-color: red;
+    width: 1360px;
 }
 
-.header__menu-bar {
-    margin-left: auto;
-}
 
-.header__date-title {
-    display: flex;
-    position: relative;
-    top: 25px;
-    left: 50px;
+.header__date {
+    line-height: 1.2;
+
+
 }
 
 
@@ -27,34 +27,4 @@
     align-content: flex-start;
 
 
-}
-
-
-.header__user-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    position: relative;
-    display: flex;
-    bottom: 10px;
-
-}
-
-
-
-
-.header__date-place {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.header__user-name {
-
-    display: flex;
-    position: relative;
-    line-height: 20px;
-    top: -10px;
-
-    left: -15px;
-    margin-left: 25px;
 }

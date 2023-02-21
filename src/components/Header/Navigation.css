@@ -5,3 +5,11 @@
     padding: 0;
     align-items: center;
 }
+
+.navigation__user {
+
+    background: url(../../images/Avatar.svg) center no-repeat;
+    width: 40px;
+    height: 40px;
+
+}
