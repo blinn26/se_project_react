@@ -1,26 +1,11 @@
-/* .card {
-    flex-direction: column;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
-    display: flex;
-}
-
-.card__name {
-
-    align-items: center;
-    justify-content: center;
-    background: #FFFFFF;
-    border-radius: 4px;
-    text-align: center;
-}
-
-
-
 .card__image {
     width: 328px;
     height: 328px;
-    display: flex;
-    z-index: 0;
-    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 20px;
-} */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+}
