@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ModalWithForm.css';
 
 function ModalWithForm({ title, name, buttonText, onsubmit, children, onclose }) {
