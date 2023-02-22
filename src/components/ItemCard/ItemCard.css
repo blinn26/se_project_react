@@ -9,3 +9,26 @@
     flex-direction: column;
 
 }
+
+.card__name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Cabinet Grotesk' sans-serif;
+    font-style: normal;
+    align-self: center;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 4px;
+    line-height: 20px;
+
+    width: 91px;
+    height: 24px;
+
+
+
+    background-color: #FFFFFF;
+
+}
