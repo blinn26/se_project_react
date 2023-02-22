@@ -8,8 +8,18 @@
 
 .navigation__user {
 
-    /* background: url(../../images/Avatar.svg) center no-repeat; */
+
     width: 40px;
     height: 40px;
+
+}
+
+.navigation__button {
+
+    font-family: 'Cabinet Grotesk';
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
 
 }

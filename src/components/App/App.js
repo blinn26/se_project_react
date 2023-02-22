@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import defaultClothingItems from '../../utils/defaultClothingItems';
-import './App.css';
-import { location } from '../../utils/constants';
-import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import ItemModal from '../ItemModal/ItemModal';
+import { location } from '../../utils/constants';
+import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
+import './App.css';
 
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -16,8 +16,6 @@ const App = () => {
   const [clothingItems, setClothingItems] = useState({});
   const [activeModal, setActiveModal] = useState();
   const [selectCard, setSelectCard] = useState(null);
-
-  /* const [temp, setTemp] = useState(''); */
 
   const handleCardClick = (card) => {
     setActiveModal('preview');
@@ -28,26 +26,24 @@ const App = () => {
     setActiveModal();
   };
 
-  useEffect(() => {
+  const fetchWeatherData = () => {
     if (location.latitude && location.longitude) {
-      // TODO: Replace this with an environment variable
-      console.log(123131323);
-
       getForecastWeather(location, APIKey)
         .then((data) => {
-          console.log(data);
-          setWeatherData(getForecastWeather(data));
           setWeatherData(filterDataFromWeatherApi(data));
         })
         .catch((err) => console.log(err));
     }
+  };
 
+  useEffect(() => {
+    fetchWeatherData();
     setClothingItems(defaultClothingItems);
   }, []);
 
   return (
     <div className='page'>
-      <div clasName='page__wrapper'>
+      <div className='page__wrapper'>
         <Header weatherData={weatherData} handleCardClick={() => setActiveModal('create')} />
         <Main weatherData={weatherData} cards={clothingItems} onCardClick={handleCardClick} />
         <Footer />
