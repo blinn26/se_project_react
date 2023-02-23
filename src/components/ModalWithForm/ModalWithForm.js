@@ -1,7 +1,7 @@
 import React from 'react';
 import './ModalWithForm.css';
 
-function ModalWithForm({ title, name, buttonText, onSubmit, children, onclose }) {
+function ModalWithForm({ title, name, buttonText, onSubmit, children, onClose }) {
   return (
     <div className='modal'>
       <form className='modal__form' name={name} onSubmit={onSubmit}>
@@ -10,7 +10,7 @@ function ModalWithForm({ title, name, buttonText, onSubmit, children, onclose })
         <button className='modal__button-submit' type='submit'>
           {buttonText}
         </button>
-        <button className='modal__button-close' onClick={onclose}>
+        <button className='modal__button-close' onClick={onClose}>
           Close
         </button>
       </form>

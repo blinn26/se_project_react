@@ -44,7 +44,7 @@ const App = () => {
   return (
     <div className='page'>
       <div className='page__wrapper'>
-        <Header weatherData={weatherData} handleCardClick={() => setActiveModal('create')} />
+        <Header weatherData={weatherData} handleAddClick={() => setActiveModal('create')} />
         <Main weatherData={weatherData} cards={clothingItems} onCardClick={handleCardClick} />
         <Footer />
       </div>
