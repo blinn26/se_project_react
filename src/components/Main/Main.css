@@ -11,3 +11,9 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.main__description-container {
+    font-family: 'Cabinet Grotesk';
+    font-weight: 700;
+    font-size: 20px;
+}

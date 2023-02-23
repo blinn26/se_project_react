@@ -10,6 +10,7 @@
     align-items: center;
     background-color: rgba(0, 0, 0, .5);
     border-top-right-radius: 10px;
+    font-family: 'Cabinet Grotesk';
 }
 
 
@@ -24,6 +25,7 @@
 
 .item-modal__preview-image {
     display: flex;
+    font-family: 'Cabinet Grotesk';
 }
 
 .item-modal__close-button {

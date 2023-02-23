@@ -21,8 +21,10 @@
 
 
 .header__date {
-    line-height: 1.2;
 
+    font-family: 'Cabinet Grotesk';
+    font-weight: 700;
+    font-size: 20px;
 
 }
 
