@@ -1,0 +1,16 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__form {
+    border-radius: 20px;
+    flex-direction: column;
+    font-family: "Cabinet-Grotesk";
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: bold;
+    background: white;
+    width: 440px;
+}
