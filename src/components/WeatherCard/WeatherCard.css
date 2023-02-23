@@ -1,0 +1,17 @@
+.weather-card {
+    width: 1360px;
+    height: 80px;
+    background: #00A3FF;
+    border-radius: 12px;
+}
+
+.weather-card__temp {
+    font-size: 36px;
+    font-family: 'Cabinet Grotesk';
+    color: #FFFFFF;
+    align-self: center;
+    display: flex;
+    color: #FFFFFF;
+    margin-top: 15px;
+    margin-left: 30px;
+}
