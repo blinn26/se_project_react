@@ -22,23 +22,14 @@ function Main({ weatherData, cards = [], onCardClick }) {
       <section className='main__clothes'>
         <div className='main__info'>
           <div className='main__description-container'>
-            <p className='main__description'>
-              Today is{actualWeather}°F and it {weatherType()}
-            </p>
-            <p className='main__description_slash'> / </p>
-            <p className='main__description'>You may want to wear</p>
+            Today is{actualWeather}°F and it {weatherType()}/ You may want to wear
           </div>
         </div>
-        {Array.isArray(cards) + ''}{' '}
         <ul className='main__items'>
           {Array.isArray(cards) &&
-            cards
-              /* .filter((card) => {
-                return card.weather === weatherType();
-              }) */
-              .map((filterCard) => (
-                <ItemCard key={filterCard.id} clothingItem={filterCard} onCardClick={onCardClick} />
-              ))}
+            cards.map((filterCard) => (
+              <ItemCard key={filterCard.id} clothingItem={filterCard} onCardClick={onCardClick} />
+            ))}
         </ul>
       </section>
     </main>

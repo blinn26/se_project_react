@@ -16,22 +16,12 @@ const Header = ({ weatherData, handleAddClick }) => {
         </p>
       </div>
       <div className='header__nav'>
-        <nav className='navigation'>
-          <ul className='navigation__container'>
-            <li>
-              <button onClick={handleAddClick} className='navigation__button'>
-                + Add clothes
-              </button>
-            </li>
-            <li>
-              <div className='navigation__link'>
-                {username}
-                <img className='navigation__user' src='/images/Avatar.svg' alt='user avatar default' />
-                <span className='navigation__user  navigation__user_type_none'></span>
-              </div>
-            </li>
-          </ul>
-        </nav>
+        {username}
+        <button onClick={handleAddClick} className='navigation__button'>
+          + Add clothes
+        </button>
+
+        <img className='navigation__user' src='/images/Avatar.svg' alt='user avatar default' />
       </div>
     </header>
   );

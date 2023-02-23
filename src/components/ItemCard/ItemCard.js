@@ -1,7 +1,7 @@
 import React from 'react';
 import './ItemCard.css';
 
-const ItemCard = ({ clothingItem, onItemClick }) => {
+const ItemCard = ({ clothingItem, onCardClick }) => {
   return (
     <div className='card'>
       <div className='card__name'> {clothingItem.name}</div>
@@ -10,7 +10,7 @@ const ItemCard = ({ clothingItem, onItemClick }) => {
         className='card__image'
         src={clothingItem.link}
         alt={clothingItem.name}
-        onClick={() => onItemClick(clothingItem)}
+        onClick={() => onCardClick(clothingItem)}
       />
     </div>
   );
