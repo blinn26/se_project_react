@@ -11,6 +11,7 @@
     background-color: rgba(0, 0, 0, .5);
     border-top-right-radius: 10px;
     font-family: 'Cabinet Grotesk';
+
 }
 
 
@@ -20,12 +21,16 @@
     background: #FFFFFF;
     border-radius: 16px;
     border-top-right-radius: 10px;
+    width: 471px;
+    height: 627px;
+    position: relative;
+    overflow: hidden;
 
 }
 
 .item-modal__preview-image {
     display: flex;
-    font-family: 'Cabinet Grotesk';
+    object-fit: cover;
 }
 
 .item-modal__close-button {
@@ -35,4 +40,26 @@
     width: 16px;
     cursor: pointer;
     border: none;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.item-modal__title {
+    font-family: 'Cabinet Grotesk';
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.item-modal__weather {
+    font-family: 'Cabinet Grotesk';
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 20px;
+
+
 }
