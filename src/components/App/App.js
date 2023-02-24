@@ -17,9 +17,13 @@ const App = () => {
   const [activeModal, setActiveModal] = useState();
   const [selectCard, setSelectCard] = useState(null);
 
-  const handleCardClick = (card) => {
+  const handleAddClick = (card) => {
     setActiveModal('preview');
     setSelectCard(card);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
   };
 
   const closeAllModals = () => {
@@ -45,18 +49,24 @@ const App = () => {
     <div className='page'>
       <div className='page__wrapper'>
         <Header weatherData={weatherData} handleAddClick={() => setActiveModal('create')} />
-        <Main weatherData={weatherData} cards={clothingItems} onCardClick={handleCardClick} />
+        <Main weatherData={weatherData} cards={clothingItems} onCardClick={handleAddClick} />
         <Footer />
       </div>
       {activeModal === 'create' && (
-        <ModalWithForm title='New garment' name='new-card' onClose={closeAllModals}>
+        <ModalWithForm
+          name='new-card'
+          buttonText='Add garment'
+          title='New garment'
+          onSubmit='handleSubmit'
+          onClose={closeAllModals}>
           <label className='modal__label'>
             <input
               type='text'
               name='name'
-              id='place-name'
+              buttonText='Add garment'
+              onClose={closeAllModals}
               className='modal__input modal__input_type_card-name'
-              placeholder='title'
+              placeholder='Name'
               required
               minLength='1'
               maxLength='30'

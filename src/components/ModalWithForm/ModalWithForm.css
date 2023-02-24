@@ -2,15 +2,54 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+
 }
+
+
+
 
 .modal__form {
     border-radius: 20px;
     flex-direction: column;
     font-family: "Cabinet-Grotesk";
     font-size: 16px;
-    line-height: 20px;
     font-weight: bold;
+    line-height: 20px;
     background: white;
     width: 440px;
+    height: 496px;
+    position: relative;
+    display: flex;
+}
+
+.modal__title {
+    font-family: "Cabinet-Grotesk";
+    font-size: 16px;
+
+}
+
+.modal__button-submit {
+    height: 36px;
+    width: 126px
+}
+
+.modal__button-close {
+    background: url(/public/images/Union1.svg)center no-repeat;
+    height: 16px;
+    width: 16px;
+
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    cursor: pointer;
 }

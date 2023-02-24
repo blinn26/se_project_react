@@ -1,6 +1,15 @@
-.footer {}
+.footer {
+    display: flex;
+    width: 100%;
+    max-width: 1360px;
+    padding: 40px 40px;
+    justify-content: space-between;
+}
 
-.footer__container {
 
-    width: 1440px;
+.footer__name {
+    line-height: 20px;
+    font-family: "Cabinet-Grotesk";
+    font-size: 16px;
+
 }
