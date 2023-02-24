@@ -57,13 +57,12 @@ const App = () => {
           name='new-card'
           buttonText='Add garment'
           title='New garment'
-          onSubmit='handleSubmit'
+          onSubmit={handleSubmit}
           onClose={closeAllModals}>
           <label className='modal__label'>
             <input
               type='text'
               name='name'
-              buttonText='Add garment'
               onClose={closeAllModals}
               className='modal__input modal__input_type_card-name'
               placeholder='Name'

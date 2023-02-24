@@ -28,7 +28,7 @@ function Main({ weatherData, cards = [], onCardClick }) {
         <ul className='main__items'>
           {Array.isArray(cards) &&
             cards.map((filterCard) => (
-              <ItemCard key={filterCard.id} clothingItem={filterCard} onCardClick={onCardClick} />
+              <ItemCard key={filterCard._id} clothingItem={filterCard} onCardClick={onCardClick} />
             ))}
         </ul>
       </section>
