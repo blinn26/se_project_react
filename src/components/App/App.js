@@ -59,30 +59,30 @@ const App = () => {
           title='New garment'
           onSubmit={handleSubmit}
           onClose={closeAllModals}>
-          <label className='modal__label'>
-            <input
-              type='text'
-              name='name'
-              onClose={closeAllModals}
-              className='modal__input modal__input_type_card-name'
-              placeholder='Name'
-              required
-              minLength='1'
-              maxLength='30'
-            />
-            <span className='modal__error' id='place-name-error'></span>
-          </label>
-          <label className='modal__label'>
-            <input
-              type='url'
-              name='link'
-              id='place-link'
-              className='modal__input modal__input_type_url'
-              placeholder='Image URL'
-              required
-            />
-            <span className='modal__error' id='place-link-error'></span>
-          </label>
+          <label className='modal__label'>Name</label>
+          <input
+            type='text'
+            name='name'
+            id='name'
+            className='modal__input modal__input_type_card-name'
+            placeholder='Name'
+            required
+            minLength='1'
+            maxLength='30'
+          />
+          <span className='modal__error' id='place-name-error'></span>
+
+          <label className='modal__label'>Link</label>
+          <input
+            type='url'
+            name='link'
+            id='link'
+            className='modal__input modal__input_type_url'
+            placeholder='Image URL'
+            required
+          />
+          <span className='modal__error' id='place-link-error'></span>
+
           <p> Select the weather type:</p>
           <div className='modal__input modal__input_type_radio'>
             <input type='radio' id='choicHot' name='weatherType' value='Hot' />
