@@ -38,7 +38,13 @@
 
 .modal__button-submit {
     height: 36px;
-    width: 126px
+    width: 126px;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
 }
 
 .modal__button-close {
