@@ -1,4 +1,8 @@
-.main {}
+.page {
+  width: 1233px;
+  margin: 0 auto;
+  margin-left: 100px;
+}
 
 .footer {
 
