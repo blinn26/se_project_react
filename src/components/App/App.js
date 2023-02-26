@@ -64,7 +64,7 @@ const App = () => {
             type='text'
             name='name'
             id='name'
-            className='modal__input modal__input_type_card-name'
+            className='modal__input modal__input_type-name'
             placeholder='Name'
             required
             minLength='1'
@@ -77,7 +77,7 @@ const App = () => {
             type='url'
             name='link'
             id='link'
-            className='modal__input modal__input_type_url'
+            className='modal__input modal__input_type-url'
             placeholder='Image URL'
             required
           />

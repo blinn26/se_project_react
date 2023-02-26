@@ -24,11 +24,12 @@
     font-weight: bold;
     line-height: 20px;
     background: white;
-    height: 440px;
-    width: 490px;
+    min-width: 440px;
+    min-height: 480px;
     justify-content: space-between;
-
+    position: relative;
     display: flex;
+    padding: 30px 30px 30px 30px;
 
 }
 
@@ -39,8 +40,11 @@
 
 
 .modal__title {
-    font-family: "Cabinet-Grotesk";
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
     font-size: 16px;
+    line-height: 20px;
 
 }
 
@@ -59,11 +63,44 @@
     background: url(/public/images/Union1.svg)center no-repeat;
     height: 16px;
     width: 16px;
-
     border: none;
     background-color: transparent;
     position: absolute;
-    top: 90px;
+    top: 25px;
     right: 30px;
     cursor: pointer;
+}
+
+.modal__input_type-name {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 20px;
+    width: 440px;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+
+
+
+}
+
+.modal__input_type-url {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 20px;
+    width: 440px;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+
 }
