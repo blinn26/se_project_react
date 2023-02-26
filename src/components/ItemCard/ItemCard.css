@@ -1,13 +1,25 @@
 .card__image {
-    width: 328px;
-    height: 328px;
-    border-radius: 20px;
+    max-width: 228px;
 }
 
 .card {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 328px;
+    height: 328px;
+    background-color: rgba(233, 233, 233, 1);
+    background-position: center;
+    background-size: 226px;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    border-radius: 19px;
+    margin: 10px;
+    gap: 20px
+}
 
+.card:hover {
+    cursor: pointer;
 }
 
 .card__name {
@@ -15,20 +27,19 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     align-self: center;
+    margin-top: 20px;
     font-weight: 700;
     font-size: 16px;
     border-radius: 4px;
     line-height: 20px;
-
     width: 91px;
     height: 24px;
+    border: 1px solid black;
+    background-color: white;
 
 
-
-    background-color: #FFFFFF;
 
 }
