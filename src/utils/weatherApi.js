@@ -15,8 +15,8 @@ const filterDataFromWeatherApi = (data) => {
     return null;
   }
   const weather = {};
-  weather.city = data.location.name;
-  weather.tempature = data.current.temp_f;
+  weather.city = data.name;
+  weather.tempature = data.main.temp;
   return weather;
 };
 

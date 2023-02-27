@@ -4,6 +4,9 @@
     margin: 0;
     padding: 0;
     align-items: center;
+    background-color: #00A3FF;
+    border-radius: 12px;
+    width: 1360px;
 }
 
 .navigation__user {

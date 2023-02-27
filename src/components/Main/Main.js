@@ -8,11 +8,11 @@ function Main({ weatherData, cards = [], onCardClick }) {
 
   const weatherType = () => {
     if (actualWeather >= 86) {
-      return 'hot';
+      return 'Sunny';
     } else if (actualWeather >= 66 && actualWeather < 85) {
-      return 'warm';
+      return 'Storm';
     } else if (actualWeather <= 65) {
-      return 'cold';
+      return 'Fog';
     }
   };
 
