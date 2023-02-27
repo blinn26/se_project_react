@@ -1,4 +1,4 @@
-.weather-card {
+.weather {
     width: 1360px;
     height: 80px;
     background: #00A3FF;
@@ -7,7 +7,7 @@
 
 }
 
-.weather-card__temp {
+.weather__temp {
     font-size: 36px;
     font-family: 'Cabinet Grotesk';
     color: #FFFFFF;

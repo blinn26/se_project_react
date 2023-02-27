@@ -4,14 +4,14 @@ import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weathe
 
 const weatherImages = [
   {
-    condition: 'Clear',
+    condition: 'Fog',
     isDay: true,
-    image: '',
+    image: '/public/images/Fog.svg',
   },
   {
     condition: 'Clear',
     isDay: false,
-    image: 'path/to/clear-night-image.jpg',
+    image: '/public/images/Day.svg',
   },
   // Add more objects for other weather conditions
 ];
