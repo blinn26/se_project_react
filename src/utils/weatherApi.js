@@ -17,6 +17,15 @@ const filterDataFromWeatherApi = (data) => {
   const weather = {};
   weather.city = data.name;
   weather.tempature = data.main.temp;
+  weather.condition = () => {
+    if (weather.condition >= 86) {
+      return 'Sunny';
+    } else if (weather.condition >= 66 && weather.condition < 85) {
+      return 'Storm';
+    } else if (weather.condition <= 65) {
+      return 'Fog';
+    }
+  };
   return weather;
 };
 

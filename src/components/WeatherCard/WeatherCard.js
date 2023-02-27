@@ -36,10 +36,12 @@ function WeatherCard({ deg, unit }) {
   }, []);
 
   useEffect(() => {
+    console.log({ weatherData });
     if (weatherData) {
       setBackColor(weatherData.isDay ? 'rgba(0, 163, 255, 1)' : 'rgba(40, 104, 151, 1)');
       setBackImageObject(
         weatherImages.find((item) => {
+          console.log({ item });
           return item.condition === weatherData.condition && item.isDay === weatherData.isDay;
         })
       );
