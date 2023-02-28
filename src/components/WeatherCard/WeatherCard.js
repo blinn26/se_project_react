@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './WeatherCard.css';
-import { getForecastWeather, filterDataFromWeatherApi } from '../utils/weatherApi';
+import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
 
 const weatherImages = [
   {
@@ -61,7 +61,7 @@ function WeatherCard({ deg, unit }) {
       }}>
       {weatherData && (
         <p className='weather__temp'>
-          {weatherData.temperature}
+          {weatherData.temp}
           {deg}°{unit}
         </p>
       )}

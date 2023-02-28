@@ -16,7 +16,7 @@ const filterDataFromWeatherApi = (data) => {
   }
   const weather = {};
   weather.city = data.name;
-  weather.tempature = data.main.temp;
+  weather.temp = data.main.temp;
   weather.condition = () => {
     if (weather.condition >= 86) {
       return 'hot';
