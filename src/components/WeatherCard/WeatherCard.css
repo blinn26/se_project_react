@@ -14,3 +14,15 @@
     align-self: center;
     margin-left: 30px;
 }
+
+.weather-hot {
+    background-image: url(/public/images/Sunny.svg);
+}
+
+.weather-warm {
+    background-image: url(/public/images/Cloudy.svg);
+}
+
+.weather-cold {
+    background-image: url(/public/images/Fog.svg);
+}

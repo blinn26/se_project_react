@@ -4,14 +4,19 @@ import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weathe
 
 const weatherImages = [
   {
-    backColor: 'Fog',
-    isDay: true,
-    image: '/public/images/Fog.svg',
-  },
-  {
-    condition: 'Sunny',
+    condition: 'hot',
     isDay: true,
     image: '/public/images/Sunny.svg',
+  },
+  {
+    condition: 'warm',
+    isDay: true,
+    image: '/public/images/Cloudy.svg',
+  },
+  {
+    condition: 'cold',
+    isDay: true,
+    image: '/public/images/Fog.svg',
   },
 ];
 
@@ -36,7 +41,7 @@ function WeatherCard({ deg, unit }) {
 
   const backImage = weatherData
     ? weatherImages.find((item) => {
-        return item.condition === weatherData.condition && item.isDay === weatherData.isDay;
+        return item.condition === weatherData.condition();
       })
     : null;
 
@@ -53,7 +58,9 @@ function WeatherCard({ deg, unit }) {
           {deg}°{unit}
         </p>
       )}
-      <p></p>
+      <p className='weather-hot'></p>
+      <p className='weather-warm'></p>
+      <p className='weather-cold'></p>
     </div>
   );
 }
