@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './WeatherCard.css';
-import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
+import { getForecastWeather, filterDataFromWeatherApi } from '../utils/weatherApi';
 
 const weatherImages = [
   {
     condition: 'Fog',
-    isDay: true,
+    isDay: false,
     image: '/public/images/Fog.svg',
   },
   {
     condition: 'Clear',
-    isDay: false,
-    image: '/public/images/Day.svg',
+    isDay: true,
+    image: '/public/images/Sunny.svg',
   },
   // Add more objects for other weather conditions
 ];
@@ -36,12 +36,10 @@ function WeatherCard({ deg, unit }) {
   }, []);
 
   useEffect(() => {
-    console.log({ weatherData });
     if (weatherData) {
       setBackColor(weatherData.isDay ? 'rgba(0, 163, 255, 1)' : 'rgba(40, 104, 151, 1)');
       setBackImageObject(
         weatherImages.find((item) => {
-          console.log({ item });
           return item.condition === weatherData.condition && item.isDay === weatherData.isDay;
         })
       );
@@ -63,7 +61,7 @@ function WeatherCard({ deg, unit }) {
       }}>
       {weatherData && (
         <p className='weather__temp'>
-          {weatherData.tempature}
+          {weatherData.temperature}
           {deg}°{unit}
         </p>
       )}
