@@ -4,15 +4,15 @@ import './Main.css';
 import WeatherCard from '../WeatherCard/WeatherCard';
 
 function Main({ weatherData, cards = [], onCardClick }) {
-  const actualWeather = weatherData.tempature;
+  const actualWeather = weatherData.temperature;
 
   const weatherType = () => {
     if (actualWeather >= 86) {
-      return 'Sunny';
+      return 'hot';
     } else if (actualWeather >= 66 && actualWeather < 85) {
-      return 'Storm';
+      return 'warm';
     } else if (actualWeather <= 65) {
-      return 'Fog';
+      return 'cold';
     }
   };
 

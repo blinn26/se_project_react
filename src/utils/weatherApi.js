@@ -16,13 +16,13 @@ const filterDataFromWeatherApi = (data) => {
   }
   const weather = {};
   weather.city = data.name;
-  weather.temp = data.main.temp;
+  weather.temperature = data.main.temp;
   weather.condition = () => {
-    if (weather.temp >= 86) {
+    if (weather.condition >= 86) {
       return 'hot';
-    } else if (weather.temp >= 66 && weather.temp < 85) {
+    } else if (weather.condition >= 66 && weather.condition < 85) {
       return 'warm';
-    } else if (weather.temp <= 65) {
+    } else if (weather.condition <= 65) {
       return 'cold';
     }
   };
