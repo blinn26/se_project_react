@@ -6,17 +6,17 @@ const weatherImages = [
   {
     condition: 'hot',
     isDay: true,
-    image: '/public/images/Sunny.svg',
+    image: '/images/Sunny.svg',
   },
   {
     condition: 'warm',
     isDay: true,
-    image: '/public/images/Cloudy.svg',
+    image: '/images/Cloudy.svg',
   },
   {
     condition: 'cold',
     isDay: true,
-    image: '/public/images/Fog.svg',
+    image: '/images/Fog.svg',
   },
 ];
 
@@ -41,6 +41,9 @@ function WeatherCard({ deg, unit }) {
 
   const backImage = weatherData
     ? weatherImages.find((item) => {
+        console.log(item.condition);
+        /*  console.log(weatherData.condition()); */
+        console.log(weatherData);
         return item.condition === weatherData.condition();
       })
     : null;
