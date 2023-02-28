@@ -53,8 +53,8 @@ function WeatherCard({ deg, unit }) {
         backgroundImage: `url(${backImage})`,
       }}>
       {weatherData && (
-        <p className='weather__temp'>
-          {weatherData.temp}
+        <p className='weather__temperature'>
+          {weatherData.temperature}
           {deg}°{unit}
         </p>
       )}
