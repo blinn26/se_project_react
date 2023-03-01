@@ -9,13 +9,12 @@
     width: 328px;
     height: 328px;
     background-color: rgba(233, 233, 233, 1);
-    background-position: center;
+    /* background-position: center;
     background-size: 226px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     border: 1px solid black;
     border-radius: 19px;
-    margin: 10px;
-    gap: 20px
+
 }
 
 .card:hover {

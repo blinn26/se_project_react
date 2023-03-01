@@ -2,7 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 0 16px */
+    font-family: 'Cabinet Grotesk';
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .header__container {
