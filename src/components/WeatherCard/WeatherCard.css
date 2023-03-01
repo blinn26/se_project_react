@@ -1,7 +1,7 @@
 .weather {
-    width: 1360px;
+    position: relative;
     height: 80px;
-    background: #00A3FF;
+
     border-radius: 12px;
     display: flex;
 
@@ -13,4 +13,9 @@
     color: #FFFFFF;
     align-self: center;
     margin-left: 30px;
+    position: absolute;
+}
+
+.weather__image {
+    width: 100%;
 }

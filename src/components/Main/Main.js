@@ -2,6 +2,7 @@ import React from 'react';
 import ItemCard from '../ItemCard/ItemCard';
 import './Main.css';
 import WeatherCard from '../WeatherCard/WeatherCard';
+import defaultClothingItems from '../../utils/defaultClothingItems';
 
 function Main({ weatherData, cards = [], onCardClick }) {
   const actualWeather = weatherData.temperature;
@@ -16,8 +17,14 @@ function Main({ weatherData, cards = [], onCardClick }) {
     }
   };
 
-  console.log(weatherType());
+  console.log(weatherType(), weatherType);
 
+  const filterCard = defaultClothingItems.filter((item) => {
+    console.log(item);
+    return item.weather.toLowerCase() === weatherType();
+  });
+
+  console.log(filterCard);
   return (
     <main className='main'>
       <WeatherCard weatherData={weatherData} />
@@ -28,8 +35,8 @@ function Main({ weatherData, cards = [], onCardClick }) {
           </div>
         </div>
         <ul className='main__items'>
-          {Array.isArray(cards) &&
-            cards.map((filterCard) => (
+          {Array.isArray(filterCard) &&
+            filterCard.map((filterCard) => (
               <ItemCard key={filterCard._id} clothingItem={filterCard} onCardClick={onCardClick} />
             ))}
         </ul>
