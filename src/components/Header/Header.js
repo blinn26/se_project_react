@@ -5,7 +5,7 @@ import '../Header/Navigation.css';
 const Header = ({ weatherData, handleAddClick }) => {
   if (!weatherData) return null;
   const currentDate = new Date().toLocaleDateString('default', { month: 'long', day: 'numeric', year: 'numeric' });
-  const username = 'Ben Linn';
+  const username = '';
 
   return (
     <header className='header'>

@@ -16,6 +16,8 @@ function Main({ weatherData, cards = [], onCardClick }) {
     }
   };
 
+  console.log(weatherType());
+
   return (
     <main className='main'>
       <WeatherCard weatherData={weatherData} />
