@@ -53,7 +53,7 @@ function WeatherCard({ deg, unit }) {
       className='weather'
       style={{
         backgroundColor: 'rgba(0, 163, 255, 1)',
-        backgroundImage: `url(${backImage})`,
+        backgroundImage: `url(${backImage?.image})`,
       }}>
       {weatherData && (
         <p className='weather__temperature'>
@@ -61,9 +61,6 @@ function WeatherCard({ deg, unit }) {
           {deg}°{unit}
         </p>
       )}
-      <p className='weather-hot'></p>
-      <p className='weather-warm'></p>
-      <p className='weather-cold'></p>
     </div>
   );
 }
