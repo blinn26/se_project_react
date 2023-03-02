@@ -33,7 +33,7 @@
 }
 
 .item-modal__close-button {
-    background: url(/public/Union.svg)center no-repeat;
+    background: url(/public/images/Union.svg)center no-repeat;
     height: 16px;
     width: 16px;
     cursor: pointer;
