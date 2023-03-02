@@ -21,7 +21,7 @@ const Header = ({ weatherData, handleAddClick }) => {
         </div>
 
         <div className='header__nav'>
-          <span className='navigation__username'>{username || 'Ben'}</span>
+          <span className='navigation__username'>{username || 'Ben Linn'}</span>
           <button onClick={handleAddClick} className='navigation__button'>
             + Add clothes
           </button>
