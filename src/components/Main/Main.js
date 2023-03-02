@@ -4,7 +4,7 @@ import './Main.css';
 import WeatherCard from '../WeatherCard/WeatherCard';
 import defaultClothingItems from '../../utils/defaultClothingItems';
 
-function Main({ weatherData, cards = [], onCardClick }) {
+function Main({ weatherData, onCardClick }) {
   const actualWeather = weatherData.temperature;
 
   const weatherType = () => {
@@ -17,14 +17,10 @@ function Main({ weatherData, cards = [], onCardClick }) {
     }
   };
 
-  console.log(weatherType(), weatherType);
-
   const filterCard = defaultClothingItems.filter((item) => {
-    console.log(item);
     return item.weather.toLowerCase() === weatherType();
   });
 
-  console.log(filterCard);
   return (
     <main className='main'>
       <WeatherCard weatherData={weatherData} />

@@ -29,9 +29,7 @@ function WeatherCard({ deg, unit }) {
         const data = await getForecastWeather();
         const filteredData = filterDataFromWeatherApi(data);
         setWeatherData(filteredData);
-      } catch (error) {
-        console.error(error);
-      }
+      } catch (error) {}
     };
 
     if (!weatherData) {
@@ -41,21 +39,12 @@ function WeatherCard({ deg, unit }) {
 
   const backImage = weatherData
     ? weatherImages.find((item) => {
-        console.log(item.condition);
-        /*  console.log(weatherData.condition()); */
-        console.log(weatherData);
         return item.condition === weatherData.condition();
       })
     : null;
 
   return (
-    <div
-      className='weather'
-      // style={{
-      //   backgroundColor: 'rgba(0, 163, 255, 1)',
-      //   backgroundImage: `url(${backImage?.image})`,
-      // }}
-    >
+    <div className='weather'>
       {weatherData && (
         <p className='weather__temperature'>
           {weatherData.temperature}

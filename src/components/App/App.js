@@ -44,7 +44,7 @@ const App = () => {
     fetchWeatherData();
     setClothingItems(defaultClothingItems);
   }, []);
-  console.log(activeModal);
+
   return (
     <div className='page'>
       <div className='page__wrapper'>
