@@ -6,17 +6,17 @@ const weatherImages = [
   {
     condition: 'hot',
     isDay: true,
-    image: '/images/Sunny.svg',
+    image: '/Sunny.svg',
   },
   {
     condition: 'warm',
     isDay: true,
-    image: '/images/Cloudy.svg',
+    image: '/Cloudy.svg',
   },
   {
     condition: 'cold',
     isDay: true,
-    image: '/images/Fog.svg',
+    image: '/Fog.svg',
   },
 ];
 

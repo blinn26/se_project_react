@@ -27,7 +27,7 @@ function Main({ weatherData, onCardClick }) {
       <section className='main__clothes'>
         <div className='main__info'>
           <div className='main__description-container'>
-            Today is{actualWeather}°F {weatherType()}/ You may want to wear
+            Today is {actualWeather} °F {weatherType()} / You may want to wear
           </div>
         </div>
         <ul className='main__items'>
