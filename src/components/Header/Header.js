@@ -25,7 +25,7 @@ const Header = ({ weatherData, handleAddClick }) => {
           <button onClick={handleAddClick} className='navigation__button'>
             + Add clothes
           </button>
-          <img className='navigation__user' src='/images/Avatar.svg' alt='user avatar default' />
+          <img className='navigation__user' src='/Avatar.svg' alt='user avatar default' />
         </div>
       </header>
     )
