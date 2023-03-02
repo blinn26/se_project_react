@@ -2,9 +2,6 @@ import React from 'react';
 import './ItemModal.css';
 
 function ItemModal({ card, onClose }) {
-  // function handleDelete() {
-  //   onCardDelete(card);
-  // }
   console.log(card);
   return (
     <div className='item-modal__preview'>

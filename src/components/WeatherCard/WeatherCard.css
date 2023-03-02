@@ -1,7 +1,6 @@
 .weather {
     position: relative;
     height: 80px;
-
     border-radius: 12px;
     display: flex;
 
@@ -14,8 +13,10 @@
     align-self: center;
     margin-left: 30px;
     position: absolute;
+    margin-top: 20px;
 }
 
 .weather__image {
     width: 100%;
+    margin-top: 20px;
 }
