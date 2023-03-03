@@ -1,7 +1,5 @@
 .main {
     flex-wrap: wrap;
-    display: flex;
-
 }
 
 .main__items {
