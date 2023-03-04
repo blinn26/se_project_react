@@ -14,7 +14,7 @@ const Header = ({ weatherData, handleAddClick }) => {
     city && (
       <header className='header'>
         <div className='header__container'>
-          <img src='images/wtwr.svg' alt='wtwr logo' className='header__logo' />
+          <img src='../../images/wtwr.svg' alt='wtwr logo' className='header__logo' />
           <p className='header__date'>
             {`${new Date().toLocaleDateString('default', { month: 'long', day: 'numeric', year: 'numeric' })}, ${city}`}
           </p>
@@ -25,7 +25,7 @@ const Header = ({ weatherData, handleAddClick }) => {
           <button onClick={handleAddClick} className='navigation__button'>
             + Add clothes
           </button>
-          <img className='navigation__user' src='images/Avatar.svg' alt='user avatar default' />
+          <img className='navigation__user' src='../../images/Avatar.svg' alt='user avatar default' />
         </div>
       </header>
     )

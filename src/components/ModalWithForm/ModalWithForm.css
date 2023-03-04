@@ -60,7 +60,7 @@
 }
 
 .modal__button-close {
-    background: url(/public/images/Union1.svg)center no-repeat;
+    background: url(../../images/Union1.svg)center no-repeat;
     height: 16px;
     width: 16px;
     border: none;
