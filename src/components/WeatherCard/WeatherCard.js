@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import './WeatherCard.css';
 import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
+import sunnyDay from '../../images/Sunny.svg';
+import cloudyDay from '../../images/Cloudy.svg';
+import fogDay from '../../images/Fog.svg';
 
 const weatherImages = [
   {
     condition: 'hot',
     isDay: true,
-    image: 'images/Sunny.svg',
+    image: sunnyDay,
   },
   {
     condition: 'warm',
     isDay: true,
-    image: 'images/Cloudy.svg',
+    image: cloudyDay,
   },
   {
     condition: 'cold',
     isDay: true,
-    image: 'images/Fog.svg',
+    image: fogDay,
   },
 ];
 
@@ -51,7 +54,7 @@ function WeatherCard({ deg, unit }) {
           {deg}°{unit}
         </p>
       )}
-      <img src={backImage?.image || ''} className='weather__image' />
+      <img src={backImage?.image || ''} className='weather__image' alt='Weather' />
     </div>
   );
 }
