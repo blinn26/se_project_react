@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import './ToggleSwitch.css';
+import { currentTemperatureUnit } from '../../context/currentTemperatureUnit.js';
 
 function ToggleSwitch(props) {
   const [checked, setChecked] = useState(props.checked);
+
+  function App() {
+    const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
+    // rest of the component code
+  }
 
   const handleToggle = () => {
     setChecked(!checked);

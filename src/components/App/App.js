@@ -8,6 +8,7 @@ import ItemModal from '../ItemModal/ItemModal';
 import { location } from '../../utils/constants';
 import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
 import './App.css';
+import { CurrentTemperatureUnit } from '../../context/currentTemperatureUnit';
 
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
