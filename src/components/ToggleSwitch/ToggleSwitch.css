@@ -25,7 +25,7 @@
 
 /* The inner switch background */
 .toggle-switch-inner {
-    background-color: black;
+    background-color: #d1d1d1;
     height: 100%;
     left: 0;
     position: absolute;
@@ -36,7 +36,7 @@
 
 /* The switch itself */
 .toggle-switch-switch {
-    background-color: black;
+    background-color: #fff;
     border: 1px solid #d1d1d1;
     border-radius: 28px;
     display: inline-block;
