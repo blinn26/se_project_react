@@ -1,26 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ToggleSwitch.css';
-import { currentTemperatureUnit } from '../../context/currentTemperatureUnit.js';
 
-function ToggleSwitch(props) {
-  const [checked, setChecked] = useState(props.checked);
-
-  function App() {
-    const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
-    // rest of the component code
-  }
-
-  const handleToggle = () => {
-    setChecked(!checked);
-    props.onChange(!checked);
-  };
-
+const ToggleSwitch = ({ isOn, handleToggle }) => {
   return (
-    <label className='toggle-switch'>
-      <input type='checkbox' checked={checked} onChange={handleToggle} />
-      <span className='toggle-switch-slider'></span>
-    </label>
+    <div className='toggle-switch'>
+      <input
+        type='checkbox'
+        className='toggle-switch-checkbox'
+        checked={isOn}
+        onChange={handleToggle}
+        id='toggle-switch'
+      />
+      <label className='toggle-switch-label' htmlFor='toggle-switch'>
+        <span className='toggle-switch-inner' />
+        <span className='toggle-switch-switch' />
+      </label>
+    </div>
   );
-}
+};
 
 export default ToggleSwitch;

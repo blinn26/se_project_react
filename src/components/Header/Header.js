@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Header/Header.css';
 import '../Header/Navigation.css';
 import headerLogo from '../../images/wtwr.svg';
 import avatarUser from '../../images/Avatar.svg';
+import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 
 const Header = ({ weatherData, handleAddClick }) => {
   // Destructure props
@@ -11,6 +12,14 @@ const Header = ({ weatherData, handleAddClick }) => {
   // Get username from URL params
   const params = new URLSearchParams(window.location.search);
   const username = params.get('username');
+
+  // Set initial toggle switch state
+  const [isToggleOn, setIsToggleOn] = useState(false);
+
+  // Handle toggle switch change event
+  const handleToggle = () => {
+    setIsToggleOn(!isToggleOn);
+  };
 
   return (
     city && (
@@ -23,6 +32,7 @@ const Header = ({ weatherData, handleAddClick }) => {
         </div>
 
         <div className='header__nav'>
+          <ToggleSwitch isOn={isToggleOn} handleToggle={handleToggle} />
           <span className='navigation__username'>{username || 'Ben Linn'}</span>
           <button onClick={handleAddClick} className='navigation__button'>
             + Add clothes
