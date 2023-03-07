@@ -8,7 +8,6 @@ import ItemModal from '../ItemModal/ItemModal';
 import { location } from '../../utils/constants';
 import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
 import './App.css';
-import { CurrentTemperatureUnit } from '../../context/currentTemperatureUnit';
 
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -50,6 +49,7 @@ const App = () => {
     <div className='page'>
       <div className='page__wrapper'>
         <Header weatherData={weatherData} handleAddClick={() => setActiveModal('create')} />
+
         <Main weatherData={weatherData} cards={clothingItems} onCardClick={handleAddClick} />
         <Footer />
       </div>
