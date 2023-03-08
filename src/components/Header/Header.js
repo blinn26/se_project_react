@@ -32,7 +32,8 @@ const Header = ({ weatherData, handleAddClick }) => {
         </div>
 
         <div className='header__nav'>
-          <ToggleSwitch isOn={isToggleOn} handleToggle={handleToggle} />
+          <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} />
+
           <span className='navigation__username'>{username || 'Ben Linn'}</span>
           <button onClick={handleAddClick} className='navigation__button'>
             + Add clothes
