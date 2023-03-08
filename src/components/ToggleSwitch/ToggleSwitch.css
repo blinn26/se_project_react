@@ -1,60 +1,94 @@
-/* ToggleSwitch.css */
-
-/* The switch container */
 .toggle-switch {
-    background-color: black;
     display: inline-block;
-    height: 28px;
-    position: relative;
-    width: 52px;
-}
-
-/* Hide the default checkbox */
-.toggle-switch input[type="checkbox"] {
-    display: none;
-}
-
-/* The switch label */
-.toggle-switch-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     cursor: pointer;
-    display: block;
-    overflow: hidden;
     position: relative;
-    user-select: none;
+    width: 60px;
+    height: 34px;
+    border: 2px solid #7E7E7E;
+    border-radius: 20px;
+    font-family: 'Cabinet Grotesk';
+    text-align: center;
 }
 
-/* The inner switch background */
+.toggle-switch-checkbox {
+    /*  display: none; */
+}
+
+.toggle-switch-label {
+    /*  display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 34px; */
+}
+
 .toggle-switch-inner {
-    background-color: #d1d1d1;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transition: background-color 0.3s ease-in-out;
-    width: 100%;
+    display: block;
+
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
 }
 
-/* The switch itself */
+.toggle-switch-inner:before,
+.toggle-switch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 34px;
+    padding: 0;
+    line-height: 34px;
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.toggle-switch-inner:before {
+    content: 'F';
+    text-align: center;
+    background-color: white;
+    color: black;
+    position: absolute;
+    left: 0%;
+    right: 50%;
+    top: 0%;
+    bottom: 0%;
+
+}
+
+.toggle-switch-inner:after {
+    content: 'C';
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+}
+
 .toggle-switch-switch {
-    background-color: #fff;
-    border: 1px solid #d1d1d1;
-    border-radius: 28px;
-    display: inline-block;
-    height: 26px;
-    left: 0;
+    display: block;
+    font-family: 'Cabinet Grotesk';
+    width: 28px;
+    height: 28px;
+    margin: auto;
+    background: black;
     position: absolute;
     top: 0;
-    transition: left 0.3s ease-in-out;
-    width: 26px;
+    bottom: 0;
+    right: 28px;
+    border-radius: 34px;
+    transition: all 0.3s ease-in 0s;
 }
 
-/* The switch when it's toggled on */
-.toggle-switch input[type="checkbox"]:checked+.toggle-switch-label .toggle-switch-inner {
-    background-color: #4cd964;
+.toggle-switch-checkbox:checked+.toggle-switch-label .toggle-switch-inner {
+    margin-left: 0;
 }
 
-/* The switch itself when it's toggled on */
-.toggle-switch input[type="checkbox"]:checked+.toggle-switch-label .toggle-switch-switch {
-    border-color: #4cd964;
-    left: 26px;
+.toggle-switch-checkbox:checked+.toggle-switch-label .toggle-switch-switch {
+    right: 0;
 }

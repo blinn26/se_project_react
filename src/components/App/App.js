@@ -7,6 +7,8 @@ import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import ItemModal from '../ItemModal/ItemModal';
 import { location } from '../../utils/constants';
 import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
+import { CurrentTemperatureUnitContext } from '../../context/currentTemperatureUnit';
+import ToggleSwitch from '../../components/ToggleSwitch/ToggleSwitch';
 import './App.css';
 
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
@@ -16,7 +18,11 @@ const App = () => {
   const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState('');
   const [selectCard, setSelectCard] = useState({});
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
 
+  const handleToggleSwitchChange = () => {
+    setCurrentTemperatureUnit(currentTemperatureUnit === 'F' ? 'C' : 'F');
+  };
   const handleAddClick = (card) => {
     setActiveModal('preview');
     setSelectCard(card);
