@@ -55,8 +55,7 @@ const App = () => {
     <div className='page'>
       <div className='page__wrapper'>
         <Header weatherData={weatherData} handleAddClick={() => setActiveModal('create')} />
-        <h1>Current Temperature Unit: {currentTemperatureUnit}</h1>
-        <ToggleSwitch isChecked={currentTemperatureUnit === 'C'} onToggle={handleToggleSwitch} />
+
         <Main weatherData={weatherData} cards={clothingItems} onCardClick={handleAddClick} />
         <Footer />
       </div>
