@@ -1,94 +1,105 @@
+/* ToggleSwitch.css */
+
+/* Default style for the toggle switch */
 .toggle-switch {
-    display: inline-block;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    cursor: pointer;
     position: relative;
+    display: inline-block;
     width: 60px;
     height: 34px;
-    border: 2px solid #7E7E7E;
-    border-radius: 20px;
-    font-family: 'Cabinet Grotesk';
-    text-align: center;
 }
 
-.toggle-switch-checkbox {
-    /*  display: none; */
+/* Hide the checkbox input */
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
+/* Style the toggle switch label */
 .toggle-switch-label {
-    /*  display: block;
-    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
-    border-radius: 34px; */
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
+/* Style the toggle switch inner circle */
 .toggle-switch-inner {
     display: block;
-
-    width: 200%;
-    margin-left: -100%;
-    transition: margin 0.3s ease-in 0s;
-}
-
-.toggle-switch-inner:before,
-.toggle-switch-inner:after {
-    display: block;
-    float: left;
-    width: 50%;
-    height: 34px;
-    padding: 0;
-    line-height: 34px;
-    font-size: 14px;
-    color: black;
-    font-weight: bold;
-    box-sizing: border-box;
-}
-
-.toggle-switch-inner:before {
-    content: 'F';
-    text-align: center;
-    background-color: white;
-    color: black;
+    width: 26px;
+    height: 26px;
+    margin: 4px;
+    background: white;
     position: absolute;
-    left: 0%;
-    right: 50%;
-    top: 0%;
-    bottom: 0%;
-
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 34px;
+    border-radius: 34px;
+    transition: all 0.3s ease;
 }
 
-.toggle-switch-inner:after {
-    content: 'C';
-    text-align: center;
-    background-color: white;
-    position: absolute;
-    left: 50%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-}
-
+/* Style the toggle switch switch handle */
 .toggle-switch-switch {
     display: block;
-    font-family: 'Cabinet Grotesk';
-    width: 28px;
-    height: 28px;
-    margin: auto;
+    width: 22px;
+    height: 22px;
     background: black;
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 28px;
-    border-radius: 34px;
-    transition: all 0.3s ease-in 0s;
+    right: 36px;
+    margin: auto;
+    border-radius: 22px;
+    transition: all 0.3s ease;
 }
 
-.toggle-switch-checkbox:checked+.toggle-switch-label .toggle-switch-inner {
-    margin-left: 0;
+/* Change the color of the toggle switch handle on hover */
+.toggle-switch:hover .toggle-switch-switch {
+    background: white;
 }
 
-.toggle-switch-checkbox:checked+.toggle-switch-label .toggle-switch-switch {
+/* Show the fahrenheit/celsius text before and after the toggle switch */
+.toggle-switch-label:before {
+    content: "F";
+    display: inline-block;
+    position: absolute;
+    left: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+}
+
+.toggle-switch-label:after {
+    content: "C";
+    display: inline-block;
+    position: absolute;
+    right: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+/* Change the color of the fahrenheit/celsius text on hover */
+.toggle-switch:hover .toggle-switch-label:before {
+    color: white;
+}
+
+.toggle-switch:hover .toggle-switch-label:after {
+    color: black;
+}
+
+/* Change the background color of the inner circle and the position of the switch handle when the checkbox is checked */
+.toggle-switch input:checked+.toggle-switch-label .toggle-switch-inner {
+    background: black;
+    left: 34px;
+    right: 0;
+}
+
+.toggle-switch input:checked+.toggle-switch-label .toggle-switch-switch {
+    background: white;
     right: 0;
 }
