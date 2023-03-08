@@ -12,8 +12,8 @@ const ToggleSwitch = ({ isChecked, onToggle }) => {
         id='toggleSwitch'
       />
       <label className='toggle-switch-label' htmlFor='toggleSwitch'>
-        <span className='toggle-switch-inner' />
-        <span className='toggle-switch-switch' />
+        {/* <span className='toggle-switch-inner' /> */}
+        <span className='toggle-switch-switch toggle-switch-inner' />
       </label>
     </div>
   );

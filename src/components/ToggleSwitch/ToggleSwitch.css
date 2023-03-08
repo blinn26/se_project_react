@@ -25,10 +25,10 @@
 .toggle-switch-label .toggle-switch-inner {
     position: absolute;
     top: 50%;
-    left: 2px;
+    /* left: 2px; */
     width: 28px;
     height: 28px;
-    margin-top: -19px;
+    margin-top: -14px;
     background-color: #000;
     color: #fff;
     text-align: center;
@@ -38,7 +38,8 @@
     transition: left 0.3s ease-in-out;
 }
 
-.toggle-switch-label .toggle-switch-switch {
+
+/* .toggle-switch-label .toggle-switch-switch {
     position: absolute;
     top: 50%;
     right: 2px;
@@ -52,34 +53,51 @@
     border-radius: 50%;
     font-size: 16px;
     transition: right 0.3s ease-in-out;
-}
+} */
 
 .toggle-switch-label:before {
     content: 'F';
     position: absolute;
+    font-family: "Cabinet-Grotesk";
+    color: rgba(0, 0, 0, 0.5);
     left: 0%;
     right: 50%;
     top: 0%;
     bottom: 0%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    justify-content: center;
 }
 
 .toggle-switch-label:after {
     content: 'C';
     position: absolute;
-    font-size: 14px;
-    color: #000;
+    font-family: "Cabinet-Grotesk";
+    color: rgba(0, 0, 0, 0.5);
     left: 50%;
     right: 0%;
     top: 0%;
     bottom: 0%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    justify-content: center;
 }
 
-.toggle-switch-input:checked+.toggle-switch-label {
-    color: black;
-}
+
+
 
 .toggle-switch-input:checked+.toggle-switch-label .toggle-switch-inner {
-    left: 40px;
+    left: 28px;
 }
 
 .toggle-switch-input:checked+.toggle-switch-label .toggle-switch-switch {
