@@ -1,103 +1,85 @@
-/* ToggleSwitch.css */
-
-/* Default style for the toggle switch */
 .toggle-switch {
     position: relative;
     display: inline-block;
-    height: 28px;
-    width: 56px;
-    border: 2px solid #7E7E7E;
-    border-radius: 20px;
+    width: 80px;
+    height: 40px;
 }
 
-/* Hide the checkbox input */
-.toggle-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.toggle-switch-input {
+    display: none;
 }
 
-/* Style the toggle switch label */
 .toggle-switch-label {
     display: block;
     width: 100%;
     height: 100%;
     cursor: pointer;
-    position: absolute;
-    top: 0;
-    left: 0;
+    border-radius: 50px;
+    background-color: #fff;
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
 }
 
-/* Style the toggle switch inner circle */
-.toggle-switch-inner {
-    display: block;
-    width: 28px;
-    height: 28px;
-    background: white;
+.toggle-switch-label .toggle-switch-inner {
     position: absolute;
     top: 50%;
     left: 2px;
-    transform: translateY(-50%);
-    border-radius: 45px;
-    transition: all 0.3s ease;
+    width: 38px;
+    height: 38px;
+    margin-top: -19px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    font-size: 16px;
+    transition: left 0.3s ease-in-out;
 }
 
-/* Style the toggle switch switch handle */
-.toggle-switch-switch {
-    display: block;
-    width: 22px;
-    height: 22px;
-    background: black;
+.toggle-switch-label .toggle-switch-switch {
     position: absolute;
     top: 50%;
     right: 2px;
-    transform: translateY(-50%);
-    border-radius: 22px;
-    transition: all 0.3s ease;
+    width: 38px;
+    height: 38px;
+    margin-top: -19px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    font-size: 16px;
+    transition: right 0.3s ease-in-out;
 }
 
-/* Change the color of the toggle switch handle on hover */
-.toggle-switch:hover .toggle-switch-switch {
-    background: white;
-}
-
-/* Show the fahrenheit/celsius text before and after the toggle switch */
 .toggle-switch-label:before {
-    content: "F";
-    display: inline-block;
+    content: 'F';
     position: absolute;
-    left: -40px;
+    left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: black;
+    font-size: 14px;
+    color: #000;
 }
 
 .toggle-switch-label:after {
-    content: "C";
-    display: inline-block;
+    content: 'C';
     position: absolute;
-    right: -40px;
+    right: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: white;
+    font-size: 14px;
+    color: #000;
 }
 
-/* Change the color of the fahrenheit/celsius text on hover */
-.toggle-switch:hover .toggle-switch-label:before {
-    color: white;
+.toggle-switch-input:checked+.toggle-switch-label {
+    background-color: #000;
 }
 
-.toggle-switch:hover .toggle-switch-label:after {
-    color: black;
+.toggle-switch-input:checked+.toggle-switch-label .toggle-switch-inner {
+    left: 40px;
 }
 
-/* Change the background color of the inner circle and the position of the switch handle when the checkbox is checked */
-.toggle-switch input:checked+.toggle-switch-label .toggle-switch-inner {
-    background: black;
-    left: 26px;
-}
-
-.toggle-switch input:checked+.toggle-switch-label .toggle-switch-switch {
-    background: white;
-    right: 26px;
+.toggle-switch-input:checked+.toggle-switch-label .toggle-switch-switch {
+    right: 40px;
 }
