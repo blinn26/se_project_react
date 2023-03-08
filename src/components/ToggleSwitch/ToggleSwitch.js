@@ -6,7 +6,7 @@ const ToggleSwitch = ({ isChecked, onToggle }) => {
     <div className='toggle-switch'>
       <input
         type='checkbox'
-        className='toggle-switch-checkbox'
+        className='toggle-switch-input'
         checked={isChecked}
         onChange={onToggle}
         id='toggleSwitch'
