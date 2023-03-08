@@ -1,8 +1,10 @@
 .toggle-switch {
     position: relative;
     display: inline-block;
-    width: 80px;
-    height: 40px;
+    width: 56px;
+    height: 28px;
+    border: 2px solid #7E7E7E;
+    border-radius: 20px;
 }
 
 .toggle-switch-input {
@@ -24,8 +26,8 @@
     position: absolute;
     top: 50%;
     left: 2px;
-    width: 38px;
-    height: 38px;
+    width: 28px;
+    height: 28px;
     margin-top: -19px;
     background-color: #000;
     color: #fff;
@@ -55,25 +57,25 @@
 .toggle-switch-label:before {
     content: 'F';
     position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 14px;
-    color: #000;
+    left: 0%;
+    right: 50%;
+    top: 0%;
+    bottom: 0%;
 }
 
 .toggle-switch-label:after {
     content: 'C';
     position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
     font-size: 14px;
     color: #000;
+    left: 50%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
 }
 
 .toggle-switch-input:checked+.toggle-switch-label {
-    background-color: #000;
+    color: black;
 }
 
 .toggle-switch-input:checked+.toggle-switch-label .toggle-switch-inner {
