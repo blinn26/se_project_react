@@ -91,7 +91,7 @@
 }
 
 
-.toggle-switch-input:checked:checked~.toggle-switch-label::before {
+.toggle-switch-input:checked~.toggle-switch-label::before {
     color: rgba(0, 0, 0, 0.5);
 }
 
