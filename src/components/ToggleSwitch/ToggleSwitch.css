@@ -22,7 +22,11 @@
     transition: background-color 0.3s ease-in-out;
 }
 
+
+
 .toggle-switch-label .toggle-switch-inner {
+
+    content: '';
     position: absolute;
     top: 50%;
     /* left: 2px; */
@@ -38,29 +42,12 @@
     transition: left 0.3s ease-in-out;
 }
 
-
-/* .toggle-switch-label .toggle-switch-switch {
-    position: absolute;
-    top: 50%;
-    right: 2px;
-    width: 38px;
-    height: 38px;
-    margin-top: -19px;
-    background-color: #fff;
-    color: #000;
-    text-align: center;
-    line-height: 38px;
-    border-radius: 50%;
-    font-size: 16px;
-    transition: right 0.3s ease-in-out;
-} */
-
 .toggle-switch-label:before {
-    content: 'F';
+    content: 'C';
     position: absolute;
     font-family: "Cabinet-Grotesk";
     color: rgba(0, 0, 0, 0.5);
-    left: 0%;
+    left: 0;
     right: 50%;
     top: 0%;
     bottom: 0%;
@@ -75,7 +62,7 @@
 }
 
 .toggle-switch-label:after {
-    content: 'C';
+    content: 'F';
     position: absolute;
     font-family: "Cabinet-Grotesk";
     color: rgba(0, 0, 0, 0.5);
@@ -93,13 +80,17 @@
     justify-content: center;
 }
 
-
-
-
-.toggle-switch-input:checked+.toggle-switch-label .toggle-switch-inner {
-    left: 28px;
+.toggle-switch-label:hover:before,
+.toggle-switch-label:hover:after {
+    color: #fff;
 }
 
-.toggle-switch-input:checked+.toggle-switch-label .toggle-switch-switch {
-    right: 40px;
+.toggle-switch-input:checked~.toggle-switch-label:before {
+    right: 28px;
+    color: #fff;
+}
+
+.toggle-switch-input:checked~.toggle-switch-label:after {
+    left: -31px;
+    color: #fff;
 }
