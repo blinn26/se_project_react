@@ -22,14 +22,10 @@
     transition: background-color 0.3s ease-in-out;
 }
 
-
-
 .toggle-switch-label .toggle-switch-inner {
-
     content: '';
     position: absolute;
     top: 50%;
-    /* left: 2px; */
     width: 28px;
     height: 28px;
     margin-top: -14px;
@@ -43,11 +39,11 @@
 }
 
 .toggle-switch-label:before {
-    content: 'C';
+    content: 'F';
     position: absolute;
     font-family: "Cabinet-Grotesk";
     color: rgba(0, 0, 0, 0.5);
-    left: 0;
+    left: 0%;
     right: 50%;
     top: 0%;
     bottom: 0%;
@@ -62,7 +58,7 @@
 }
 
 .toggle-switch-label:after {
-    content: 'F';
+    content: 'C';
     position: absolute;
     font-family: "Cabinet-Grotesk";
     color: rgba(0, 0, 0, 0.5);
@@ -80,17 +76,22 @@
     justify-content: center;
 }
 
-.toggle-switch-label:hover:before,
-.toggle-switch-label:hover:after {
+.toggle-switch-input:checked~.toggle-switch-label:hover::before {
     color: #fff;
 }
 
-.toggle-switch-input:checked~.toggle-switch-label:before {
-    right: 28px;
+.toggle-switch-input:checked~.toggle-switch-label:hover::after {
     color: #fff;
 }
 
-.toggle-switch-input:checked~.toggle-switch-label:after {
-    left: -31px;
-    color: #fff;
+
+.toggle-switch-input:checked:checked~.toggle-switch-label::before {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.toggle-switch-input:checked~.toggle-switch-label .toggle-switch-inner {
+
+    left: calc(100% - 28px);
+
+
 }
