@@ -38,6 +38,8 @@
     transition: left 0.3s ease-in-out;
 }
 
+
+
 .toggle-switch-label:before {
     content: 'F';
     position: absolute;
@@ -56,6 +58,8 @@
     line-height: 17px;
     justify-content: center;
 }
+
+
 
 .toggle-switch-label:after {
     content: 'C';
@@ -76,11 +80,13 @@
     justify-content: center;
 }
 
-.toggle-switch-input:checked~.toggle-switch-label:hover::before {
+
+.toggle-switch-input:checked~.toggle-switch-label::before {
     color: #fff;
 }
 
-.toggle-switch-input:checked~.toggle-switch-label:hover::after {
+
+.toggle-switch-input:checked~.toggle-switch-label::after {
     color: #fff;
 }
 
@@ -90,7 +96,6 @@
 }
 
 .toggle-switch-input:checked~.toggle-switch-label .toggle-switch-inner {
-
     left: calc(100% - 28px);
 
 
