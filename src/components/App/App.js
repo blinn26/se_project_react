@@ -9,6 +9,7 @@ import { location } from '../../utils/constants';
 import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import './App.css';
+import currentTemperatureUnit from '../../context/currentTemperatureUnit';
 
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
