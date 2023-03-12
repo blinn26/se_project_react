@@ -21,6 +21,8 @@ function Main({ weatherData, onCardClick }) {
     return item.weather.toLowerCase() === weatherType();
   });
 
+  console.log(weatherData);
+
   return (
     <main className='main'>
       <WeatherCard weatherData={weatherData} />

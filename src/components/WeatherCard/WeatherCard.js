@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import './WeatherCard.css';
-import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
+import { CurrentTemperatureUnitContext } from '../../context/currentTemperatureUnit';
 import sunnyDay from '../../images/Sunny.svg';
 import cloudyDay from '../../images/Cloudy.svg';
 import fogDay from '../../images/Fog.svg';
@@ -23,22 +23,12 @@ const weatherImages = [
   },
 ];
 
-function WeatherCard({ deg, unit }) {
-  const [weatherData, setWeatherData] = useState(null);
+function WeatherCard({ weatherData }) {
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getForecastWeather();
-        const filteredData = filterDataFromWeatherApi(data);
-        setWeatherData(filteredData);
-      } catch (error) {}
-    };
-
-    if (!weatherData) {
-      fetchData();
-    }
-  }, [weatherData]);
+  if (!weatherData.condition) {
+    return null;
+  }
 
   const backImage = weatherData
     ? weatherImages.find((item) => {
@@ -50,8 +40,10 @@ function WeatherCard({ deg, unit }) {
     <div className='weather'>
       {weatherData && (
         <p className='weather__temperature'>
-          {weatherData.temperature}
-          {deg}°{unit}
+          {currentTemperatureUnit === 'F'
+            ? `${weatherData.temperature}F`
+            : `${((weatherData.temperature - 32) * 5) / 9}C`}
+          °
         </p>
       )}
       <img src={backImage?.image || ''} className='weather__image' alt='Weather' />
