@@ -19,10 +19,6 @@ const App = () => {
   const [selectCard, setSelectCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
 
-  const handleToggleSwitch = () => {
-    setCurrentTemperatureUnit(currentTemperatureUnit === 'F' ? 'C' : 'F');
-  };
-
   const handleAddClick = (card) => {
     setActiveModal('preview');
     setSelectCard(card);
@@ -55,7 +51,7 @@ const App = () => {
     <CurrentTemperatureUnitContext.Provider
       value={{
         currentTemperatureUnit,
-        handleToggleSwitchChange: handleToggleSwitch,
+        setCurrentTemperatureUnit,
       }}>
       <div className='page'>
         <div className='page__wrapper'>
