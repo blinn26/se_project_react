@@ -2,7 +2,7 @@ import React from 'react';
 import ItemCard from '../ItemCard/ItemCard';
 import './ClothesSection.css';
 
-const ClothesSection = ({ card, handleAddClick, onCardClick }) => {
+const ClothesSection = ({ cards, handleAddClick, onCardClick }) => {
   return (
     <div className='clothes-section'>
       <div className='clothes-section-header'>
@@ -13,7 +13,7 @@ const ClothesSection = ({ card, handleAddClick, onCardClick }) => {
         </button>
       </div>
       <div className='clothes-cards-container'>
-        {card.map((item) => (
+        {cards.map((item) => (
           <ItemCard key={item.id} item={item} onCardClick={onCardClick} />
         ))}
       </div>

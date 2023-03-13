@@ -1,11 +1,13 @@
 import React from 'react';
+import SideBar from '../SideBar/SideBar';
+import ClothesSection from '../ClothesSection/ClothesSection';
 
-function Profile({ card, handleAddClick, onCardClick }) {
+function Profile({ cards, handleAddClick, onCardClick }) {
   return (
     <div className='profile'>
       <div className='profile-container'>
         <SideBar />
-        <ClothesSection cards={card} handleAddClick={handleAddClick} onCardClick={onCardClick} />
+        <ClothesSection cards={cards} handleAddClick={handleAddClick} onCardClick={onCardClick} />
       </div>
     </div>
   );
