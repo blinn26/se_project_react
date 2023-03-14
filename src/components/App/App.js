@@ -21,6 +21,7 @@ const App = () => {
   const [selectCard, setSelectCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
   const cards = defaultClothingItems;
+
   const onCardClick = (card) => {
     setActiveModal('preview');
     setSelectCard(card);
