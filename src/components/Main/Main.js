@@ -31,14 +31,17 @@ function Main({ weatherData, onCardClick }) {
       <section className='main__clothes'>
         <div className='main__info'>
           <div className='main__description-container'>
-            Today is {currentTemperatureUnit === 'F' ? `${actualWeather} °F` : `${((actualWeather - 32) * 5) / 9} °C`}
+            Today is{' '}
+            {currentTemperatureUnit === 'F'
+              ? `${Math.round(actualWeather)} °F`
+              : `${Math.round(((actualWeather - 32) * 5) / 9)} °C`}
             {weatherType()} / You may want to wear
           </div>
         </div>
         <ul className='main__items'>
           {Array.isArray(filterCard) &&
             filterCard.map((filterCard) => (
-              <ItemCard key={filterCard._id} clothingItem={filterCard} onCardClick={onCardClick} />
+              <ItemCard key={filterCard._id} item={filterCard} onCardClick={onCardClick} />
             ))}
         </ul>
       </section>

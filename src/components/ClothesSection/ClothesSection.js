@@ -13,8 +13,8 @@ const ClothesSection = ({ cards, handleAddClick, onCardClick }) => {
         </button>
       </div>
       <div className='clothes-cards-container'>
-        {cards.map((item) => (
-          <ItemCard key={item.id} item={item} onCardClick={onCardClick} />
+        {cards.map((item, index) => (
+          <ItemCard key={index} item={item} onCardClick={onCardClick} />
         ))}
       </div>
     </div>

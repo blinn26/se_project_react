@@ -65,11 +65,11 @@ const App = () => {
         <div className='page__wrapper'>
           <Header weatherData={weatherData} handleAddClick={() => setActiveModal('create')} />
           <Switch>
-            <Route path='/'>
-              <Main weatherData={weatherData} cards={clothingItems} onCardClick={handleAddClick} />
-            </Route>
             <Route path='/profile'>
               <Profile cards={cards} handleAddClick={handleAddClick} onCardClick={onCardClick} />
+            </Route>
+            <Route path='/'>
+              <Main weatherData={weatherData} cards={clothingItems} onCardClick={handleAddClick} />
             </Route>
           </Switch>
           <Footer />

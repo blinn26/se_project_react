@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../Header/Header.css';
 import '../Header/Navigation.css';
 import headerLogo from '../../images/wtwr.svg';
@@ -38,7 +39,9 @@ const Header = ({ weatherData, handleAddClick }) => {
           <button onClick={handleAddClick} className='navigation__button'>
             + Add clothes
           </button>
-          <img className='navigation__user' src={avatarUser} alt='user avatar default' />
+          <Link to='/profile'>
+            <img className='navigation__user' src={avatarUser} alt='user avatar default' />
+          </Link>
         </div>
       </header>
     )

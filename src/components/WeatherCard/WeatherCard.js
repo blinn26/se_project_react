@@ -41,9 +41,8 @@ function WeatherCard({ weatherData }) {
       {weatherData && (
         <p className='weather__temperature'>
           {currentTemperatureUnit === 'F'
-            ? `${weatherData.temperature}F`
-            : `${((weatherData.temperature - 32) * 5) / 9}C`}
-          °
+            ? `${Math.round(weatherData.temperature)} °F`
+            : `${Math.round(((weatherData.temperature - 32) * 5) / 9)} °C`}
         </p>
       )}
       <img src={backImage?.image || ''} className='weather__image' alt='Weather' />
