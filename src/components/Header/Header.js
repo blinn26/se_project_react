@@ -26,7 +26,9 @@ const Header = ({ weatherData, handleAddClick }) => {
     city && (
       <header className='header'>
         <div className='header__container'>
-          <img src={headerLogo} alt='wtwr logo' className='header__logo' />
+          <Link to='/'>
+            <img src={headerLogo} alt='wtwr logo' className='header__logo' />
+          </Link>
           <p className='header__date'>
             {`${new Date().toLocaleDateString('default', { month: 'long', day: 'numeric', year: 'numeric' })}, ${city}`}
           </p>
