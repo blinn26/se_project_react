@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
 // onAddItem refers to handleAddItemSubmit, which is declared in App.js
-const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
+const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   // declare state for each input field
 
   // use a useEffect hook to reset the input field state to empty strings when 
@@ -18,11 +18,13 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
   return (
     {/* don't forget to pass appropriate props to ModalWithForm */}
          <ModalWithForm
-            name='new-card'
-            buttonText='Add garment'
+            card='new-card'
+            buttonText = 'Add garment'
+            isOpen = { isOpen }
+            onAddItem = { onAddItem }
             title='New garment'
             onSubmit={handleSubmit}
-            onClose={closeAllModals}>
+            onClose={onClose}>
             <label className='modal__label'>Name</label>
             <input
               type='text'
