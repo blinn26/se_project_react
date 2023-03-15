@@ -39,7 +39,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   return (
     /* don't forget to pass appropriate props to ModalWithForm */
     <ModalWithForm
-      card='new-card'
+      name='new-card'
       buttonText='Add garment'
       isOpen={isOpen}
       title='New garment'
