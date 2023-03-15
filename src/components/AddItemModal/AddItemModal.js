@@ -23,9 +23,10 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   }
 
 
-  function handleImageChange(event) {
-    setItemName(event.target.value);
-  }
+ function handleImageChange(event) {
+  setItemLink(event.target.value);
+}
+
 
   function handleWeatherTypeChange(event) {
     setItemLink(event.target.value);
