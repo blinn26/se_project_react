@@ -3,17 +3,46 @@ import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
 // onAddItem refers to handleAddItemSubmit, which is declared in App.js
 const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
+  const [ itemName, setItemName ] = useState('');
+  const [ itemLink, setItemLink ] = useState('');
+  const [ weatherType, setWeatherType ] = useState('');
   // declare state for each input field
 
   // use a useEffect hook to reset the input field state to empty strings when 
   // the modal is opened
-
+  useEffect(() => { 
+    setItemName('');
+    setItemLink('');
+    setWeatherType('');
+  }, [ isOpen ]);
   // create onChange handlers corresponding to each state variable
 
-  function handleSubmit(e) {
+
+  function handleNameChange(event) {
+    setItemName(event.target.value);
+  }
+
+
+  function handleImageChange(event) {
+    setItemName(event.target.value);
+  }
+
+  function handleWeatherTypeChange(event) {
+    setItemLink(event.target.value);
+  }
+
+ 
     // prevent default behavior
     // call onAddItem with appropriate arguments
+  
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    onAddItem(itemName, itemLink, weatherType);
   }
+    // prevent default behavior
+    // call onAddItem with appropriate arguments
+  
 
   return (
     {/* don't forget to pass appropriate props to ModalWithForm */}
