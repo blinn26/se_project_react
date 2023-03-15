@@ -5,6 +5,8 @@
 
 .side-bar__container {
     display: flex;
+    margin-top: 25px;
+
 
 }
 
@@ -18,7 +20,7 @@
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     align-self: center;
-
+    margin-left: 15px;
     font-weight: 700;
     font-size: 20px;
 }
