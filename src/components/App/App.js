@@ -17,7 +17,7 @@ const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
 const App = () => {
   const [weatherData, setWeatherData] = useState({});
-  const [clothingItems, setClothingItems] = useState([]);
+  const [filterCard, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState('');
   const [selectCard, setSelectCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
@@ -47,7 +47,7 @@ const App = () => {
 
   function handleCardDeleteSubmit() {
     setSelectCard(selectCard.id);
-    setClothingItems(clothingItems.filter((item) => item.id !== selectCard.id));
+    setClothingItems(filterCard.filter((item) => item.id !== selectCard.id));
     setActiveModal('');
   }
 
