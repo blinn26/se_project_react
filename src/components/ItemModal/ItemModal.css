@@ -61,3 +61,17 @@
 
 
 }
+
+.item-modal__delete {
+    font-family: 'Cabinet Grotesk';
+    color: rgba(255, 77, 0, 1);
+    font-weight: 700;
+    size: 20px;
+    line-height: 24px;
+}
+
+.item-modal__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
