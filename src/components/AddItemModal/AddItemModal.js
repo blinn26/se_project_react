@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
-
 const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   const [itemName, setItemName] = useState('');
   const [itemLink, setItemLink] = useState('');
@@ -69,7 +68,6 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
         onChange={handleImageChange}
       />
       <span className='modal__error' id='place-link-error'></span>
-      /* the contents of the form will go in here */
       <p>Select the weather type:</p>
       <div className='modal__input modal__input_type_radio'>
         <input
