@@ -1,7 +1,7 @@
 import React from 'react';
 import './ItemModal.css';
 
-function ItemModal({ card, onClose }) {
+function ItemModal({ card, onClose, onDelete }) {
   return (
     <div className='item-modal__preview'>
       <div className='item-modal__container'>
@@ -9,6 +9,7 @@ function ItemModal({ card, onClose }) {
         <img className='item-modal__preview-image' alt={card.name} src={card.link} />
         <div className='item-modal__description'>
           <h2 className='item-modal__title'>{card.name}</h2>
+          <p className='item-modal-link'>{onDelete}</p>
 
           <p className='item-modal__weather'>Weather: {card.weather}</p>
         </div>
