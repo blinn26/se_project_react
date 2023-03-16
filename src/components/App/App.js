@@ -34,14 +34,20 @@ const App = () => {
   };
 
   const handleAddCardSubmit = (itemName, itemLink, weatherType) => {
-  
-    console.log(itemName)
-    console.log(itemLink)
-    console.log(weatherType)
+    console.log(itemName);
+    console.log(itemLink);
+    console.log(weatherType);
   };
 
+  function handleCardDeleteSubmit() {
+    /*  mockApi. */ selectCard(selectCard.id).then(() => {
+      setClothingItems(clothingItems.filter((item) => item.id !== selectCard.id));
+      setActiveModal('');
+    });
+  }
+
   const closeAllModals = () => {
-    setActiveModal();
+    setActiveModal('');
   };
 
   const fetchWeatherData = () => {
@@ -78,15 +84,12 @@ const App = () => {
           </Switch>
           <Footer />
         </div>
-        {activeModal === 'create' &&
-          <AddItemModal
-          onClose={closeAllModals}
-            isOpen={activeModal === 'create'}
-            onAddItem={handleAddCardSubmit}
-          />}
-        
-
-        {activeModal === 'preview' && <ItemModal card={selectCard} onClose={closeAllModals} />}
+        {activeModal === 'create' && (
+          <AddItemModal onClose={closeAllModals} isOpen={activeModal === 'create'} onAddItem={handleAddCardSubmit} />
+        )}
+        {activeModal === 'preview' && (
+          <ItemModal card={selectCard} onClose={closeAllModals} onDelete={handleCardDeleteSubmit} />
+        )}
       </div>
     </CurrentTemperatureUnitContext.Provider>
   );
