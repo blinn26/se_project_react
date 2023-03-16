@@ -21,7 +21,7 @@ const App = () => {
   const [activeModal, setActiveModal] = useState('');
   const [selectCard, setSelectCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
-  const cards = defaultClothingItems;
+  const [cards, setCards] = useState(defaultClothingItems);
 
   const onCardClick = (card) => {
     setActiveModal('preview');
@@ -33,17 +33,16 @@ const App = () => {
     setSelectCard(card);
   };
 
-  const handleAddCardSubmit = (itemName, itemLink, weatherType) => {
-    const newCard = {
-      id: Date.now(),
-      name: itemName,
-      imageUrl: itemLink,
-      weatherType: weatherType,
-    };
-    console.log(itemName);
-    console.log(itemLink);
-    console.log(weatherType);
-    console.log(newCard);
+  const handleAddCardSubmit = (name, link, weather) => {
+    setCards([
+      ...cards, // spread operator
+      {
+        _id: Date.now(),
+        name,
+        link,
+        weather,
+      },
+    ]);
   };
 
   function handleCardDeleteSubmit() {
@@ -85,7 +84,7 @@ const App = () => {
               <Profile cards={cards} handleAddClick={handleAddClick} onCardClick={onCardClick} />
             </Route>
             <Route path='/'>
-              <Main weatherData={weatherData} cards={clothingItems} onCardClick={onCardClick} />
+              <Main weatherData={weatherData} cards={cards} onCardClick={onCardClick} />
             </Route>
           </Switch>
           <Footer />
