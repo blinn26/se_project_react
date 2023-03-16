@@ -34,16 +34,22 @@ const App = () => {
   };
 
   const handleAddCardSubmit = (itemName, itemLink, weatherType) => {
+    const newCard = {
+      id: Date.now(),
+      name: itemName,
+      imageUrl: itemLink,
+      weatherType: weatherType,
+    };
     console.log(itemName);
     console.log(itemLink);
     console.log(weatherType);
+    console.log(newCard);
   };
 
   function handleCardDeleteSubmit() {
-    /*  mockApi. */ selectCard(selectCard.id).then(() => {
-      setClothingItems(clothingItems.filter((item) => item.id !== selectCard.id));
-      setActiveModal('');
-    });
+    setSelectCard(selectCard.id);
+    setClothingItems(clothingItems.filter((item) => item.id !== selectCard.id));
+    setActiveModal('');
   }
 
   const closeAllModals = () => {
@@ -79,7 +85,7 @@ const App = () => {
               <Profile cards={cards} handleAddClick={handleAddClick} onCardClick={onCardClick} />
             </Route>
             <Route path='/'>
-              <Main weatherData={weatherData} cards={clothingItems} onCardClick={handleAddClick} />
+              <Main weatherData={weatherData} cards={clothingItems} onCardClick={onCardClick} />
             </Route>
           </Switch>
           <Footer />
