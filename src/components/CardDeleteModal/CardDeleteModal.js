@@ -21,3 +21,5 @@ function CardDeleteModal({ onClose, onDelete }) {
     </div>
   );
 }
+
+export default CardDeleteModal;

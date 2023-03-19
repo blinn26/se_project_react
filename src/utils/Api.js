@@ -12,7 +12,7 @@ const Api = {
 
   getCards: async () => {
     const url = `${baseUrl}/get`;
-    method = 'GET';
+
     const options = {
       headers: {
         'Content-Type': 'application/json',
