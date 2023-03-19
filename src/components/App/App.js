@@ -35,7 +35,7 @@ const App = () => {
   };
 
   const handleAddCardSubmit = (name, link, weather) => {
-    Api.addCards({ name, imageUrl: link, weather })
+    Api.addCard({ name, imageUrl: link, weather })
       .then((newCard) => {
         setCards([...cards, newCard]);
       })
@@ -45,7 +45,7 @@ const App = () => {
   };
 
   function handleCardDeleteSubmit() {
-    Api.deleteCards(selectCard.id)
+    Api.deleteCard(selectCard.id)
       .then(() => {
         setClothingItems(clothingItems.filter((item) => item.id !== selectCard.id));
         setActiveModal('');

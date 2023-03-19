@@ -1,46 +1,49 @@
-const baseUrl = 'http://localhost:3001';
+const baseUrl = 'https://my-json-server.typicode.com/blinn26/se_project_react';
 
 const Api = {
-  _request: async (url, options = {}) => {
+  request: async (url, options = {}) => {
     const response = await fetch(url, options);
-    const data = await response.json();
     if (response.ok) {
-      return data;
-    } else {
-      throw new Error(`Error ${response.status}: ${data.message}`);
+      return await response.json();
     }
+    const error = new Error(`Error ${response.status}: ${await response.text()}`);
+    throw error;
   },
 
   getCards: async () => {
-    return await Api._request(`${baseUrl}/items`, {
+    const url = `${baseUrl}/items`;
+    const options = {
       headers: {
         'Content-Type': 'application/json',
       },
-    });
+    };
+    return await Api.request(url, options);
   },
 
-  addCards: async ({ name, weather, imageUrl }) => {
-    return await Api._request(`${baseUrl}/items`, {
+  addCard: async ({ name, imageUrl, weather }) => {
+    const url = `${baseUrl}/items`;
+    const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        name,
-        weather,
-        imageUrl,
-      }),
-    });
+      body: JSON.stringify({ name, imageUrl, weather }),
+    };
+    return await Api.request(url, options);
   },
 
-  deleteCards: async (id) => {
-    return await Api._request(`${baseUrl}/items/${id}`, {
+  deleteCard: async (id) => {
+    const url = `${baseUrl}/items/${id}`;
+    const options = {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
       },
-    });
+    };
+    return await Api.request(url, options);
   },
 };
 
 export default Api;
+
+/* https://my-json-server.typicode.com/blinn26/se_project_react */
