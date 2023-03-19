@@ -1,4 +1,4 @@
-const baseUrl = 'https://my-json-server.typicode.com/blinn26/se_project_react';
+const baseUrl = ' https://my-json-server.typicode.com/blinn26/se_project_react   ';
 
 const Api = {
   request: async (url, options = {}) => {
@@ -11,7 +11,8 @@ const Api = {
   },
 
   getCards: async () => {
-    const url = `${baseUrl}/items`;
+    const url = `${baseUrl}/get`;
+    method = 'GET';
     const options = {
       headers: {
         'Content-Type': 'application/json',
@@ -45,5 +46,3 @@ const Api = {
 };
 
 export default Api;
-
-/* https://my-json-server.typicode.com/blinn26/se_project_react */
