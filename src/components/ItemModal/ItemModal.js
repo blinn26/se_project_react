@@ -1,7 +1,7 @@
 import React from 'react';
 import './ItemModal.css';
 
-function ItemModal({ card, onClose, onDelete, onOpenDeleteModal }) {
+function ItemModal({ card, onClose, onOpenDeleteModal, onDelete }) {
   return (
     <div className='item-modal__preview'>
       <div className='item-modal__container'>

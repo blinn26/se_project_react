@@ -14,7 +14,7 @@ function CardDeleteModal({ onClose, onDelete }) {
         <p>Are you sure you want to delete this item?</p>
       </div>
       <div className='modal__delete-footer'>
-        <button className='modal__delete-button' onClick={onDelete}>
+        <button className='modal__delete-button' onClick={() => onDelete(onClose)}>
           Yes, delete item
         </button>
         <button className='modal__delete-button' onClick={onClose}>
