@@ -1,7 +1,7 @@
 import React from 'react';
 import './ItemModal.css';
 
-function ItemModal({ card, onClose, onDelete }) {
+function ItemModal({ card, onClose, onDelete, onOpenDeleteModal }) {
   return (
     <div className='item-modal__preview'>
       <div className='item-modal__container'>
@@ -13,7 +13,7 @@ function ItemModal({ card, onClose, onDelete }) {
 
             <p className='item-modal__weather'>Weather: {card.weather}</p>
           </div>
-          <button className='item-modal__delete' onClick={onDelete} type='button'>
+          <button className='item-modal__delete' onClick={onOpenDeleteModal} type='button'>
             Delete item
           </button>
         </div>

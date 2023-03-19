@@ -13,7 +13,7 @@ import { CurrentTemperatureUnitContext } from '../../context/currentTemperatureU
 import Profile from '../Profile/Profile';
 import AddItemModal from '../AddItemModal/AddItemModal';
 import Api from '../../utils/Api';
-
+import CardDeleteModal from '../CardDeleteModal/CardDeleteModal';
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
 const App = () => {
@@ -23,6 +23,7 @@ const App = () => {
   const [selectCard, setSelectCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
   const [cards, setCards] = useState(defaultClothingItems);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
   const onCardClick = (card) => {
     setActiveModal('preview');
@@ -49,11 +50,15 @@ const App = () => {
       .then(() => {
         setClothingItems(clothingItems.filter((item) => item.id !== selectCard.id));
         setActiveModal('');
+        setDeleteModalOpen(false);
       })
       .catch((error) => {
         console.log(error);
       });
   }
+  const openDeleteModal = () => {
+    setDeleteModalOpen(true);
+  };
 
   const closeAllModals = () => {
     setActiveModal('');
@@ -104,7 +109,15 @@ const App = () => {
           <AddItemModal onClose={closeAllModals} isOpen={activeModal === 'create'} onAddItem={handleAddCardSubmit} />
         )}
         {activeModal === 'preview' && (
-          <ItemModal card={selectCard} onClose={closeAllModals} onDelete={handleCardDeleteSubmit} />
+          <ItemModal
+            card={selectCard}
+            onClose={closeAllModals}
+            onDelete={handleCardDeleteSubmit}
+            onOpenDeleteModal={openDeleteModal}
+          />
+        )}
+        {deleteModalOpen && (
+          <CardDeleteModal onClose={() => setDeleteModalOpen(false)} onDelete={handleCardDeleteSubmit} />
         )}
       </div>
     </CurrentTemperatureUnitContext.Provider>
