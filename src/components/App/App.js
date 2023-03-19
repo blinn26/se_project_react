@@ -12,6 +12,7 @@ import './App.css';
 import { CurrentTemperatureUnitContext } from '../../context/currentTemperatureUnit';
 import Profile from '../Profile/Profile';
 import AddItemModal from '../AddItemModal/AddItemModal';
+import Api from '../../utils/Api';
 
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -34,21 +35,24 @@ const App = () => {
   };
 
   const handleAddCardSubmit = (name, link, weather) => {
-    setCards([
-      ...cards, // spread operator
-      {
-        _id: Date.now(),
-        name,
-        link,
-        weather,
-      },
-    ]);
+    Api.addCards({ name, imageUrl: link, weather })
+      .then((newCard) => {
+        setCards([...cards, newCard]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   function handleCardDeleteSubmit() {
-    setSelectCard(selectCard.id);
-    setClothingItems(clothingItems.filter((item) => item.id !== selectCard.id));
-    setActiveModal('');
+    Api.deleteCards(selectCard.id)
+      .then(() => {
+        setClothingItems(clothingItems.filter((item) => item.id !== selectCard.id));
+        setActiveModal('');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   const closeAllModals = () => {
@@ -66,8 +70,15 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetchWeatherData();
-    setClothingItems(defaultClothingItems);
+    fetchWeatherData(filterDataFromWeatherApi);
+    Api.getCards()
+      .then((data) => {
+        setCards(data);
+      })
+      .catch((error) => {
+        console.log(error);
+        setCards(defaultClothingItems);
+      });
   }, []);
 
   return (

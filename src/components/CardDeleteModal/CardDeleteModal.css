@@ -1,0 +1,12 @@
+.modal__delete-container {
+
+    position: absolute;
+    width: 670px;
+    height: 280px;
+    left: 385px;
+    top: 271px;
+
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
