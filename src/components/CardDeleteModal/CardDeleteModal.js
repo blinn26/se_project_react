@@ -1,25 +1,21 @@
 import React from 'react';
 import './CardDeleteModal.css';
 
-function CardDeleteModal({ onClose, onDelete }) {
+function CardDeleteModal({ onClose, handleDelete, isLoading }) {
   return (
-    <div className='modal__delete-container'>
-      <div className='modal__delete-content'>
-        <div className='modal__delete-title'>Delete Card</div>
-        <div className='modal__delete-close' onClick={onClose}>
-          X
+    <div className='modal modal__confirm'>
+      <div className='modal__delete-container'>
+        <button className='modal__close modal__close-item' onClick={onClose} />
+        <div className='modal__message'>
+          <p className='modal__message-line'>Are you sure you want to delete this item?</p>
+          <p className='modal__message-line'>This action is irreversable.</p>
         </div>
-      </div>
-      <div className='modal__delete-body'>
-        <p>Are you sure you want to delete this item?</p>
-      </div>
-      <div className='modal__delete-footer'>
-        <button className='modal__delete-button' onClick={() => onDelete(onClose)}>
-          Yes, delete item
-        </button>
-        <button className='modal__delete-button' onClick={onClose}>
+        <p className='modal__yes' onClick={handleDelete}>
+          {isLoading ? 'Saving...' : 'Yes, delete item'}
+        </p>
+        <p className='modal__cancel' onClick={onClose}>
           Cancel
-        </button>
+        </p>
       </div>
     </div>
   );

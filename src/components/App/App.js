@@ -18,12 +18,12 @@ const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
 const App = () => {
   const [weatherData, setWeatherData] = useState({});
-  /*  const [clothingItems, setClothingItems] = useState([]); */
   const [activeModal, setActiveModal] = useState('');
   const [selectCard, setSelectCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
   const [cards, setCards] = useState(defaultClothingItems);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const onCardClick = (card) => {
     setActiveModal('preview');
@@ -46,6 +46,7 @@ const App = () => {
   };
 
   function handleCardDeleteSubmit(onClose) {
+    setIsDeleting(true);
     Api.deleteCard(selectCard.id)
       .then(() => {
         setCards(cards.filter((item) => item.id !== selectCard.id));
@@ -55,6 +56,9 @@ const App = () => {
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        setIsDeleting(false);
       });
   }
 
@@ -116,8 +120,8 @@ const App = () => {
         {deleteModalOpen && (
           <CardDeleteModal
             onClose={() => setDeleteModalOpen(false)}
-            onDelete={handleCardDeleteSubmit}
-            selectCard={selectCard}
+            handleDelete={handleCardDeleteSubmit}
+            isLoading={isDeleting}
           />
         )}
       </div>

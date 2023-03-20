@@ -1,4 +1,6 @@
-const baseUrl = 'https://my-json-server.typicode.com/blinn26/se_project_react';
+/* const baseUrl = 'localhost3001'; */
+
+const BASE_URL = 'https://my-json-server.typicode.com/blinn26/se_project_react';
 
 const Api = {
   request: async (url, options = {}) => {
@@ -11,9 +13,10 @@ const Api = {
   },
 
   getCards: async () => {
-    const url = `${baseUrl}/get`;
+    const url = `${BASE_URL}/items`;
 
     const options = {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -22,7 +25,7 @@ const Api = {
   },
 
   addCard: async ({ name, imageUrl, weather }) => {
-    const url = `${baseUrl}/items`;
+    const url = `${BASE_URL}/items,`;
     const options = {
       method: 'POST',
       headers: {
@@ -34,7 +37,7 @@ const Api = {
   },
 
   deleteCard: async (id) => {
-    const url = `${baseUrl}/items/${id}`;
+    const url = `${BASE_URL}/items/${id}`;
     const options = {
       method: 'DELETE',
       headers: {
