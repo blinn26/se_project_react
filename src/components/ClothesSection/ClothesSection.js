@@ -7,15 +7,14 @@ const ClothesSection = ({ cards, handleAddClick, onCardClick }) => {
     <div className='clothes-section'>
       <div className='clothes-section-header'>
         <h2 className='clothes-section-title'>Your Items</h2>
-        <button className='clothes-section-add-button' onClick={handleAddClick}>
-          {' '}
+        <button className='clothes-section-add-button' onClick={handleAddClick} type='button'>
           + Add new
         </button>
       </div>
       <div className='clothes-cards-container'>
-        {cards.map((item, index) => (
-          <ItemCard key={index} item={item} onCardClick={onCardClick} />
-        ))}
+        {cards.map((card, index) => {
+          return <ItemCard key={index} card={card} onCardClick={onCardClick} />;
+        })}
       </div>
     </div>
   );
