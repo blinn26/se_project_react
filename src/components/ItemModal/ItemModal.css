@@ -12,6 +12,7 @@
     border-top-right-radius: 10px;
     font-family: 'Cabinet Grotesk';
 
+
 }
 
 
@@ -30,6 +31,7 @@
 .item-modal__preview-image {
     display: flex;
     object-fit: cover;
+
 }
 
 .item-modal__close-button {

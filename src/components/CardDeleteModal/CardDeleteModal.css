@@ -1,63 +1,41 @@
 .modal__delete-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
     width: 670px;
     height: 280px;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 20px;
+    position: fixed;
+    z-index: 0;
 }
 
-.modal__delete-content {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    width: 400px;
-    max-width: 90%;
-}
 
-.modal__delete-header {
+
+.modal__message-line {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    justify-content: center;
 }
 
-.modal__delete-title {
-    font-size: 24px;
-}
 
-.modal__delete-close {
-    font-size: 24px;
+
+
+
+
+.modal__close {
+    background: url(../../images/Union1.svg)center no-repeat;
+    position: absolute;
+    width: 14px;
+    height: 14px;
     cursor: pointer;
-}
-
-.modal__delete-body {
-    margin-bottom: 20px;
-}
-
-.modal__delete-footer {
     display: flex;
-    justify-content: space-between;
-}
+    justify-content: center;
+    align-items: center;
+    right: 20px;
 
-.modal__delete-button {
-    border: none;
-    background-color: #007bff;
-    color: #FF4D00;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.modal__delete-button:hover {
-    background-color: #0056b3;
 }
