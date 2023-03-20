@@ -6,7 +6,7 @@ function ItemModal({ card, onClose, onOpenDeleteModal, onDelete }) {
     <div className='item-modal__preview'>
       <div className='item-modal__container'>
         <button type='button' className='item-modal__close-button' onClick={onClose}></button>
-        <img className='item-modal__preview-image' alt={card.name} src={card.link} />
+        <img className='item-modal__preview-image' alt={card.name} src={card.imageUrl} />
         <div className='item-modal__content'>
           <div className='item-modal__description'>
             <h2 className='item-modal__title'>{card.name}</h2>
@@ -21,4 +21,5 @@ function ItemModal({ card, onClose, onOpenDeleteModal, onDelete }) {
     </div>
   );
 }
+
 export default ItemModal;
