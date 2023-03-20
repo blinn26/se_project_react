@@ -31,8 +31,7 @@ const App = () => {
   };
 
   const handleAddClick = (card) => {
-    setActiveModal('preview');
-    setSelectCard(card);
+    setActiveModal('create');
   };
 
   const handleAddCardSubmit = (name, link, weather) => {
