@@ -23,6 +23,8 @@ function Main({ cards, weatherData, onCardClick }) {
     return item.weather.toLowerCase() === weatherType();
   });
 
+  console.log('filterCard:', filterCard);
+
   return (
     <main className='main'>
       <WeatherCard weatherData={weatherData} />
@@ -38,9 +40,7 @@ function Main({ cards, weatherData, onCardClick }) {
         </div>
         <ul className='main__items'>
           {Array.isArray(filterCard) &&
-            filterCard.map((filterCard) => (
-              <ItemCard key={filterCard._id} item={filterCard} onCardClick={onCardClick} />
-            ))}
+            filterCard.map((card, index) => <ItemCard key={index} item={card} onCardClick={onCardClick} />)}
         </ul>
       </section>
     </main>
