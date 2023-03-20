@@ -45,14 +45,13 @@ const App = () => {
       });
   };
 
-  function handleCardDeleteSubmit(onClose) {
+  function handleCardDeleteSubmit() {
     setIsDeleting(true);
     Api.deleteCard(selectCard.id)
       .then(() => {
         setCards(cards.filter((item) => item.id !== selectCard.id));
         setActiveModal('');
         setDeleteModalOpen(false);
-        onClose();
       })
       .catch((error) => {
         console.log(error);
