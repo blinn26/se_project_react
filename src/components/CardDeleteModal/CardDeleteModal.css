@@ -1,41 +1,63 @@
 .modal__delete-container {
-
     width: 670px;
     height: 280px;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     z-index: 0;
 }
-
-
 
 .modal__message-line {
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
-
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    width: 100%;
+    line-height: 0.2;
+
+}
+
+.modal__yes {
+    color: #FF4D00;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.modal__cancel {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
 }
 
 
-
-
-
-
 .modal__close {
-    background: url(../../images/Union1.svg)center no-repeat;
+    background: url(../../images/Union1.svg) center no-repeat;
     position: absolute;
     width: 14px;
     height: 14px;
     cursor: pointer;
     display: flex;
+    border: none;
     justify-content: center;
     align-items: center;
     right: 20px;
+    top: 20px;
 
 }
