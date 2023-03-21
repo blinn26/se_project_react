@@ -1,11 +1,10 @@
-.profile {
-    width: 100%;
-    max-width: 1440px;
-}
+.profile {}
 
 .profile-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-top: 100px;
+    gap: 20px;
+
 
 }

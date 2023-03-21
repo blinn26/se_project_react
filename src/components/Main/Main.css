@@ -5,7 +5,7 @@
 .main__items {
 
     display: flex;
-    gap: 17px;
+    gap: 17px 17px;
     flex-wrap: wrap;
     margin-top: 20px;
     justify-content: center;

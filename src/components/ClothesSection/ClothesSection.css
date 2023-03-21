@@ -1,8 +1,15 @@
+.clothes-section {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
 .clothes-cards-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 17px;
+    gap: 17px 17px;
+    align-content: flex-end;
 
 }
 
@@ -11,10 +18,16 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    gap: 20px;
 }
 
 .clothes-section-title {
     font-family: 'Cabinet Grotesk';
 
+
+}
+
+.clothes-section-add-button {
+    display: flex;
 
 }
