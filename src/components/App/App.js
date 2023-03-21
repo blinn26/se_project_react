@@ -49,7 +49,7 @@ const App = () => {
     Api.deleteCard(selectCard.id)
       .then(() => {
         setCards(cards.filter((item) => item.id !== selectCard.id));
-        setActiveModal('');
+        setActiveModal(''); // Close the preview modal
         setDeleteModalOpen(false);
       })
       .catch((error) => {
@@ -62,6 +62,7 @@ const App = () => {
 
   const openDeleteModal = () => {
     setDeleteModalOpen(true);
+    setActiveModal(''); // Close the preview modal
   };
 
   const closeAllModals = () => {
@@ -120,6 +121,7 @@ const App = () => {
             onClose={() => setDeleteModalOpen(false)}
             handleDelete={handleCardDeleteSubmit}
             isLoading={isDeleting}
+            onItemDeleted={closeAllModals} // Add this line
           />
         )}
       </div>
