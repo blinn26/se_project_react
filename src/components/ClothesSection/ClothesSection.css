@@ -6,6 +6,13 @@
 
 }
 
+.clothes-section-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
 .clothes-section-title {
     font-family: 'Cabinet Grotesk';
     /* font-style: normal;
