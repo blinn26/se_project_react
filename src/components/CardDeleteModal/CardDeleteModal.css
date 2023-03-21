@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: center;
     z-index: 0;
+    cursor: pointer;
 }
 
 .modal__message-line {
@@ -40,6 +41,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
+    cursor: pointer;
 }
 
 .modal__cancel {
@@ -48,6 +50,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
+    cursor: pointer;
 }
 
 

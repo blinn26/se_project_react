@@ -13,6 +13,7 @@
     z-index: 3;
 
 
+
 }
 
 .item-modal__container {
@@ -70,6 +71,7 @@
     line-height: 24px;
     border: none;
     background-color: #FFFFFF;
+    cursor: pointer;
 }
 
 .item-modal__content {
