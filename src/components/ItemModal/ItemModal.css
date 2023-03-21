@@ -1,5 +1,4 @@
 .item-modal__preview {
-
     position: fixed;
     top: 0;
     right: 0;
@@ -15,9 +14,6 @@
 
 
 }
-
-
-
 
 .item-modal__container {
     background: #FFFFFF;

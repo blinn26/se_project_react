@@ -13,11 +13,6 @@
     z-index: 3;
 }
 
-
-
-
-
-
 .modal__form {
     border-radius: 20px;
     flex-direction: column;
@@ -34,12 +29,6 @@
     padding: 30px 30px 30px 30px;
 
 }
-
-
-
-
-
-
 
 .modal__title {
     font-family: 'Cabinet Grotesk';
