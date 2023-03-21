@@ -1,6 +1,7 @@
 import React from 'react';
 import SideBar from '../SideBar/SideBar';
 import ClothesSection from '../ClothesSection/ClothesSection';
+import './Profile.css';
 
 function Profile({ cards, handleAddClick, onCardClick }) {
   return (
