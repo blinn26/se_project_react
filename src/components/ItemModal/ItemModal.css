@@ -11,6 +11,7 @@
     background-color: rgba(0, 0, 0, .5);
     border-top-right-radius: 10px;
     font-family: 'Cabinet Grotesk';
+    z-index: 3;
 
 
 }

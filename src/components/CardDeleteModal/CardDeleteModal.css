@@ -29,6 +29,10 @@
 
 }
 
+.modal__confirm {
+    z-index: 4;
+}
+
 .modal__yes {
     color: #FF4D00;
     font-family: 'Cabinet Grotesk';
