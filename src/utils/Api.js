@@ -25,7 +25,7 @@ const Api = {
   },
 
   addCard: async ({ name, imageUrl, weather }) => {
-    const url = `${BASE_URL}/items,`;
+    const url = `${BASE_URL}/items`;
     const options = {
       method: 'POST',
       headers: {
