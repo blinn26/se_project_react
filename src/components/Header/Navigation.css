@@ -6,7 +6,7 @@
     align-items: center;
     background-color: #00A3FF;
     border-radius: 12px;
-    width: 1360px;
+
 }
 
 .navigation__user {
@@ -21,6 +21,7 @@
     font-size: 20px;
     cursor: pointer;
     border: none;
+    background-color: white;
 
 }
 
