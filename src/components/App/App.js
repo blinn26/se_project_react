@@ -38,6 +38,7 @@ const App = () => {
     Api.addCard({ name, imageUrl: link, weather })
       .then((newCard) => {
         setCards([...cards, newCard]);
+        closeAllModals();
       })
       .catch((error) => {
         console.log(error);
@@ -80,7 +81,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetchWeatherData(filterDataFromWeatherApi);
+    fetchWeatherData();
     Api.getCards()
       .then((data) => {
         setCards(data);
