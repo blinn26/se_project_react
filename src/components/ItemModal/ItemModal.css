@@ -20,7 +20,7 @@
     background: #FFFFFF;
     border-radius: 16px;
     border-top-right-radius: 10px;
-    height: 665px;
+
     position: relative;
     overflow: hidden;
 
@@ -29,6 +29,7 @@
 .item-modal__preview-image {
     display: flex;
     object-fit: cover;
+    max-width: 400px;
 
 }
 

@@ -11,6 +11,7 @@
     background-color: rgba(233, 233, 233, 1);
     border: 1px solid black;
     border-radius: 19px;
+    justify-content: space-evenly;
 
 }
 
