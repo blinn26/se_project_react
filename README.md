@@ -126,5 +126,3 @@ font-family: 'CabinetGrotesk-Bold';
 font-family: 'CabinetGrotesk-Extrabold';
 font-family: 'CabinetGrotesk-Black';
 ```
-
-Project 10-11
