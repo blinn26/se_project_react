@@ -14,6 +14,7 @@ import Profile from '../Profile/Profile';
 import AddItemModal from '../AddItemModal/AddItemModal';
 import Api from '../../utils/Api';
 import CardDeleteModal from '../CardDeleteModal/CardDeleteModal';
+import { checkToken } from '../../utils/auth';
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
 const App = () => {
@@ -24,6 +25,26 @@ const App = () => {
   const [cards, setCards] = useState(defaultClothingItems);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [, setUser] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      checkToken(token)
+        .then((data) => {
+          if (data && data.user) {
+            setUser(data.user);
+          } else {
+            localStorage.removeItem('token');
+          }
+        })
+        .catch((error) => {
+          console.error('Error checking token:', error);
+          localStorage.removeItem('token');
+        });
+    }
+  }, []);
 
   const onCardClick = (card) => {
     setActiveModal('preview');
