@@ -143,7 +143,7 @@ const App = () => {
             onClose={() => setDeleteModalOpen(false)}
             handleDelete={handleCardDeleteSubmit}
             isLoading={isDeleting}
-            onItemDeleted={closeAllModals} // Add this line
+            onItemDeleted={closeAllModals}
           />
         )}
       </div>
