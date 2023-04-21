@@ -1,6 +1,5 @@
-/* const baseUrl = 'localhost3001'; */
-
-const BASE_URL = 'https://my-json-server.typicode.com/blinn26/se_project_react';
+const BASE_URL = 'http://localhost:3001';
+/* const BASE_URL = 'https://my-json-server.typicode.com/blinn26/se_project_react'; */
 
 const Api = {
   request: async (url, options = {}) => {
