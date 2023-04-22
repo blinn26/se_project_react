@@ -1,5 +1,12 @@
 const BASE_URL = 'http://localhost:3001';
 
+const handleResponse = (res) => {
+  if (!res.ok) {
+    return res.json().then((error) => Promise.reject(error));
+  }
+  return res.json();
+};
+
 export function signUp(name, avatar, email, password) {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
@@ -7,7 +14,9 @@ export function signUp(name, avatar, email, password) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ name, avatar, email, password }),
-  }).then((res) => res.json());
+  })
+    .then(handleResponse)
+    .catch((error) => console.log(error));
 }
 
 export function signIn(email, password) {
@@ -17,7 +26,9 @@ export function signIn(email, password) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ email, password }),
-  }).then((res) => res.json());
+  })
+    .then(handleResponse)
+    .catch((error) => console.log(error));
 }
 
 export function checkToken(token) {
@@ -27,5 +38,10 @@ export function checkToken(token) {
       'Content-Type': 'application/json',
       authorization: `Bearer ${token}`,
     },
-  }).then((res) => res.json());
+  })
+    .then(handleResponse)
+    .catch((error) => console.log(error));
 }
+
+const auth = { signIn, signUp, checkToken };
+export default auth;
