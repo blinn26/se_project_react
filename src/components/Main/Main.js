@@ -17,7 +17,6 @@ function Main({ cards, weatherData, onCardClick }) {
       return 'cold';
     }
   };
-
   const filterCard = cards.filter((item) => {
     return item.weather.toLowerCase() === weatherType();
   });

@@ -104,7 +104,7 @@ const App = () => {
   useEffect(() => {
     fetchWeatherData();
     Api.getCards()
-      .then((data) => {
+      .then(({ data }) => {
         setCards(data);
       })
       .catch((error) => {
