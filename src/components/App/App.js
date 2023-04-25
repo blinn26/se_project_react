@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import defaultClothingItems from '../../utils/defaultClothingItems';
 import ItemModal from '../ItemModal/ItemModal';
 import { location } from '../../utils/constants';
 import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
@@ -25,7 +24,7 @@ const App = () => {
   const [activeModal, setActiveModal] = useState('');
   const [selectCard, setSelectCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
-  const [cards, setCards] = useState(defaultClothingItems);
+  const [cards, setCards] = useState([]);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentUser, setUser] = useState(null);
@@ -100,7 +99,7 @@ const App = () => {
 
   function handleCardDeleteSubmit() {
     setIsDeleting(true);
-    Api.deleteCard(selectCard.id)
+    Api.deleteCard(selectCard._id)
       .then(() => {
         setCards(cards.filter((item) => item.id !== selectCard.id));
         setActiveModal(''); // Close the preview modal
@@ -137,14 +136,15 @@ const App = () => {
     fetchWeatherData();
     Api.getCards()
       .then(({ data }) => {
+        console.log(data);
         setCards(data);
       })
       .catch((error) => {
         console.log(error);
-        setCards(defaultClothingItems);
+        // setCards(defaultClothingItems);
       });
   }, []);
-
+  console.log(cards);
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <CurrentTemperatureUnitContext.Provider

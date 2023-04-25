@@ -4,6 +4,7 @@ const BASE_URL = 'http://localhost:3001';
 const Api = {
   request: async (url, options = {}) => {
     const response = await fetch(url, options);
+    console.log(options);
     if (response.ok) {
       return await response.json();
     }
