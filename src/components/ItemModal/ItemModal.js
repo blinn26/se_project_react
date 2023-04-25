@@ -1,5 +1,6 @@
 import React from 'react';
 import './ItemModal.css';
+import '../ModalWithForm/ModalWithForm.js';
 
 function ItemModal({ card, onClose, onOpenDeleteModal }) {
   return (

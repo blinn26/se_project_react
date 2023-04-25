@@ -4,7 +4,6 @@ import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import defaultClothingItems from '../../utils/defaultClothingItems';
-
 import ItemModal from '../ItemModal/ItemModal';
 import { location } from '../../utils/constants';
 import { getForecastWeather, filterDataFromWeatherApi } from '../../utils/weatherApi';
@@ -15,7 +14,10 @@ import Profile from '../Profile/Profile';
 import AddItemModal from '../AddItemModal/AddItemModal';
 import Api from '../../utils/Api';
 import CardDeleteModal from '../CardDeleteModal/CardDeleteModal';
-import { checkToken } from '../../utils/auth';
+import { checkToken, signIn, signUp } from '../../utils/auth';
+import LoginModal from '../LoginModal/LoginModal';
+import RegisterModal from '../RegisterModal/RegisterModal';
+
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
 const App = () => {
@@ -27,6 +29,8 @@ const App = () => {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentUser, setUser] = useState(null);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -47,6 +51,33 @@ const App = () => {
     }
   }, []);
 
+  const handleLogin = ({ email, password }) => {
+    signIn(email, password)
+      .then((res) => {
+        localStorage.setItem('token', res.token);
+        checkToken(res.token)
+          .then((data) => {
+            setUser(data.user);
+            setIsLoginModalOpen(false);
+          })
+          .catch((error) => {
+            console.error('Error checking token:', error);
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleRegister = ({ name, avatar, email, password }) => {
+    signUp(name, avatar, email, password)
+      .then((res) => {
+        handleLogin({ email, password });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const onCardClick = (card) => {
     setActiveModal('preview');
     setSelectCard(card);
@@ -124,6 +155,8 @@ const App = () => {
         <div className='page'>
           <div className='page__wrapper'>
             <Header weatherData={weatherData} handleAddClick={() => setActiveModal('create')} />
+            <button onClick={() => setIsLoginModalOpen(true)}>Log in</button>
+            <button onClick={() => setIsRegisterModalOpen(true)}>Sign up</button>
             <Switch>
               <Route path='/profile'>
                 <Profile cards={cards} handleAddClick={handleAddClick} onCardClick={onCardClick} />
@@ -147,6 +180,10 @@ const App = () => {
               isLoading={isDeleting}
               onItemDeleted={closeAllModals}
             />
+          )}
+          {isLoginModalOpen && <LoginModal onClose={() => setIsLoginModalOpen(false)} onLogin={handleLogin} />}
+          {isRegisterModalOpen && (
+            <RegisterModal onClose={() => setIsRegisterModalOpen(false)} onRegister={handleRegister} />
           )}
         </div>
       </CurrentTemperatureUnitContext.Provider>
