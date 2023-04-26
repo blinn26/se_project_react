@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
-function RegisterModal(props) {
+function RegisterModal({ isOpen, onClose, onRegister, authError }) {
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
   const [email, setEmail] = useState('');
@@ -9,27 +9,30 @@ function RegisterModal(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.onRegister({ name, avatar, email, password });
+    onRegister({ name, avatar, email, password });
   }
 
   return (
-    <ModalWithForm isOpen={props.isOpen} onClose={props.onClose} onSubmit={handleSubmit} title='Sign Up'>
-      <label className='modal__label'>Email</label>
+    <ModalWithForm isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} title='Sign Up' buttonText='Sign Up'>
+      <label className='register__label'>Email</label>
       <input
         className='register__input'
+        type='email'
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder='Email*'
+        placeholder='Email'
         required
       />
+      <label className='register__label'>Password</label>
       <input
         className='register__input'
         type='password'
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        placeholder='Password*'
+        placeholder='Password'
         required
       />
+      <label className='register__label'>Name</label>
       <input
         className='register__input'
         type='text'
@@ -38,6 +41,7 @@ function RegisterModal(props) {
         placeholder='Name'
         required
       />
+      <label className='register__label'>Avatar URL</label>
       <input
         className='register__input'
         type='url'
@@ -45,6 +49,8 @@ function RegisterModal(props) {
         onChange={(e) => setAvatar(e.target.value)}
         placeholder='Avatar URL'
       />
+
+      {authError && <p className='error-message'>{authError}</p>}
     </ModalWithForm>
   );
 }

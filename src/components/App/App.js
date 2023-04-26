@@ -30,6 +30,7 @@ const App = () => {
   const [currentUser, setUser] = useState(null);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [authError, setAuthError] = useState('');
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -53,18 +54,25 @@ const App = () => {
   const handleLogin = ({ email, password }) => {
     signIn(email, password)
       .then((res) => {
-        localStorage.setItem('token', res.token);
-        checkToken(res.token)
-          .then((data) => {
-            setUser(data.user);
-            setIsLoginModalOpen(false);
-          })
-          .catch((error) => {
-            console.error('Error checking token:', error);
-          });
+        if (res && res.token) {
+          localStorage.setItem('token', res.token);
+          checkToken(res.token)
+            .then((data) => {
+              setUser(data.user);
+              setIsLoginModalOpen(false);
+              setAuthError('');
+            })
+            .catch((error) => {
+              console.error('Error checking token:', error);
+              setAuthError('Error checking token');
+            });
+        } else {
+          setAuthError(res.message || 'Invalid credentials');
+        }
       })
       .catch((error) => {
         console.log(error);
+        setAuthError('Error signing in');
       });
   };
 
@@ -181,9 +189,21 @@ const App = () => {
               onItemDeleted={closeAllModals}
             />
           )}
-          {isLoginModalOpen && <LoginModal onClose={() => setIsLoginModalOpen(false)} onLogin={handleLogin} />}
+          {isLoginModalOpen && (
+            <LoginModal
+              onClose={() => setIsLoginModalOpen(false)}
+              onLogin={handleLogin}
+              authError={authError}
+              setAuthError={setAuthError}
+            />
+          )}
           {isRegisterModalOpen && (
-            <RegisterModal onClose={() => setIsRegisterModalOpen(false)} onRegister={handleRegister} />
+            <RegisterModal
+              onClose={() => setIsRegisterModalOpen(false)}
+              onRegister={handleRegister}
+              authError={authError}
+              setAuthError={setAuthError}
+            />
           )}
         </div>
       </CurrentTemperatureUnitContext.Provider>

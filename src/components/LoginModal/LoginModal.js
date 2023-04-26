@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
-function LoginModal(props) {
+function LoginModal({ isOpen, onClose, onLogin, authError }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.onLogin({ email, password });
+    onLogin({ email, password });
   }
 
   return (
-    <ModalWithForm
-      isOpen={props.isOpen}
-      onClose={props.onClose}
-      onSubmit={handleSubmit}
-      title='Log In'
-      buttonText='Log In'>
+    <ModalWithForm isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} title='Log In' buttonText='Log In'>
       <label className='login__label'>Email</label>
       <input
         className='login__input'
@@ -35,6 +30,7 @@ function LoginModal(props) {
         placeholder='Password'
         required
       />
+      {authError && <p className='error-message'>{authError}</p>}
     </ModalWithForm>
   );
 }
