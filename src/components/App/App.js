@@ -61,6 +61,7 @@ const App = () => {
             .then((data) => {
               setUser(data.user);
               setIsLoginModalOpen(false);
+              setIsRegisterModalOpen(false);
               setAuthError('');
             })
             .catch((error) => {

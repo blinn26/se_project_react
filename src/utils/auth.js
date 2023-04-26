@@ -32,7 +32,7 @@ export function signIn(email, password) {
 }
 
 export function checkToken(token) {
-  return fetch(`${BASE_URL}/user/me`, {
+  return fetch(`${BASE_URL}/users/me`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
