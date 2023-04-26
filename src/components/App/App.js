@@ -18,6 +18,7 @@ import LoginModal from '../LoginModal/LoginModal';
 import RegisterModal from '../RegisterModal/RegisterModal';
 
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
+console.log(APIKey);
 
 const App = () => {
   const [weatherData, setWeatherData] = useState({});

@@ -11,7 +11,7 @@ function LoginModal({ isOpen, onClose, onLogin, authError }) {
   }
 
   return (
-    <ModalWithForm isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} title='Log In' buttonText='Log In'>
+    <ModalWithForm isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} title='Log In' buttonText='Next'>
       <label className='login__label'>Email</label>
       <input
         className='login__input'
