@@ -31,24 +31,17 @@ const App = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   const [authError, setAuthError] = useState('');
+  const [token, setToken] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    setIsLoading(true);
+    const storedToken = localStorage.getItem('token');
 
-    if (token) {
-      checkToken(token)
-        .then((data) => {
-          if (data && data.user) {
-            setUser(data.user);
-          } else {
-            localStorage.removeItem('token');
-          }
-        })
-        .catch((error) => {
-          console.error('Error checking token:', error);
-          localStorage.removeItem('token');
-        });
+    if (storedToken) {
+      setToken(storedToken);
     }
+    setIsLoading(false);
   }, []);
 
   const handleLogin = ({ email, password }) => {
@@ -105,11 +98,11 @@ const App = () => {
       });
   };
 
-  function handleCardDeleteSubmit() {
+  const handleCardDeleteSubmit = () => {
     setIsDeleting(true);
-    Api.deleteCard(selectCard._id)
+    Api.deleteCard(selectCard._id, token)
       .then(() => {
-        setCards(cards.filter((item) => item.id !== selectCard.id));
+        setCards(cards.filter((item) => item._id !== selectCard._id));
         setActiveModal(''); // Close the preview modal
         setDeleteModalOpen(false);
       })
@@ -119,7 +112,7 @@ const App = () => {
       .finally(() => {
         setIsDeleting(false);
       });
-  }
+  };
 
   const openDeleteModal = () => {
     setDeleteModalOpen(true);
@@ -139,19 +132,21 @@ const App = () => {
         .catch((err) => console.log(err));
     }
   };
-
   useEffect(() => {
     fetchWeatherData();
-    Api.getCards()
-      .then(({ data }) => {
-        setCards(data);
-      })
-      .catch((error) => {
-        console.log(error);
-        // setCards(defaultClothingItems);
-      });
   }, []);
 
+  useEffect(() => {
+    if (token) {
+      Api.getCards(token)
+        .then(({ data }) => {
+          setCards(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [token]);
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <CurrentTemperatureUnitContext.Provider
@@ -164,50 +159,59 @@ const App = () => {
             <Header weatherData={weatherData} handleAddClick={() => setActiveModal('create')} />
             <button onClick={() => setIsLoginModalOpen(true)}>Log in</button>
             <button onClick={() => setIsRegisterModalOpen(true)}>Sign up</button>
-            <Switch>
-              <Route path='/profile'>
-                <Profile cards={cards} handleAddClick={handleAddClick} onCardClick={onCardClick} />
-              </Route>
-              <Route path='/'>
-                <Main weatherData={weatherData} cards={cards} onCardClick={onCardClick} />
-              </Route>
-            </Switch>
-            <Footer />
+            {isLoading ? (
+              <div>Loading...</div>
+            ) : (
+              <>
+                <Switch>
+                  <Route path='/profile'>
+                    <Profile cards={cards} handleAddClick={handleAddClick} onCardClick={onCardClick} />
+                  </Route>
+                  <Route path='/'>
+                    <Main weatherData={weatherData} cards={cards} onCardClick={onCardClick} />
+                  </Route>
+                </Switch>
+                <Footer />
+                {activeModal === 'create' && (
+                  <AddItemModal
+                    onClose={closeAllModals}
+                    isOpen={activeModal === 'create'}
+                    onAddItem={handleAddCardSubmit}
+                  />
+                )}
+                {activeModal === 'preview' && (
+                  <ItemModal card={selectCard} onClose={closeAllModals} onOpenDeleteModal={openDeleteModal} />
+                )}
+                {deleteModalOpen && (
+                  <CardDeleteModal
+                    onClose={() => setDeleteModalOpen(false)}
+                    handleDelete={handleCardDeleteSubmit}
+                    isLoading={isDeleting}
+                    onItemDeleted={closeAllModals}
+                  />
+                )}
+                {isLoginModalOpen && (
+                  <LoginModal
+                    onClose={() => setIsLoginModalOpen(false)}
+                    onLogin={handleLogin}
+                    authError={authError}
+                    setAuthError={setAuthError}
+                  />
+                )}
+                {isRegisterModalOpen && (
+                  <RegisterModal
+                    onClose={() => setIsRegisterModalOpen(false)}
+                    onRegister={handleRegister}
+                    authError={authError}
+                    setAuthError={setAuthError}
+                  />
+                )}
+              </>
+            )}
           </div>
-          {activeModal === 'create' && (
-            <AddItemModal onClose={closeAllModals} isOpen={activeModal === 'create'} onAddItem={handleAddCardSubmit} />
-          )}
-          {activeModal === 'preview' && (
-            <ItemModal card={selectCard} onClose={closeAllModals} onOpenDeleteModal={openDeleteModal} />
-          )}
-          {deleteModalOpen && (
-            <CardDeleteModal
-              onClose={() => setDeleteModalOpen(false)}
-              handleDelete={handleCardDeleteSubmit}
-              isLoading={isDeleting}
-              onItemDeleted={closeAllModals}
-            />
-          )}
-          {isLoginModalOpen && (
-            <LoginModal
-              onClose={() => setIsLoginModalOpen(false)}
-              onLogin={handleLogin}
-              authError={authError}
-              setAuthError={setAuthError}
-            />
-          )}
-          {isRegisterModalOpen && (
-            <RegisterModal
-              onClose={() => setIsRegisterModalOpen(false)}
-              onRegister={handleRegister}
-              authError={authError}
-              setAuthError={setAuthError}
-            />
-          )}
         </div>
       </CurrentTemperatureUnitContext.Provider>
     </CurrentUserContext.Provider>
   );
 };
-
 export default App;

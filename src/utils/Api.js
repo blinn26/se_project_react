@@ -4,7 +4,6 @@ const BASE_URL = 'http://localhost:3001';
 const Api = {
   request: async (url, options = {}) => {
     const response = await fetch(url, options);
-    console.log(options);
     if (response.ok) {
       return await response.json();
     }
@@ -12,36 +11,39 @@ const Api = {
     throw error;
   },
 
-  getCards: async () => {
+  getCards: async (token) => {
     const url = `${BASE_URL}/items`;
 
     const options = {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
     };
     return await Api.request(url, options);
   },
 
-  addCard: async ({ name, imageUrl, weather }) => {
+  addCard: async ({ name, imageUrl, weather }, token) => {
     const url = `${BASE_URL}/items`;
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({ name, imageUrl, weather }),
     };
     return await Api.request(url, options);
   },
 
-  deleteCard: async (_id) => {
+  deleteCard: async (_id, token) => {
     const url = `${BASE_URL}/items/${_id}`;
     const options = {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
     };
     return await Api.request(url, options);
