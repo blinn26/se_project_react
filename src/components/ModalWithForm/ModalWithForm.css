@@ -95,3 +95,42 @@
     line-height: 20px;
 
 }
+
+.register__label {
+
+    width: 80px;
+    height: 20px;
+    left: 500px;
+    top: 483px;
+
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+
+}
+
+
+.register__input {
+    width: 80px;
+
+    left: 500px;
+    top: 511px;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+
+    /* identical to box height, or 125% */
+    padding: 13px, 0;
+    width: 440px;
+    left: 500px;
+    top: 535px;
+
+    border: 1px solid #000000;
+
+
+
+}

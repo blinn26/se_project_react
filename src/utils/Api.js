@@ -24,7 +24,9 @@ const Api = {
     return await Api.request(url, options);
   },
 
-  addCard: async ({ name, imageUrl, weather }, token) => {
+  addCard: async ({ name, imageUrl, weather }) => {
+    const token = localStorage.getItem('token');
+    console.log(token);
     const url = `${BASE_URL}/items`;
     const options = {
       method: 'POST',
