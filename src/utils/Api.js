@@ -36,8 +36,8 @@ const Api = {
     return await Api.request(url, options);
   },
 
-  deleteCard: async (id) => {
-    const url = `${BASE_URL}/items/${id}`;
+  deleteCard: async (_id) => {
+    const url = `${BASE_URL}/items/${_id}`;
     const options = {
       method: 'DELETE',
       headers: {
