@@ -18,7 +18,6 @@ import LoginModal from '../LoginModal/LoginModal';
 import RegisterModal from '../RegisterModal/RegisterModal';
 
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
-console.log(APIKey);
 
 const App = () => {
   const [weatherData, setWeatherData] = useState({});
@@ -73,7 +72,6 @@ const App = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
         setAuthError('Error signing in');
       });
   };
@@ -146,7 +144,6 @@ const App = () => {
     fetchWeatherData();
     Api.getCards()
       .then(({ data }) => {
-        console.log(data);
         setCards(data);
       })
       .catch((error) => {
@@ -154,7 +151,7 @@ const App = () => {
         // setCards(defaultClothingItems);
       });
   }, []);
-  console.log(cards);
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <CurrentTemperatureUnitContext.Provider
