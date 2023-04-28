@@ -33,6 +33,7 @@ const App = () => {
   const [authError, setAuthError] = useState('');
   const [token, setToken] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoggedIn] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -51,7 +52,7 @@ const App = () => {
           localStorage.setItem('token', res.token);
           checkToken(res.token)
             .then((data) => {
-              setUser(data.user);
+              setUser(data.user); // Update currentUser state
               setIsLoginModalOpen(false);
               setIsRegisterModalOpen(false);
               setAuthError('');
@@ -157,8 +158,12 @@ const App = () => {
         <div className='page'>
           <div className='page__wrapper'>
             <Header weatherData={weatherData} handleAddClick={() => setActiveModal('create')} />
-            <button onClick={() => setIsLoginModalOpen(true)}>Log in</button>
-            <button onClick={() => setIsRegisterModalOpen(true)}>Sign up</button>
+            {!isLoggedIn && (
+              <>
+                <button onClick={() => setIsLoginModalOpen(true)}>Log in</button>
+                <button onClick={() => setIsRegisterModalOpen(true)}>Sign up</button>
+              </>
+            )}
             {isLoading ? (
               <div>Loading...</div>
             ) : (
