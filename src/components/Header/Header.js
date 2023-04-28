@@ -11,19 +11,15 @@ const Header = ({ weatherData, handleAddClick, openLoginModal, openRegisterModal
   // Destructure props
   const { city } = weatherData || {};
 
-  // Get username from URL params
   const params = new URLSearchParams(window.location.search);
   const username = params.get('username') || 'User';
 
-  // Set initial toggle switch state
   const [isToggleOn, setIsToggleOn] = useState(false);
 
-  // Handle toggle switch change event
   const handleToggle = () => {
     setIsToggleOn(!isToggleOn);
   };
 
-  // Get current user from context
   const currentUser = useContext(CurrentUserContext);
 
   return (
