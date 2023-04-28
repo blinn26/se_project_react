@@ -21,7 +21,6 @@ const Header = ({ weatherData, handleAddClick, openLoginModal, openRegisterModal
   };
 
   const currentUser = useContext(CurrentUserContext);
-
   return (
     city && (
       <header className='header'>

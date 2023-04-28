@@ -50,8 +50,8 @@ const App = () => {
         if (res && res.token) {
           localStorage.setItem('token', res.token);
           checkToken(res.token)
-            .then((data) => {
-              setUser(data.user); // Update currentUser state
+            .then((res) => {
+              setUser(res.data); // Update currentUser state
               setIsLoginModalOpen(false);
               setIsRegisterModalOpen(false);
               setAuthError('');
