@@ -3,10 +3,12 @@ import ItemCard from '../ItemCard/ItemCard';
 import './Main.css';
 import WeatherCard from '../WeatherCard/WeatherCard';
 import { CurrentTemperatureUnitContext } from '../../context/currentTemperatureUnit';
+import CurrentUserContext from '../../context/currentUserContext';
 
 function Main({ cards, weatherData, onCardClick }) {
   const actualWeather = weatherData.temperature;
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+  const currentUser = useContext(CurrentUserContext);
 
   const weatherType = () => {
     if (actualWeather >= 86) {
@@ -33,6 +35,8 @@ function Main({ cards, weatherData, onCardClick }) {
               : `${Math.round(((actualWeather - 32) * 5) / 9)} °C`}
             {weatherType()} / You may want to wear
           </div>
+          {/* Example: Display user's name */}
+          {currentUser && <p>Welcome, {currentUser.name}!</p>}
         </div>
         <ul className='main__items'>
           {Array.isArray(filterCard) &&

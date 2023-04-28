@@ -2,7 +2,7 @@ import React from 'react';
 import './ItemModal.css';
 import '../ModalWithForm/ModalWithForm.js';
 
-function ItemModal({ card, onClose, onOpenDeleteModal }) {
+function ItemModal({ card, onClose, onOpenDeleteModal, currentUser }) {
   return (
     <div className='item-modal__preview'>
       <div className='item-modal__container'>
@@ -11,12 +11,13 @@ function ItemModal({ card, onClose, onOpenDeleteModal }) {
         <div className='item-modal__content'>
           <div className='item-modal__description'>
             <h2 className='item-modal__title'>{card.name}</h2>
-
             <p className='item-modal__weather'>Weather: {card.weather}</p>
           </div>
-          <button className='item-modal__delete' onClick={onOpenDeleteModal} type='button'>
-            Delete item
-          </button>
+          {currentUser && (
+            <button className='item-modal__delete' onClick={onOpenDeleteModal} type='button'>
+              Delete item
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -6,13 +6,9 @@ import headerLogo from '../../images/wtwr.svg';
 import avatarUser from '../../images/Avatar.svg';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 
-const Header = ({ weatherData, handleAddClick }) => {
+const Header = ({ weatherData, handleAddClick, currentUser }) => {
   // Destructure props
   const { city } = weatherData || {};
-
-  // Get username from URL params
-  const params = new URLSearchParams(window.location.search);
-  const username = params.get('username');
 
   // Set initial toggle switch state
   const [isToggleOn, setIsToggleOn] = useState(false);
@@ -37,12 +33,12 @@ const Header = ({ weatherData, handleAddClick }) => {
         <div className='header__nav'>
           <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} />
 
-          <span className='navigation__username'>{username || 'Ben Linn'}</span>
+          <span className='navigation__username'>{currentUser ? currentUser.name : 'Ben Linn'}</span>
           <button onClick={handleAddClick} className='navigation__button'>
             + Add clothes
           </button>
           <Link to='/profile'>
-            <img className='navigation__user' src={avatarUser} alt='user avatar default' />
+            <img className='navigation__user' src={currentUser ? currentUser.avatar : avatarUser} alt='user avatar' />
           </Link>
         </div>
       </header>
