@@ -22,7 +22,7 @@
     line-height: 20px;
     background: white;
     min-width: 440px;
-    min-height: 480px;
+    gap: 30px;
     justify-content: space-between;
     position: relative;
     display: flex;
@@ -126,9 +126,28 @@
     width: 440px;
     left: 500px;
     top: 535px;
+    border: none;
+    border-bottom: 1px solid #000000;
 
-    border: 1px solid #000000;
 
 
+}
 
+.login__input {
+    padding: 13px, 0;
+    width: 440px;
+    left: 500px;
+    top: 535px;
+    border: none;
+    border-bottom: 1px solid #000000;
+
+}
+
+.login__lablel {
+    padding: 13px, 0;
+    width: 440px;
+    left: 500px;
+    top: 535px;
+    border: none;
+    border-bottom: 1px solid #000000;
 }
