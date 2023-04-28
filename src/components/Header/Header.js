@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import '../Header/Header.css';
 import '../Header/Navigation.css';
 import headerLogo from '../../images/wtwr.svg';
 import avatarUser from '../../images/Avatar.svg';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
+import CurrentUserContext from '../../context/currentUserContext';
 
-const Header = ({ weatherData, handleAddClick }) => {
+const Header = ({ weatherData, handleAddClick, openLoginModal, openRegisterModal }) => {
   // Destructure props
   const { city } = weatherData || {};
 
   // Get username from URL params
   const params = new URLSearchParams(window.location.search);
-  const username = params.get('username');
+  const username = params.get('username') || 'User';
 
   // Set initial toggle switch state
   const [isToggleOn, setIsToggleOn] = useState(false);
@@ -21,6 +22,9 @@ const Header = ({ weatherData, handleAddClick }) => {
   const handleToggle = () => {
     setIsToggleOn(!isToggleOn);
   };
+
+  // Get current user from context
+  const currentUser = useContext(CurrentUserContext);
 
   return (
     city && (
@@ -37,13 +41,26 @@ const Header = ({ weatherData, handleAddClick }) => {
         <div className='header__nav'>
           <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} />
 
-          <span className='navigation__username'>{username || 'Ben Linn'}</span>
-          <button onClick={handleAddClick} className='navigation__button'>
-            + Add clothes
-          </button>
-          <Link to='/profile'>
-            <img className='navigation__user' src={avatarUser} alt='user avatar default' />
-          </Link>
+          {currentUser ? (
+            <>
+              <span className='navigation__username'>{currentUser.name || username}</span>
+              <button onClick={handleAddClick} className='navigation__button'>
+                + Add clothes
+              </button>
+              <Link to='/profile'>
+                <img className='navigation__user' src={currentUser.avatar || avatarUser} alt='user avatar' />
+              </Link>
+            </>
+          ) : (
+            <>
+              <span className='navigation__link' onClick={openLoginModal}>
+                Log in
+              </span>
+              <span className='navigation__link' onClick={openRegisterModal}>
+                Sign up
+              </span>
+            </>
+          )}
         </div>
       </header>
     )

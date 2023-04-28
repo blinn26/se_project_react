@@ -33,3 +33,7 @@
     border: none;
 
 }
+
+.navigation__link {
+    cursor: pointer;
+}

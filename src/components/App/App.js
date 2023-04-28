@@ -33,7 +33,6 @@ const App = () => {
   const [authError, setAuthError] = useState('');
   const [token, setToken] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [isLoggedIn] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -157,13 +156,12 @@ const App = () => {
         }}>
         <div className='page'>
           <div className='page__wrapper'>
-            <Header weatherData={weatherData} handleAddClick={() => setActiveModal('create')} />
-            {!isLoggedIn && (
-              <>
-                <button onClick={() => setIsLoginModalOpen(true)}>Log in</button>
-                <button onClick={() => setIsRegisterModalOpen(true)}>Sign up</button>
-              </>
-            )}
+            <Header
+              weatherData={weatherData}
+              handleAddClick={() => setActiveModal('create')}
+              openLoginModal={() => setIsLoginModalOpen(true)}
+              openRegisterModal={() => setIsRegisterModalOpen(true)}
+            />
             {isLoading ? (
               <div>Loading...</div>
             ) : (
@@ -195,20 +193,21 @@ const App = () => {
                     onItemDeleted={closeAllModals}
                   />
                 )}
+                {/* ... */}
                 {isLoginModalOpen && (
                   <LoginModal
+                    isOpen={isLoginModalOpen}
                     onClose={() => setIsLoginModalOpen(false)}
                     onLogin={handleLogin}
                     authError={authError}
-                    setAuthError={setAuthError}
                   />
                 )}
                 {isRegisterModalOpen && (
                   <RegisterModal
+                    isOpen={isRegisterModalOpen}
                     onClose={() => setIsRegisterModalOpen(false)}
                     onRegister={handleRegister}
                     authError={authError}
-                    setAuthError={setAuthError}
                   />
                 )}
               </>
