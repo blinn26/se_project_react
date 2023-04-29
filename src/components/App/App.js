@@ -113,6 +113,25 @@ const App = () => {
         setIsDeleting(false);
       });
   };
+  const handleLike = (card) => {
+    const { _id: id, isLiked } = card;
+    const token = localStorage.getItem('token');
+    if (isLiked) {
+      // Remove like
+      Api.removeCardLike(id, token)
+        .then((updatedCard) => {
+          setCards((cards) => cards.map((c) => (c._id === id ? updatedCard : c)));
+        })
+        .catch((err) => console.log(err));
+    } else {
+      // Add like
+      Api.addCardLike(id, token)
+        .then((updatedCard) => {
+          setCards((cards) => cards.map((c) => (c._id === id ? updatedCard : c)));
+        })
+        .catch((err) => console.log(err));
+    }
+  };
 
   const openDeleteModal = () => {
     setDeleteModalOpen(true);
@@ -171,7 +190,12 @@ const App = () => {
                     <Profile cards={cards} handleAddClick={handleAddClick} onCardClick={onCardClick} />
                   </Route>
                   <Route path='/'>
-                    <Main weatherData={weatherData} cards={cards} onCardClick={onCardClick} />
+                    <Main
+                      weatherData={weatherData}
+                      cards={cards}
+                      onCardClick={onCardClick}
+                      onCardLike={handleLike} // Pass the handleLike function as a prop to Main
+                    />
                   </Route>
                 </Switch>
                 <Footer />

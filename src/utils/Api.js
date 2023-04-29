@@ -49,6 +49,29 @@ const Api = {
     };
     return await Api.request(url, options);
   },
+  addCardLike: async (id, token) => {
+    const url = `${BASE_URL}/items/${id}/likes`;
+    const options = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return await Api.request(url, options);
+  },
+
+  removeCardLike: async (id, token) => {
+    const url = `${BASE_URL}/items/${id}/likes`;
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return await Api.request(url, options);
+  },
 };
 
 export default Api;

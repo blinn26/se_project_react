@@ -4,7 +4,7 @@ import './Main.css';
 import WeatherCard from '../WeatherCard/WeatherCard';
 import { CurrentTemperatureUnitContext } from '../../context/currentTemperatureUnit';
 
-function Main({ cards, weatherData, onCardClick }) {
+function Main({ cards, weatherData, onCardClick, onCardLike }) {
   const actualWeather = weatherData.temperature;
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
@@ -19,7 +19,8 @@ function Main({ cards, weatherData, onCardClick }) {
   };
 
   const filterCard = cards.filter((item) => {
-    return item.weather.toLowerCase() === weatherType();
+    // Ensure that the weather property exists before calling toLowerCase
+    return item.weather && item.weather.toLowerCase() === weatherType();
   });
 
   return (
@@ -37,7 +38,14 @@ function Main({ cards, weatherData, onCardClick }) {
         </div>
         <ul className='main__items'>
           {Array.isArray(filterCard) &&
-            filterCard.map((card, index) => <ItemCard key={index} card={card} onCardClick={onCardClick} />)}
+            filterCard.map((card, index) => (
+              <ItemCard
+                key={card._id}
+                card={card}
+                onCardClick={onCardClick} // Pass the onCardClick function as a prop
+                onCardLike={onCardLike} // Pass the onCardLike function as a prop
+              />
+            ))}
         </ul>
       </section>
     </main>

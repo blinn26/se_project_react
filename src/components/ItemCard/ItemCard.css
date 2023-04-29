@@ -40,3 +40,20 @@
 
 
 }
+
+/* ItemCard.css */
+.card__like-button {
+    /* Style for the unfilled like button */
+    background: url('../../images/HeartNotLiked.svg');
+    border: none;
+    height: 200px;
+    width: 200px;
+    /* Other styles */
+}
+
+.card__like-button_filled {
+    /* Style for the filled like button */
+    background: url('../../images/HeartLiked.svg');
+    height: 200px;
+    width: 200px;
+}
