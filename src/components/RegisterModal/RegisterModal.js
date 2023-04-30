@@ -13,7 +13,7 @@ function RegisterModal({ isOpen, onClose, onRegister, authError }) {
   }
 
   return (
-    <ModalWithForm isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} title='Sign Up' buttonText='Sign Up'>
+    <ModalWithForm isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} title='Sign Up' buttonText='Next'>
       <label className='register__label'>Email</label>
       <input
         className='register__input'
