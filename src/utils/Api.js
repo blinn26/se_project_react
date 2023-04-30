@@ -49,8 +49,8 @@ const Api = {
     };
     return await Api.request(url, options);
   },
-  addCardLike: async (id, token) => {
-    const url = `${BASE_URL}/items/${id}/likes`;
+  addCardLike: async (_id, token) => {
+    const url = `${BASE_URL}/items/${_id}/likes`;
     const options = {
       method: 'PUT',
       headers: {
@@ -61,8 +61,8 @@ const Api = {
     return await Api.request(url, options);
   },
 
-  removeCardLike: async (id, token) => {
-    const url = `${BASE_URL}/items/${id}/likes`;
+  removeCardLike: async (_id, token) => {
+    const url = `${BASE_URL}/items/${_id}/likes`;
     const options = {
       method: 'DELETE',
       headers: {
