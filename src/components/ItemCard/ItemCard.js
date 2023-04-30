@@ -8,6 +8,8 @@ const ItemCard = ({ card, onCardClick, onCardLike }) => {
     onCardLike(card);
   };
 
+  console.log('Card ID:', card._id, 'Is Liked:', card.isLiked);
+
   return (
     <div className='card'>
       <div className='card__name'>{card.name}</div>
