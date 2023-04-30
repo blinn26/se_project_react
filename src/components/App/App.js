@@ -187,7 +187,12 @@ const App = () => {
               <>
                 <Switch>
                   <Route path='/profile'>
-                    <Profile cards={cards} handleAddClick={handleAddClick} onCardClick={onCardClick} />
+                    <Profile
+                      cards={cards}
+                      handleAddClick={handleAddClick}
+                      onCardClick={onCardClick}
+                      onCardLike={handleLike} // Pass the handleLike function as the onCardLike prop
+                    />
                   </Route>
                   <Route path='/'>
                     <Main weatherData={weatherData} cards={cards} onCardClick={onCardClick} onCardLike={handleLike} />
