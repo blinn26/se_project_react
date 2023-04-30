@@ -51,7 +51,7 @@ const App = () => {
           localStorage.setItem('token', res.token);
           checkToken(res.token)
             .then((res) => {
-              setUser(res.data); // Update currentUser state
+              setUser(res.data);
               setIsLoginModalOpen(false);
               setIsRegisterModalOpen(false);
               setAuthError('');
@@ -103,7 +103,7 @@ const App = () => {
     Api.deleteCard(selectCard._id, token)
       .then(() => {
         setCards(cards.filter((item) => item._id !== selectCard._id));
-        setActiveModal(''); // Close the preview modal
+        setActiveModal('');
         setDeleteModalOpen(false);
       })
       .catch((error) => {
@@ -113,7 +113,6 @@ const App = () => {
         setIsDeleting(false);
       });
   };
-  // client/src/components/App/App.js
 
   const handleLike = (card) => {
     const { _id: id, isLiked } = card;
@@ -135,7 +134,7 @@ const App = () => {
 
   const openDeleteModal = () => {
     setDeleteModalOpen(true);
-    setActiveModal(''); // Close the preview modal
+    setActiveModal('');
   };
 
   const closeAllModals = () => {
@@ -159,6 +158,7 @@ const App = () => {
     if (token) {
       Api.getCards(token)
         .then(({ data }) => {
+          console.log(data);
           setCards(data);
         })
         .catch((error) => {
@@ -190,12 +190,7 @@ const App = () => {
                     <Profile cards={cards} handleAddClick={handleAddClick} onCardClick={onCardClick} />
                   </Route>
                   <Route path='/'>
-                    <Main
-                      weatherData={weatherData}
-                      cards={cards}
-                      onCardClick={onCardClick}
-                      onCardLike={handleLike} // Pass the handleLike function as a prop to Main
-                    />
+                    <Main weatherData={weatherData} cards={cards} onCardClick={onCardClick} onCardLike={handleLike} />
                   </Route>
                 </Switch>
                 <Footer />
