@@ -158,7 +158,6 @@ const App = () => {
     if (token) {
       Api.getCards(token)
         .then(({ data }) => {
-          console.log(data);
           setCards(data);
         })
         .catch((error) => {
