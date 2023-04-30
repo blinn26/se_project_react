@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import '../Header/Header.css';
 import '../Header/Navigation.css';
 import headerLogo from '../../images/wtwr.svg';
@@ -7,8 +7,7 @@ import avatarUser from '../../images/Avatar.svg';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 import CurrentUserContext from '../../context/currentUserContext';
 
-const Header = ({ weatherData, handleAddClick, openLoginModal, openRegisterModal }) => {
-  // Destructure props
+const Header = ({ weatherData, handleAddClick, openLoginModal, openRegisterModal, setUser }) => {
   const { city } = weatherData || {};
 
   const params = new URLSearchParams(window.location.search);
@@ -21,6 +20,14 @@ const Header = ({ weatherData, handleAddClick, openLoginModal, openRegisterModal
   };
 
   const currentUser = useContext(CurrentUserContext);
+  const history = useHistory();
+
+  const handleSignOut = () => {
+    localStorage.removeItem('token');
+    setUser(null);
+    history.push('/');
+  };
+
   return (
     city && (
       <header className='header'>
@@ -45,6 +52,9 @@ const Header = ({ weatherData, handleAddClick, openLoginModal, openRegisterModal
               <Link to='/profile'>
                 <img className='navigation__user' src={currentUser.avatar || avatarUser} alt='user avatar' />
               </Link>
+              <button onClick={handleSignOut} className='navigation__button'>
+                Sign out
+              </button>
             </>
           ) : (
             <>

@@ -65,7 +65,7 @@ const App = () => {
         }
       })
       .catch((error) => {
-        setAuthError('Error signing in');
+        setAuthError('Incorrect password');
       });
   };
 
@@ -179,6 +179,7 @@ const App = () => {
               handleAddClick={() => setActiveModal('create')}
               openLoginModal={() => setIsLoginModalOpen(true)}
               openRegisterModal={() => setIsRegisterModalOpen(true)}
+              setUser={setUser}
             />
             {isLoading ? (
               <div>Loading...</div>
@@ -190,7 +191,8 @@ const App = () => {
                       cards={cards}
                       handleAddClick={handleAddClick}
                       onCardClick={onCardClick}
-                      onCardLike={handleLike} // Pass the handleLike function as the onCardLike prop
+                      onCardLike={handleLike}
+                      prop
                     />
                   </Route>
                   <Route path='/'>

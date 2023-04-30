@@ -35,7 +35,7 @@ function LoginModal({ isOpen, onClose, onLogin, authError, orRegister }) {
         maxLength={35}
       />
       {authError && (
-        <p className='Incorrect Password' onClick={orRegister}>
+        <p className='incorrect__password' onClick={orRegister}>
           {authError}
         </p>
       )}
