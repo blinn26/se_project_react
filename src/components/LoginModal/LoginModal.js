@@ -19,7 +19,6 @@ function LoginModal({ isOpen, onClose, onLogin, authError, orRegister }) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder='Email'
-        id='email'
         required
         minLength={1}
         maxLength={30}
@@ -27,11 +26,10 @@ function LoginModal({ isOpen, onClose, onLogin, authError, orRegister }) {
       <label className='login__label'>Password</label>
       <input
         className='login__input'
-        type='text'
+        type='password'
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder='Password'
-        id='password'
         required
         minLength={4}
         maxLength={35}
@@ -39,7 +37,6 @@ function LoginModal({ isOpen, onClose, onLogin, authError, orRegister }) {
       {authError && (
         <p className='Incorrect Password' onClick={orRegister}>
           {authError}
-          or Register
         </p>
       )}
     </ModalWithForm>
