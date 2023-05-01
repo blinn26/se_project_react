@@ -226,6 +226,10 @@ const App = () => {
                     onClose={() => setIsLoginModalOpen(false)}
                     onLogin={handleLogin}
                     authError={authError}
+                    switchToRegister={() => {
+                      setIsRegisterModalOpen(true);
+                      setIsLoginModalOpen(false);
+                    }}
                   />
                 )}
                 {isRegisterModalOpen && (
@@ -234,6 +238,10 @@ const App = () => {
                     onClose={() => setIsRegisterModalOpen(false)}
                     onRegister={handleRegister}
                     authError={authError}
+                    switchToLogin={() => {
+                      setIsLoginModalOpen(true);
+                      setIsRegisterModalOpen(false);
+                    }}
                   />
                 )}
               </>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
-function RegisterModal({ isOpen, onClose, onRegister, handleLogIn }) {
+function RegisterModal({ isOpen, onClose, onRegister, switchToLogin }) {
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
   const [email, setEmail] = useState('');
@@ -50,7 +50,7 @@ function RegisterModal({ isOpen, onClose, onRegister, handleLogIn }) {
         onChange={(e) => setAvatar(e.target.value)}
         placeholder='Avatar URL'
       />
-      <p className='or__log-in' onClick={handleLogIn}>
+      <p className='or__log-in' onClick={switchToLogin}>
         or Log in
       </p>
     </ModalWithForm>

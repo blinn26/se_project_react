@@ -13,14 +13,6 @@
     z-index: 3;
 }
 
-.modal__container {
-    background-color: #FFFFFF;
-    width: 496px;
-    height: 436px;
-    border-radius: 20px;
-    position: relative;
-
-}
 
 .modal__form {
     border-radius: 20px;
@@ -30,12 +22,10 @@
     font-weight: bold;
     line-height: 20px;
     background: white;
-    min-width: 440px;
-    gap: 30px;
     justify-content: space-between;
-    position: relative;
     display: flex;
     padding: 30px 30px 30px 30px;
+    position: absolute;
 
 }
 
@@ -48,17 +38,25 @@
 
 }
 
+.modal__label {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
 .modal__button-submit {
-    height: 36px;
-    width: 65px;
     color: #FFFFFF;
     background: #000000;
     border-radius: 4px;
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
-    position: absolute;
     bottom: 36px;
+    width: fit-content;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
 }
 
 .modal__button-close {
@@ -143,35 +141,41 @@
 
 }
 
-.login__input {
-    padding: 13px, 0;
+.login__label {
+
     width: 440px;
     left: 500px;
     top: 535px;
     border: none;
-    border-bottom: 1px solid #000000;
-    font-family: 'Cabinet Grotesk';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-
-}
-
-.login__lablel {
-    padding: 13px, 0;
-    width: 440px;
-    left: 500px;
-    top: 535px;
-    border: none;
-    border-bottom: 1px solid #000000;
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
     color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 8px;
+    padding-top: 8px;
+    color: #000000;
+
 }
+
+.login__input {
+    width: 440px;
+    left: 500px;
+    top: 535px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+
+
+}
+
 
 
 
@@ -183,10 +187,9 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    /* position: absolute; */
     position: relative;
-    /* right: 30px; */
-    left: 75px;
+    left: 70px;
+    top: 41px;
 }
 
 .or__log-in {
@@ -197,8 +200,8 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    /* position: absolute; */
     position: relative;
-    /* right: 30px; */
-    left: 75px;
+    left: 70px;
+    top: 41px;
+
 }

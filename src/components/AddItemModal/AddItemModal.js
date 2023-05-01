@@ -57,6 +57,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
         value={itemName}
         onChange={handleNameChange}
       />
+      <label className='modal__label'>Image URL</label>
       <input
         type='url'
         name='link'

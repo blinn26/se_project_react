@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
-function LoginModal({ isOpen, onClose, onLogin, handleOrRegister }) {
+function LoginModal({ isOpen, onClose, onLogin, switchToRegister }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -38,7 +38,7 @@ function LoginModal({ isOpen, onClose, onLogin, handleOrRegister }) {
         autoComplete='new-password'
       />
 
-      <p className='or__register' onClick={handleOrRegister}>
+      <p className='or__register' onClick={switchToRegister}>
         or Register
       </p>
     </ModalWithForm>
