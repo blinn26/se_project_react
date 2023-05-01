@@ -50,11 +50,12 @@ const App = () => {
         if (res && res.token) {
           localStorage.setItem('token', res.token);
           checkToken(res.token)
-            .then((res) => {
-              setUser(res.data);
+            .then((decoded) => {
+              setUser(decoded.data);
               setIsLoginModalOpen(false);
               setIsRegisterModalOpen(false);
               setAuthError('');
+              setToken(res.token);
             })
             .catch((error) => {
               console.error('Error checking token:', error);
