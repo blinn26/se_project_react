@@ -14,6 +14,9 @@ function RegisterModal({ isOpen, onClose, onRegister, authError }) {
 
   return (
     <ModalWithForm isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} title='Sign Up' buttonText='Next'>
+      <button className='login__button' type='button'>
+        or Log in
+      </button>
       <label className='register__label'>Email</label>
       <input
         className='register__input'
@@ -49,7 +52,6 @@ function RegisterModal({ isOpen, onClose, onRegister, authError }) {
         onChange={(e) => setAvatar(e.target.value)}
         placeholder='Avatar URL'
       />
-
       {authError && <p className='error-message'>{authError}</p>}
     </ModalWithForm>
   );
