@@ -5,16 +5,12 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   const [itemName, setItemName] = useState('');
   const [itemLink, setItemLink] = useState('');
   const [weatherType, setWeatherType] = useState('');
-  // onAddItem refers to handleAddItemSubmit, which is declared in App.js
-  // declare state for each input field
 
   useEffect(() => {
     setItemName('');
     setItemLink('');
     setWeatherType('');
   }, [isOpen]);
-  // use a useEffect hook to reset the input field state to empty strings when
-  // the modal is opened
 
   function handleNameChange(event) {
     setItemName(event.target.value);
@@ -33,10 +29,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
     onAddItem(itemName, itemLink, weatherType);
   }
 
-  // prevent default behavior
-  // call onAddItem with appropriate arguments
   return (
-    /* don't forget to pass appropriate props to ModalWithForm */
     <ModalWithForm
       name='new-card'
       buttonText='Add garment'
@@ -70,7 +63,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
       />
       <span className='modal__error' id='place-link-error'></span>
       <p>Select the weather type:</p>
-      <div className='modal__input modal__input_type_radio'>
+      <div className='modal__input modal__input_type_radio hot'>
         <input
           type='radio'
           id='choiceHot'
@@ -79,11 +72,11 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
           checked={weatherType === 'Hot'}
           onChange={handleWeatherTypeChange}
         />
-        <label className='modal__label_radio' htmlFor='choiceHot'>
+        <label className='modal__label-hot' htmlFor='choiceHot'>
           Hot
         </label>
       </div>
-      <div>
+      <div className='modal__input modal__input_type_radio warm'>
         <input
           type='radio'
           id='choiceWarm'
@@ -92,11 +85,11 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
           checked={weatherType === 'warm'}
           onChange={handleWeatherTypeChange}
         />
-        <label className='modal__label_radio' htmlFor='choiceWarm'>
+        <label className='modal__label-warm' htmlFor='choiceWarm'>
           Warm
         </label>
       </div>
-      <div>
+      <div className='modal__input modal__input_type_radio cold'>
         <input
           type='radio'
           id='choiceCold'
@@ -105,7 +98,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
           checked={weatherType === 'cold'}
           onChange={handleWeatherTypeChange}
         />
-        <label className='modal__label_radio' htmlFor='choiceCold'>
+        <label className='modal__label-cold' htmlFor='choiceCold'>
           Cold
         </label>
       </div>

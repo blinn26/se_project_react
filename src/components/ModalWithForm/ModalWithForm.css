@@ -45,17 +45,17 @@
 
 .modal__button-submit {
     color: #FFFFFF;
-    background: #000000;
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 4px;
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
     bottom: 36px;
     width: fit-content;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 
 }
 
@@ -106,56 +106,45 @@
 }
 
 .register__label {
-    width: 80px;
-    height: 20px;
-    left: 500px;
-    top: 483px;
+
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
+    padding-top: 20px;
 
 
 }
 
 
 .register__input {
-    width: 80px;
-
-    left: 500px;
-    top: 511px;
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
-    padding: 13px, 0;
     width: 440px;
-    left: 500px;
-    top: 535px;
     border: none;
     border-bottom: 1px solid #000000;
     color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 2px;
+    padding-top: 18px;
 
 
 
 }
 
 .login__label {
-
     width: 440px;
-    left: 500px;
-    top: 535px;
     border: none;
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    color: rgba(0, 0, 0, 0.5);
-    padding-bottom: 8px;
-    padding-top: 8px;
-    color: #000000;
+    border-bottom: 20px;
+    padding-bottom: 9px;
+    padding-top: 20px;
 
 }
 
@@ -170,8 +159,8 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    padding-bottom: 4px;
-    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-top: 18px;
 
 
 }
@@ -188,8 +177,8 @@
     font-size: 16px;
     line-height: 20px;
     position: relative;
-    left: 70px;
-    top: 41px;
+    left: 82px;
+    top: 42px;
 }
 
 .or__log-in {
@@ -201,7 +190,40 @@
     font-size: 16px;
     line-height: 20px;
     position: relative;
-    left: 70px;
-    top: 41px;
+    left: 73px;
+    top: 43px;
 
+}
+
+.modal__input.modal__input_type_radio.hot {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__input.modal__input_type_radio.warm {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__input.modal__input_type_radio.cold {
+    padding-top: 8px;
+    padding-bottom: 30px;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.5);
 }
