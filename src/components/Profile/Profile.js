@@ -12,7 +12,7 @@ function Profile({ cards, handleAddClick, onCardClick, onCardLike }) {
           cards={cards}
           handleAddClick={handleAddClick}
           onCardClick={onCardClick}
-          onCardLike={onCardLike} // Pass the onCardLike prop to the ClothesSection
+          onCardLike={onCardLike}
         />
       </div>
     </div>

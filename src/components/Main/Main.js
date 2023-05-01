@@ -39,12 +39,7 @@ function Main({ cards, weatherData, onCardClick, onCardLike }) {
         <ul className='main__items'>
           {Array.isArray(filterCard) &&
             filterCard.map((card, index) => (
-              <ItemCard
-                key={card._id}
-                card={card}
-                onCardClick={onCardClick} // Pass the onCardClick function as a prop
-                onCardLike={onCardLike} // Pass the onCardLike function as a prop
-              />
+              <ItemCard key={card._id} card={card} onCardClick={onCardClick} onCardLike={onCardLike} />
             ))}
         </ul>
       </section>

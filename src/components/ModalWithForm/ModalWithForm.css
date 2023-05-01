@@ -41,13 +41,15 @@
 
 .modal__button-submit {
     height: 36px;
-    width: 126px;
+    width: 65px;
     color: #FFFFFF;
-    background: rgba(0, 0, 0, 0.3);
+    background: #000000;
     border-radius: 4px;
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
+    position: absolute;
+    bottom: 36px;
 }
 
 .modal__button-close {
@@ -126,6 +128,7 @@
     top: 535px;
     border: none;
     border-bottom: 1px solid #000000;
+    color: rgba(0, 0, 0, 0.5);
 
 
 
@@ -138,6 +141,11 @@
     top: 535px;
     border: none;
     border-bottom: 1px solid #000000;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
 
 }
 
@@ -148,28 +156,40 @@
     top: 535px;
     border: none;
     border-bottom: 1px solid #000000;
-}
-
-.login__button {
-    position: absolute;
-    width: 60px;
-    height: 20px;
-    left: 577px;
-    top: 575px;
-    border: none;
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    background-color: white;
+    color: rgba(0, 0, 0, 0.5);
 }
 
-.incorrect__password {
+
+
+.or__register {
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    color: #FF4D00;
+    /* position: absolute; */
+    position: relative;
+    /* right: 30px; */
+    left: 75px;
+}
+
+.or__log-in {
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    /* position: absolute; */
+    position: relative;
+    /* right: 30px; */
+    left: 75px;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
-function RegisterModal({ isOpen, onClose, onRegister, authError }) {
+function RegisterModal({ isOpen, onClose, onRegister, handleLogIn }) {
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
   const [email, setEmail] = useState('');
@@ -14,9 +14,6 @@ function RegisterModal({ isOpen, onClose, onRegister, authError }) {
 
   return (
     <ModalWithForm isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} title='Sign Up' buttonText='Next'>
-      <button className='login__button' type='button'>
-        or Log in
-      </button>
       <label className='register__label'>Email</label>
       <input
         className='register__input'
@@ -34,6 +31,7 @@ function RegisterModal({ isOpen, onClose, onRegister, authError }) {
         onChange={(e) => setPassword(e.target.value)}
         placeholder='Password'
         required
+        autoComplete='new-password'
       />
       <label className='register__label'>Name</label>
       <input
@@ -52,7 +50,9 @@ function RegisterModal({ isOpen, onClose, onRegister, authError }) {
         onChange={(e) => setAvatar(e.target.value)}
         placeholder='Avatar URL'
       />
-      {authError && <p className='error-message'>{authError}</p>}
+      <p className='or__log-in' onClick={handleLogIn}>
+        or Log in
+      </p>
     </ModalWithForm>
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
-function LoginModal({ isOpen, onClose, onLogin, authError, orRegister }) {
+function LoginModal({ isOpen, onClose, onLogin, handleOrRegister }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,6 +23,7 @@ function LoginModal({ isOpen, onClose, onLogin, authError, orRegister }) {
         required
         minLength={1}
         maxLength={30}
+        autoComplete='new-password'
       />
       <label className='login__label'>Password</label>
       <input
@@ -33,12 +35,12 @@ function LoginModal({ isOpen, onClose, onLogin, authError, orRegister }) {
         required
         minLength={4}
         maxLength={35}
+        autoComplete='new-password'
       />
-      {authError && (
-        <p className='incorrect__password' onClick={orRegister}>
-          {authError}
-        </p>
-      )}
+
+      <p className='or__register' onClick={handleOrRegister}>
+        or Register
+      </p>
     </ModalWithForm>
   );
 }

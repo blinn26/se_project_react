@@ -14,7 +14,10 @@ const ItemCard = ({ card, onCardClick, onCardLike }) => {
       <img className='card__image' src={card.imageUrl || card.link} alt={card.name} onClick={() => onCardClick(card)} />
       <button
         className={`card__like-button ${card.isLiked ? 'card__like-button_filled' : ''}`}
-        onClick={handleLikeClick}>
+        onClick={handleLikeClick}
+        style={{ background: 'none' }}>
+        {' '}
+        {/* Remove background image */}
         {card.isLiked ? <img src={HeartLiked} alt='Heart Liked' /> : <img src={HeartNotLiked} alt='Heart Not Liked' />}
       </button>
     </div>
