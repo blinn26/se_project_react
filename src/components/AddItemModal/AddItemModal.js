@@ -5,12 +5,17 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   const [itemName, setItemName] = useState('');
   const [itemLink, setItemLink] = useState('');
   const [weatherType, setWeatherType] = useState('');
+  const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
     setItemName('');
     setItemLink('');
     setWeatherType('');
   }, [isOpen]);
+
+  useEffect(() => {
+    setIsFormValid(itemName.length > 0 && itemLink.length > 0 && weatherType.length > 0);
+  }, [itemName, itemLink, weatherType]);
 
   function handleNameChange(event) {
     setItemName(event.target.value);
@@ -36,7 +41,8 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
       isOpen={isOpen}
       title='New garment'
       onSubmit={handleSubmit}
-      onClose={onClose}>
+      onClose={onClose}
+      isValid={isFormValid}>
       <label className='modal__label'>Name</label>
       <input
         type='text'

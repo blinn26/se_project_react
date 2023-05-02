@@ -129,4 +129,22 @@ font-family: 'CabinetGrotesk-Black';
 
 ## Start of Project 14 Front End Development
 
-b
+## Link to my backened https://github.com/blinn26/se_project_express.git se_project_express
+
+## Link to my frontend https://github.com/blinn26/se_project_react.git
+
+## SE_PROJECT_REACT
+
+## API
+
+## WEB_HOOKS
+
+## MODALS
+
+## VALIDATION
+
+## useState
+
+## useContext
+
+## JWT TOKEN

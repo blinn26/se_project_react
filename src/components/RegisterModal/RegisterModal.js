@@ -9,7 +9,6 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToLogin }) {
   const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
-    // Update isFormValid based on email and password input
     setIsFormValid(email.includes('@') && email.includes('.com') && password.length >= 4 && name.length > 0);
   }, [email, password, name]);
 
