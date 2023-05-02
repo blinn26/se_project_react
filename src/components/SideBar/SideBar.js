@@ -5,7 +5,7 @@ import avatarUser from '../../images/Avatar.svg';
 import CurrentUserContext from '../../context/currentUserContext';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
-function SideBar() {
+function SideBar({ handleSignOut }) {
   const currentUser = useContext(CurrentUserContext);
   const history = useHistory();
   const [showModal, setShowModal] = useState(false);
@@ -19,7 +19,7 @@ function SideBar() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    handleSignOut();
     history.push('/');
   };
 

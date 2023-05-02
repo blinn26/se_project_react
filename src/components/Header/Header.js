@@ -29,6 +29,7 @@ const Header = ({ weatherData, handleAddClick, openLoginModal, openRegisterModal
     history.push('/');
   };
 
+  const isMainPage = location.pathname === '/';
   const isProfilePage = location.pathname === '/profile';
 
   return (
@@ -48,25 +49,14 @@ const Header = ({ weatherData, handleAddClick, openLoginModal, openRegisterModal
 
           {currentUser ? (
             <>
-              {isProfilePage ? (
-                <>
-                  <button onClick={handleAddClick} className='navigation__button'>
-                    + Add clothes
-                  </button>
-                  <span className='navigation__username'>{currentUser.name || username}</span>
-                </>
-              ) : (
-                <>
-                  <span className='navigation__username'>{currentUser.name || username}</span>
-                  <button onClick={handleAddClick} className='navigation__button'>
-                    + Add clothes
-                  </button>
-                </>
-              )}
+              <button onClick={handleAddClick} className='navigation__button'>
+                + Add clothes
+              </button>
+              <span className='navigation__username'>{currentUser.name || username}</span>
               <Link to='/profile'>
                 <img className='navigation__user' src={currentUser.avatar || avatarUser} alt='user avatar' />
               </Link>
-              {!isProfilePage && (
+              {!isMainPage && !isProfilePage && (
                 <button onClick={handleSignOut} className='navigation__button'>
                   Sign out
                 </button>

@@ -193,7 +193,7 @@ const App = () => {
                       handleAddClick={handleAddClick}
                       onCardClick={onCardClick}
                       onCardLike={handleLike}
-                      prop
+                      setUser={setUser} // Pass the setUser function to the Profile component
                     />
                   </Route>
                   <Route path='/'>

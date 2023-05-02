@@ -5,12 +5,16 @@ import ClothesSection from '../ClothesSection/ClothesSection';
 import CurrentUserContext from '../../context/currentUserContext';
 import './Profile.css';
 
-function Profile({ cards, handleAddClick, onCardClick, onCardLike }) {
+function Profile({ cards, handleAddClick, onCardClick, onCardLike, setUser }) {
   const history = useHistory();
   const currentUser = useContext(CurrentUserContext);
 
-  const handleEditProfileClick = () => {
-    history.push('/'); // Change this to the path of your main page
+  const handleSignOut = () => {
+    localStorage.removeItem('token');
+
+    setUser(null);
+
+    history.push('/');
   };
 
   useEffect(() => {
@@ -23,7 +27,7 @@ function Profile({ cards, handleAddClick, onCardClick, onCardLike }) {
   return (
     <div className='profile'>
       <div className='profile-container'>
-        <SideBar currentUser={currentUser} onClick={handleEditProfileClick} />
+        <SideBar currentUser={currentUser} handleSignOut={handleSignOut} />
         <ClothesSection
           cards={cards}
           handleAddClick={handleAddClick}
