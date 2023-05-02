@@ -2,7 +2,7 @@ import React from 'react';
 import ItemCard from '../ItemCard/ItemCard';
 import './ClothesSection.css';
 
-const ClothesSection = ({ cards, onCardClick, onCardLike }) => {
+const ClothesSection = ({ cards = [], onCardClick, onCardLike }) => {
   return (
     <div className='clothes-section'>
       {/* ... */}

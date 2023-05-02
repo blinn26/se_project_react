@@ -22,6 +22,7 @@
     margin-left: 15px;
     font-weight: 700;
     font-size: 20px;
+    color: #000000;
 }
 
 .side-bar__button {
@@ -31,13 +32,31 @@
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 20px;
     position: relative;
     top: 60px;
     right: 120px;
     background-color: white;
+    border-radius: 20px;
+
 }
 
 .side-bar__button:hover {
     color: #000000;
+}
+
+.side-bar__logout {
+    background: #FFFFFF;
+    border: none;
+    color: #000000;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    position: relative;
+    right: 305px;
+    top: 100px;
+
+
 }

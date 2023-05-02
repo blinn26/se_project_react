@@ -1,3 +1,4 @@
+// Part 1
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Main from '../Main/Main';
@@ -16,6 +17,7 @@ import CardDeleteModal from '../CardDeleteModal/CardDeleteModal';
 import { checkToken, signIn, signUp } from '../../utils/auth';
 import LoginModal from '../LoginModal/LoginModal';
 import RegisterModal from '../RegisterModal/RegisterModal';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'; // Import ProtectedRoute
 
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -88,7 +90,12 @@ const App = () => {
     setActiveModal('create');
   };
 
-  const handleAddCardSubmit = (name, link, weather) => {
+  const handleAddCardSubmit = (
+    name,
+    link,
+    weather
+    // Part 2
+  ) => {
     Api.addCard({ name, imageUrl: link, weather })
       .then((newCard) => {
         setCards([...cards, newCard]);
@@ -166,6 +173,7 @@ const App = () => {
         });
     }
   }, [token]);
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <CurrentTemperatureUnitContext.Provider
@@ -187,15 +195,16 @@ const App = () => {
             ) : (
               <>
                 <Switch>
-                  <Route path='/profile'>
-                    <Profile
-                      cards={cards}
-                      handleAddClick={handleAddClick}
-                      onCardClick={onCardClick}
-                      onCardLike={handleLike}
-                      setUser={setUser} // Pass the setUser function to the Profile component
-                    />
-                  </Route>
+                  <ProtectedRoute
+                    path='/profile'
+                    isAuthenticated={!!currentUser}
+                    component={Profile}
+                    cards={cards}
+                    handleAddClick={handleAddClick}
+                    onCardClick={onCardClick}
+                    onCardLike={handleLike}
+                    setUser={setUser}
+                  />
                   <Route path='/'>
                     <Main weatherData={weatherData} cards={cards} onCardClick={onCardClick} onCardLike={handleLike} />
                   </Route>
@@ -252,4 +261,5 @@ const App = () => {
     </CurrentUserContext.Provider>
   );
 };
+
 export default App;
