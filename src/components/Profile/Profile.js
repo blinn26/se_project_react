@@ -25,6 +25,8 @@ function Profile({ cards, handleAddClick, onCardClick, onCardLike, handleSetUser
 
   return (
     <div className='profile'>
+      <div className='profile__title'>Your Items</div>
+      <p className='profile__click'>+ Add New</p>
       <div className='profile-container'>
         <SideBar currentUser={currentUser} handleSignOut={handleSignOut} />
         <ClothesSection
