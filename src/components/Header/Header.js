@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import '../Header/Header.css';
 import '../Header/Navigation.css';
 import headerLogo from '../../images/wtwr.svg';
@@ -21,12 +21,15 @@ const Header = ({ weatherData, handleAddClick, openLoginModal, openRegisterModal
 
   const currentUser = useContext(CurrentUserContext);
   const history = useHistory();
+  const location = useLocation();
 
   const handleSignOut = () => {
     localStorage.removeItem('token');
     setUser(null);
     history.push('/');
   };
+
+  const isProfilePage = location.pathname === '/profile';
 
   return (
     city && (
@@ -45,16 +48,29 @@ const Header = ({ weatherData, handleAddClick, openLoginModal, openRegisterModal
 
           {currentUser ? (
             <>
-              <span className='navigation__username'>{currentUser.name || username}</span>
-              <button onClick={handleAddClick} className='navigation__button'>
-                + Add clothes
-              </button>
+              {isProfilePage ? (
+                <>
+                  <button onClick={handleAddClick} className='navigation__button'>
+                    + Add clothes
+                  </button>
+                  <span className='navigation__username'>{currentUser.name || username}</span>
+                </>
+              ) : (
+                <>
+                  <span className='navigation__username'>{currentUser.name || username}</span>
+                  <button onClick={handleAddClick} className='navigation__button'>
+                    + Add clothes
+                  </button>
+                </>
+              )}
               <Link to='/profile'>
                 <img className='navigation__user' src={currentUser.avatar || avatarUser} alt='user avatar' />
               </Link>
-              <button onClick={handleSignOut} className='navigation__button'>
-                Sign out
-              </button>
+              {!isProfilePage && (
+                <button onClick={handleSignOut} className='navigation__button'>
+                  Sign out
+                </button>
+              )}
             </>
           ) : (
             <>
