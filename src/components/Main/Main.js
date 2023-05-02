@@ -19,7 +19,6 @@ function Main({ cards, weatherData, onCardClick, onCardLike }) {
   };
 
   const filterCard = cards.filter((item) => {
-    // Ensure that the weather property exists before calling toLowerCase
     return item.weather && item.weather.toLowerCase() === weatherType();
   });
 
