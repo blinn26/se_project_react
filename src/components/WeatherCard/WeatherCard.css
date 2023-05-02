@@ -13,12 +13,16 @@
     color: #FFFFFF;
     align-self: center;
     margin-left: 30px;
-    position: absolute;
+    position: rea;
     z-index: 2;
+    align-self: auto;
+    position: relative;
+    bottom: 15px;
 
 }
 
 .weather__image {
     width: 100%;
+    position: absolute;
 
 }
