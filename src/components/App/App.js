@@ -36,7 +36,7 @@ const App = () => {
   const [token, setToken] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const pineapple = (token) => {
+  const isReloading = (token) => {
     checkToken(token)
       .then((decoded) => {
         setUser(decoded.data);
@@ -56,7 +56,7 @@ const App = () => {
     const storedToken = localStorage.getItem('token');
 
     if (storedToken) {
-      pineapple(storedToken);
+      isReloading(storedToken);
     }
     setIsLoading(false);
   }, []);
@@ -66,7 +66,7 @@ const App = () => {
       .then((res) => {
         if (res && res.token) {
           localStorage.setItem('token', res.token);
-          pineapple(res.token);
+          isReloading(res.token);
         } else {
           setAuthError(res.message || 'Invalid credentials');
         }
