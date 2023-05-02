@@ -1,5 +1,5 @@
 // Part 1
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
@@ -17,7 +17,7 @@ import CardDeleteModal from '../CardDeleteModal/CardDeleteModal';
 import { checkToken, signIn, signUp } from '../../utils/auth';
 import LoginModal from '../LoginModal/LoginModal';
 import RegisterModal from '../RegisterModal/RegisterModal';
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'; // Import ProtectedRoute
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -94,12 +94,7 @@ const App = () => {
     setActiveModal('create');
   };
 
-  const handleAddCardSubmit = (
-    name,
-    link,
-    weather
-    // Part 2
-  ) => {
+  const handleAddCardSubmit = (name, link, weather) => {
     Api.addCard({ name, imageUrl: link, weather })
       .then((newCard) => {
         setCards([...cards, newCard]);
@@ -162,6 +157,10 @@ const App = () => {
         .catch((err) => console.log(err));
     }
   };
+
+  const handleSetUserNull = useCallback(() => {
+    setUser(null);
+  }, [setUser]);
   useEffect(() => {
     fetchWeatherData();
   }, []);
@@ -207,7 +206,7 @@ const App = () => {
                     handleAddClick={handleAddClick}
                     onCardClick={onCardClick}
                     onCardLike={handleLike}
-                    setUser={setUser}
+                    handleSetUserNull={handleSetUserNull}
                   />
                   <Route path='/'>
                     <Main weatherData={weatherData} cards={cards} onCardClick={onCardClick} onCardLike={handleLike} />
