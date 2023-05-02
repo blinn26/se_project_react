@@ -36,12 +36,27 @@ const App = () => {
   const [token, setToken] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const pineapple = (token) => {
+    checkToken(token)
+      .then((decoded) => {
+        setUser(decoded.data);
+        setIsLoginModalOpen(false);
+        setIsRegisterModalOpen(false);
+        setAuthError('');
+        setToken(token);
+      })
+      .catch((error) => {
+        console.error('Error checking token:', error);
+        setAuthError('Error checking token');
+      });
+  };
+
   useEffect(() => {
     setIsLoading(true);
     const storedToken = localStorage.getItem('token');
 
     if (storedToken) {
-      setToken(storedToken);
+      pineapple(storedToken);
     }
     setIsLoading(false);
   }, []);
@@ -51,18 +66,7 @@ const App = () => {
       .then((res) => {
         if (res && res.token) {
           localStorage.setItem('token', res.token);
-          checkToken(res.token)
-            .then((decoded) => {
-              setUser(decoded.data);
-              setIsLoginModalOpen(false);
-              setIsRegisterModalOpen(false);
-              setAuthError('');
-              setToken(res.token);
-            })
-            .catch((error) => {
-              console.error('Error checking token:', error);
-              setAuthError('Error checking token');
-            });
+          pineapple(res.token);
         } else {
           setAuthError(res.message || 'Invalid credentials');
         }
