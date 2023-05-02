@@ -4,12 +4,9 @@ import avatarUser from '../../images/Avatar.svg';
 import CurrentUserContext from '../../context/currentUserContext';
 
 function SideBar() {
-  // Access the currentUser context
   const currentUser = useContext(CurrentUserContext);
 
-  const handleOpenProfileModal = () => {
-    // Logic to open the profile modal
-  };
+  const handleOpenProfileModal = () => {};
 
   return (
     <div className='side-bar'>
