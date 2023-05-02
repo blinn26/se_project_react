@@ -14,9 +14,7 @@ export function signUp(name, avatar, email, password) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ name, avatar, email, password }),
-  })
-    .then(handleResponse)
-    .catch((error) => console.log(error));
+  }).then(handleResponse);
 }
 
 export function signIn(email, password) {
@@ -26,9 +24,7 @@ export function signIn(email, password) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ email, password }),
-  })
-    .then(handleResponse)
-    .catch((error) => console.log(error));
+  }).then(handleResponse);
 }
 
 export function checkToken(token) {
@@ -38,9 +34,7 @@ export function checkToken(token) {
       'Content-Type': 'application/json',
       authorization: `Bearer ${token}`,
     },
-  })
-    .then(handleResponse)
-    .catch((error) => console.log(error));
+  }).then(handleResponse);
 }
 
 const auth = { signIn, signUp, checkToken };
