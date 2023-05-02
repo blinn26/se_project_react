@@ -1,11 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import SideBar from '../SideBar/SideBar';
 import ClothesSection from '../ClothesSection/ClothesSection';
+import CurrentUserContext from '../../context/currentUserContext';
 import './Profile.css';
 
 function Profile({ cards, handleAddClick, onCardClick, onCardLike }) {
   const history = useHistory();
+  const currentUser = useContext(CurrentUserContext);
+
+  const handleEditProfileClick = () => {
+    history.push('/'); // Change this to the path of your main page
+  };
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -17,7 +23,7 @@ function Profile({ cards, handleAddClick, onCardClick, onCardLike }) {
   return (
     <div className='profile'>
       <div className='profile-container'>
-        <SideBar />
+        <SideBar currentUser={currentUser} onClick={handleEditProfileClick} />
         <ClothesSection
           cards={cards}
           handleAddClick={handleAddClick}

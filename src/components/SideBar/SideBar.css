@@ -23,3 +23,22 @@
     font-weight: 700;
     font-size: 20px;
 }
+
+.side-bar__button {
+    color: #000000;
+    cursor: pointer;
+    border: none;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+
+    position: relative;
+    top: 60px;
+    right: 120px;
+    background-color: white;
+}
+
+.side-bar__button:hover {
+    color: #000000;
+}
