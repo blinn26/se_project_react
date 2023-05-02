@@ -1,12 +1,9 @@
 .page {
-  width: 100%;
-  padding: 0 20px;
-  justify-content: center;
-  display: flex;
-  max-width: 1600px;
-
+  background-color: white;
+  padding: 30px, 30x, 30px, 30px;
 }
 
 .page__wrapper {
-  justify-content: center;
+  margin: 0 auto;
+  max-width: 1600px;
 }
