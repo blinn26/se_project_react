@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
 function RegisterModal({ isOpen, onClose, onRegister, switchToLogin }) {
@@ -6,6 +6,12 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToLogin }) {
   const [avatar, setAvatar] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    // Update isFormValid based on email and password input
+    setIsFormValid(email.includes('@') && email.includes('.com') && password.length >= 4 && name.length > 0);
+  }, [email, password, name]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -13,7 +19,13 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToLogin }) {
   }
 
   return (
-    <ModalWithForm isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} title='Sign Up' buttonText='Next'>
+    <ModalWithForm
+      isOpen={isOpen}
+      onClose={onClose}
+      onSubmit={handleSubmit}
+      title='Sign Up'
+      buttonText='Next'
+      isValid={isFormValid}>
       <label className='register__label'>Email</label>
       <input
         className='register__input'
