@@ -232,27 +232,18 @@
     background-color: black;
 }
 
-.edit-profile__label-name,
-.edit-profile__label-avatar {
-    padding-top: 8px;
-    padding-bottom: 8px;
+.edit-profile-modal__input-label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
-.edit-profile__input-name,
-.edit-profile__input-avatar {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    margin-bottom: 24px;
-    font-size: 16px;
-    line-height: 20px;
-    width: 440px;
-    font-family: 'Cabinet Grotesk';
-    font-style: normal;
-    font-weight: 700;
-}
-
-.edit-profile__content {
-    display: flex;
-    flex-direction: column;
+.edit-profile-modal__input {
+    width: 100%;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    background-color: transparent;
+    padding: 3px 0;
 }
