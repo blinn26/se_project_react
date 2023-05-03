@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import './SideBar.css';
 import avatarUser from '../../images/Avatar.svg';
 import CurrentUserContext from '../../context/currentUserContext';
-import ModalWithForm from '../ModalWithForm/ModalWithForm';
+import EditProfileModal from '../EditProfileModal/EditProfileModal';
 
 function SideBar({ handleSignOut }) {
   const currentUser = useContext(CurrentUserContext);
@@ -36,14 +36,14 @@ function SideBar({ handleSignOut }) {
         </button>
       </div>
       {showModal && (
-        <ModalWithForm
-          name='edit-profile'
-          buttonText='Save Changes'
+        <EditProfileModal
           isOpen={showModal}
-          title='Change profile data'
-          onClose={closeModal}>
-          {/* content for editing goes here */}
-        </ModalWithForm>
+          onClose={closeModal}
+          onUpdateUser={(name, avatar) => {
+            console.log('Updated user:', name, avatar);
+            closeModal();
+          }}
+        />
       )}
     </div>
   );

@@ -27,35 +27,36 @@ const EditProfileModal = ({ isOpen, onClose, onUpdateUser }) => {
       title='Change profile data'
       onSubmit={handleSubmit}
       onClose={onClose}>
-      <label className='modal__label'>Name</label>
-      <input
-        title='Name'
-        type='text'
-        name='name'
-        id='name'
-        className='modal__input modal__input_type-name'
-        placeholder='Name'
-        required
-        minLength='1'
-        maxLength='30'
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <label className='modal__label'>Avatar URL</label>
-      <input
-        title='Avatar'
-        type='url'
-        name='avatar'
-        id='avatar'
-        className='modal__input modal__input_type-url'
-        placeholder='Avatar URL'
-        required
-        value={avatar}
-        onChange={(e) => setAvatar(e.target.value)}
-      />
-      <span className='modal__error' id='avatar-url-error'></span>
+      <div className='edit-profile__content'>
+        <label className='edit-profile__label-name'>Name</label>
+        <input
+          title='Name'
+          type='text'
+          name='name'
+          id='name'
+          className='edit-profile__input-name'
+          placeholder='Name'
+          required
+          minLength='1'
+          maxLength='30'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <label className='edit-profile__label-avatar'>Avatar URL</label>
+        <input
+          title='Avatar'
+          type='url'
+          name='avatar'
+          id='avatar'
+          className='edit-profile__input-avatar'
+          placeholder='Avatar URL'
+          required
+          value={avatar}
+          onChange={(e) => setAvatar(e.target.value)}
+        />
+        <span className='modal__error' id='avatar-url-error'></span>
+      </div>
     </ModalWithForm>
   );
 };
-
 export default EditProfileModal;
