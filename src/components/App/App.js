@@ -1,4 +1,3 @@
-// Part 1
 import React, { useState, useEffect, useCallback } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Main from '../Main/Main';
