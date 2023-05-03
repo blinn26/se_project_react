@@ -45,7 +45,6 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
       isValid={isFormValid}
       additionalClass='add-item-modal'>
       {' '}
-      {/* Add this line */}
       <label className='modal__label'>Name</label>
       <input
         type='text'

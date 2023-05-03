@@ -18,7 +18,6 @@ function Profile({ cards, handleAddClick, onCardClick, onCardLike, handleSetUser
   };
 
   const handleAddFormOpen = () => {
-    console.log('Toggling Add Form');
     setIsAddFormOpen(!isAddFormOpen);
   };
 

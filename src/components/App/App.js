@@ -97,7 +97,7 @@ const App = () => {
           setAuthError(res.message || 'Invalid credentials');
         }
       })
-      .catch((error) => {
+      .catch(() => {
         setAuthError('Incorrect password');
       });
   };
