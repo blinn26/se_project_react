@@ -233,9 +233,14 @@
 }
 
 .edit-profile-modal__input-label {
-    display: block;
+
     font-size: 14px;
     margin-bottom: 10px;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .edit-profile-modal__input {
