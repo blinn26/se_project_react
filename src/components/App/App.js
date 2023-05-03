@@ -17,7 +17,6 @@ import { checkToken, signIn, signUp } from '../../utils/auth';
 import LoginModal from '../LoginModal/LoginModal';
 import RegisterModal from '../RegisterModal/RegisterModal';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import SideBar from '../SideBar/SideBar';
 import EditProfileModal from '../EditProfileModal/EditProfileModal';
 
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
@@ -235,6 +234,8 @@ const App = () => {
                     onCardClick={onCardClick}
                     onCardLike={handleLike}
                     handleSetUserNull={handleSetUserNull}
+                    handleEditProfileOpen={handleEditProfileOpen} // Pass this prop
+                    handleSignOut={handleSignOut} // Pass this prop
                   />
 
                   <Route path='/'>
@@ -287,7 +288,7 @@ const App = () => {
                 )}
               </>
             )}
-            <SideBar handleEditProfileOpen={handleEditProfileOpen} handleSignOut={handleSignOut} />
+
             {isEditProfileModalOpen && (
               <EditProfileModal
                 isOpen={isEditProfileModalOpen}

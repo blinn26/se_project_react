@@ -5,13 +5,12 @@ import ClothesSection from '../ClothesSection/ClothesSection';
 import CurrentUserContext from '../../context/currentUserContext';
 import './Profile.css';
 
-function Profile({ cards, handleAddClick, onCardClick, onCardLike, handleSetUserNull }) {
+function Profile({ cards, handleAddClick, onCardClick, onCardLike, handleSetUserNull, handleEditProfileOpen }) {
   const history = useHistory();
   const currentUser = useContext(CurrentUserContext);
 
   const handleSignOut = () => {
     localStorage.removeItem('token');
-
     handleSetUserNull();
     history.push('/');
   };
@@ -28,7 +27,11 @@ function Profile({ cards, handleAddClick, onCardClick, onCardLike, handleSetUser
       <div className='profile__title'>Your Items</div>
       <p className='profile__click'>+ Add New</p>
       <div className='profile-container'>
-        <SideBar currentUser={currentUser} handleSignOut={handleSignOut} />
+        <SideBar
+          currentUser={currentUser}
+          handleSignOut={handleSignOut}
+          handleEditProfileOpen={handleEditProfileOpen}
+        />
         <ClothesSection
           cards={cards}
           handleAddClick={handleAddClick}
