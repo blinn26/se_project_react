@@ -1,7 +1,7 @@
 import React from 'react';
 import './ModalWithForm.css';
 
-function ModalWithForm({ title, name, buttonText, onSubmit, children, isOpen, onClose, isValid }) {
+function ModalWithForm({ title, name, buttonText, onSubmit, children, isOpen, onClose, isValid, additionalClass }) {
   const buttonClassName = isValid ? 'modal__button-submit modal__button-submit-valid' : 'modal__button-submit';
 
   const handleCloseOnOverlayClick = (event) => {
@@ -11,7 +11,7 @@ function ModalWithForm({ title, name, buttonText, onSubmit, children, isOpen, on
   };
 
   return (
-    <div className={`modal ${isOpen ? 'modal_open' : ''}`} onClick={handleCloseOnOverlayClick}>
+    <div className={`modal ${isOpen ? 'modal_open' : ''} ${additionalClass}`} onClick={handleCloseOnOverlayClick}>
       <form className='modal__form' name={name} onSubmit={onSubmit}>
         <h2 className='modal__title'>{title}</h2>
         {children}

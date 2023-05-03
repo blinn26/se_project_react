@@ -1,24 +1,4 @@
 .modal {
-    visibility: hidden;
-    opacity: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 3;
-
-}
-
-.modal_open {
-    visibility: visible;
-    opacity: 1;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -273,37 +253,13 @@
     padding: 3px 0;
 }
 
-.modal {
+.modal.add-item-modal {
     visibility: hidden;
     opacity: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 3;
-
+    transition: visibility 0.25s, opacity 0.25s;
 }
 
-.modal_open {
+.modal.add-item-modal.modal_open {
     visibility: visible;
     opacity: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 3;
 }

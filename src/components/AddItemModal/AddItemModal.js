@@ -42,7 +42,10 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
       title='New garment'
       onSubmit={handleSubmit}
       onClose={onClose}
-      isValid={isFormValid}>
+      isValid={isFormValid}
+      additionalClass='add-item-modal'>
+      {' '}
+      {/* Add this line */}
       <label className='modal__label'>Name</label>
       <input
         type='text'
