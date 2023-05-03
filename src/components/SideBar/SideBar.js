@@ -7,10 +7,6 @@ function SideBar({ handleSignOut, handleEditProfileOpen }) {
   const currentUser = useContext(CurrentUserContext);
   const history = useHistory();
 
-  const handleEditProfileClick = () => {
-    handleEditProfileOpen();
-  };
-
   const handleLogout = () => {
     handleSignOut();
     history.push('/');
@@ -21,7 +17,7 @@ function SideBar({ handleSignOut, handleEditProfileOpen }) {
       <div className='side-bar__container'>
         <img src={currentUser?.avatar || avatarUser} alt='avatar' className='side-bar__avatar' />
         <p className='side-bar__username'>{currentUser?.name || 'User'}</p>
-        <button onClick={handleEditProfileClick} className='side-bar__button'>
+        <button onClick={handleEditProfileOpen} className='side-bar__button'>
           Change Profile Data
         </button>
         <button onClick={handleLogout} className='side-bar__logout'>

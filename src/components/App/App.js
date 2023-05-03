@@ -116,7 +116,7 @@ const App = () => {
     setSelectCard(card);
   };
 
-  const handleAddClick = (card) => {
+  const handleAddClick = () => {
     setActiveModal('create');
   };
 
@@ -172,6 +172,7 @@ const App = () => {
 
   const closeAllModals = () => {
     setActiveModal('');
+    handleEditProfileClose();
   };
 
   const fetchWeatherData = () => {
