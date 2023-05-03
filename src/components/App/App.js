@@ -17,6 +17,8 @@ import { checkToken, signIn, signUp } from '../../utils/auth';
 import LoginModal from '../LoginModal/LoginModal';
 import RegisterModal from '../RegisterModal/RegisterModal';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import SideBar from '../SideBar/SideBar';
+import EditProfileModal from '../EditProfileModal/EditProfileModal';
 
 const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -34,6 +36,32 @@ const App = () => {
   const [authError, setAuthError] = useState('');
   const [token, setToken] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
+
+  const handleEditProfile = (name, avatar) => {
+    setIsLoading(true);
+    const token = localStorage.getItem('token');
+    Api.updateUserInfo(name, avatar, token)
+      .then((res) => {
+        closeAllModals();
+        setUser(res.data);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+  const handleEditProfileOpen = () => {
+    setIsEditProfileModalOpen(true);
+  };
+
+  const handleEditProfileClose = () => {
+    setIsEditProfileModalOpen(false);
+  };
+  const handleSignOut = () => {
+    localStorage.removeItem('token');
+    setUser(null);
+  };
 
   const isReloading = (token) => {
     checkToken(token)
@@ -192,6 +220,7 @@ const App = () => {
               openRegisterModal={() => setIsRegisterModalOpen(true)}
               setUser={setUser}
             />
+
             {isLoading ? (
               <div>Loading...</div>
             ) : (
@@ -207,6 +236,7 @@ const App = () => {
                     onCardLike={handleLike}
                     handleSetUserNull={handleSetUserNull}
                   />
+
                   <Route path='/'>
                     <Main weatherData={weatherData} cards={cards} onCardClick={onCardClick} onCardLike={handleLike} />
                   </Route>
@@ -256,6 +286,14 @@ const App = () => {
                   />
                 )}
               </>
+            )}
+            <SideBar handleEditProfileOpen={handleEditProfileOpen} handleSignOut={handleSignOut} />
+            {isEditProfileModalOpen && (
+              <EditProfileModal
+                isOpen={isEditProfileModalOpen}
+                onClose={handleEditProfileClose}
+                onUpdateUser={handleEditProfile}
+              />
             )}
           </div>
         </div>

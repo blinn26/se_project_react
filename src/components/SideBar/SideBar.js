@@ -40,9 +40,9 @@ function SideBar({ handleSignOut }) {
           name='edit-profile'
           buttonText='Save Changes'
           isOpen={showModal}
-          title='Edit Profile'
+          title='Change profile data'
           onClose={closeModal}>
-          {/* Form content for editing profile data goes here */}
+          {/* content for editing goes here */}
         </ModalWithForm>
       )}
     </div>

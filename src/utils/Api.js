@@ -60,6 +60,18 @@ const Api = {
     };
     return await Api.request(url, options);
   },
+  updateUserInfo: async (name, avatar, token) => {
+    const url = `${BASE_URL}/users/me`;
+    const options = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ name, avatar }),
+    };
+    return await Api.request(url, options);
+  },
 
   removeCardLike: async (_id, token) => {
     const url = `${BASE_URL}/items/${_id}/likes`;

@@ -24,11 +24,12 @@ const EditProfileModal = ({ isOpen, onClose, onUpdateUser }) => {
       name='edit-profile'
       buttonText='Save Changes'
       isOpen={isOpen}
-      title='Edit Profile'
+      title='Change profile data'
       onSubmit={handleSubmit}
       onClose={onClose}>
       <label className='modal__label'>Name</label>
       <input
+        title='Name'
         type='text'
         name='name'
         id='name'
@@ -42,6 +43,7 @@ const EditProfileModal = ({ isOpen, onClose, onUpdateUser }) => {
       />
       <label className='modal__label'>Avatar URL</label>
       <input
+        title='Avatar'
         type='url'
         name='avatar'
         id='avatar'
