@@ -63,7 +63,7 @@ const Api = {
   updateUserInfo: async (name, avatar, token) => {
     const url = `${BASE_URL}/users/me`;
     const options = {
-      method: 'GET',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,

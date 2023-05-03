@@ -1,21 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import './SideBar.css';
 import avatarUser from '../../images/Avatar.svg';
 import CurrentUserContext from '../../context/currentUserContext';
-import EditProfileModal from '../EditProfileModal/EditProfileModal';
-
-function SideBar({ handleSignOut }) {
+function SideBar({ handleSignOut, handleEditProfileOpen }) {
   const currentUser = useContext(CurrentUserContext);
   const history = useHistory();
-  const [showModal, setShowModal] = useState(false);
 
   const handleEditProfileClick = () => {
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
+    handleEditProfileOpen();
   };
 
   const handleLogout = () => {
@@ -35,16 +28,6 @@ function SideBar({ handleSignOut }) {
           Log out
         </button>
       </div>
-      {showModal && (
-        <EditProfileModal
-          isOpen={showModal}
-          onClose={closeModal}
-          onUpdateUser={(name, avatar) => {
-            console.log('Updated user:', name, avatar);
-            closeModal();
-          }}
-        />
-      )}
     </div>
   );
 }

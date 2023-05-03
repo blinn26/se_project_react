@@ -234,8 +234,8 @@ const App = () => {
                     onCardClick={onCardClick}
                     onCardLike={handleLike}
                     handleSetUserNull={handleSetUserNull}
-                    handleEditProfileOpen={handleEditProfileOpen} // Pass this prop
-                    handleSignOut={handleSignOut} // Pass this prop
+                    handleEditProfileOpen={handleEditProfileOpen}
+                    handleSignOut={handleSignOut}
                   />
 
                   <Route path='/'>
