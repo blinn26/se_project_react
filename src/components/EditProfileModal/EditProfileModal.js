@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
+import CurrentUserContext from '../../context/currentUserContext';
 
-const EditProfileModal = ({ isOpen, onClose, currentUser, onUpdateUser }) => {
-  const [name, setName] = useState(currentUser.name);
-  const [avatar, setAvatar] = useState(currentUser.avatar);
+const EditProfileModal = ({ isOpen, onClose, onUpdateUser }) => {
+  const currentUser = useContext(CurrentUserContext);
+  const [name, setName] = useState('');
+  const [avatar, setAvatar] = useState('');
+
+  useEffect(() => {
+    if (currentUser) {
+      setName(currentUser.name);
+      setAvatar(currentUser.avatar);
+    }
+  }, [currentUser, isOpen]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,22 +20,38 @@ const EditProfileModal = ({ isOpen, onClose, currentUser, onUpdateUser }) => {
   };
 
   return (
-    <ModalWithForm isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit}>
+    <ModalWithForm
+      name='edit-profile'
+      buttonText='Save Changes'
+      isOpen={isOpen}
+      title='Edit Profile'
+      onSubmit={handleSubmit}
+      onClose={onClose}>
+      <label className='modal__label'>Name</label>
       <input
         type='text'
-        className='edit-profile-modal__input'
+        name='name'
+        id='name'
+        className='modal__input modal__input_type-name'
         placeholder='Name'
+        required
+        minLength='1'
+        maxLength='30'
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
+      <label className='modal__label'>Avatar URL</label>
       <input
-        type='text'
-        className='edit-profile-modal__input'
+        type='url'
+        name='avatar'
+        id='avatar'
+        className='modal__input modal__input_type-url'
         placeholder='Avatar URL'
+        required
         value={avatar}
         onChange={(e) => setAvatar(e.target.value)}
       />
-      Save Changes
+      <span className='modal__error' id='avatar-url-error'></span>
     </ModalWithForm>
   );
 };

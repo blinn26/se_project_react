@@ -35,7 +35,16 @@ function SideBar({ handleSignOut }) {
           Log out
         </button>
       </div>
-      {showModal && <ModalWithForm onClose={closeModal} />}
+      {showModal && (
+        <ModalWithForm
+          name='edit-profile'
+          buttonText='Save Changes'
+          isOpen={showModal}
+          title='Edit Profile'
+          onClose={closeModal}>
+          {/* Form content for editing profile data goes here */}
+        </ModalWithForm>
+      )}
     </div>
   );
 }
