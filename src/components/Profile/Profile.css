@@ -6,3 +6,29 @@
 
 
 }
+
+.profile__click {
+
+
+
+    cursor: pointer;
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+
+
+}
+
+.profile__title {
+
+
+
+
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+}
