@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
-import Validation from '../../utils/validation';
+import { LoginValidation } from '../../utils/validation';
 
 function LoginModal({ isOpen, onClose, onLogin, switchToRegister }) {
   const [email, setEmail] = useState('');
@@ -10,7 +10,7 @@ function LoginModal({ isOpen, onClose, onLogin, switchToRegister }) {
   useEffect(() => {
     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim.test(email);
 
-    setIsFormValid(Validation(email));
+    setIsFormValid(LoginValidation(email, password));
   }, [email, password]);
 
   function handleSubmit(e) {

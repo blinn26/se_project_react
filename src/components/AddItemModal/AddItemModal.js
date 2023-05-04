@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
+import { NewItemValidation } from '../../utils/validation';
 
 const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   const [itemName, setItemName] = useState('');
@@ -8,14 +9,10 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
-    setItemName('');
-    setItemLink('');
-    setWeatherType('');
-  }, [isOpen]);
+    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim.test(itemLink, itemName, weatherType);
 
-  useEffect(() => {
-    setIsFormValid(itemName.length > 0 && itemLink.length > 0 && weatherType.length > 0);
-  }, [itemName, itemLink, weatherType]);
+    setIsFormValid(NewItemValidation(itemLink, itemName, weatherType));
+  }, [itemLink, itemName, weatherType]);
 
   function handleNameChange(event) {
     setItemName(event.target.value);
