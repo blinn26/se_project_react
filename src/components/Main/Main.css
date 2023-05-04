@@ -16,6 +16,8 @@
     font-family: 'Cabinet Grotesk';
     font-weight: 700;
     font-size: 20px;
+    position: relative;
+    left: 15px;
 }
 
 .main__info {

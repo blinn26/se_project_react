@@ -13,6 +13,9 @@
     height: 60px;
     width: 60px;
     border-radius: 50%;
+    position: relative;
+    bottom: 65px;
+    left: 25px;
 }
 
 .side-bar__username {
@@ -23,6 +26,9 @@
     font-weight: 700;
     font-size: 20px;
     color: #000000;
+    position: relative;
+    bottom: 65px;
+    left: 25px;
 }
 
 .side-bar__button {
@@ -33,11 +39,14 @@
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
-    position: relative;
-    top: 70px;
+    background-color: white;
+    border-radius: 20px;
+    top: 24px;
     right: 120px;
     background-color: white;
     border-radius: 20px;
+    position: relative;
+    left: -83px;
 
 }
 
@@ -57,6 +66,8 @@
     position: relative;
     right: 306px;
     top: 121px;
+    left: -267px;
+    top: 81px;
 
 
 }

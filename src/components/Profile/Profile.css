@@ -9,21 +9,26 @@
 
 .profile__click {
 
-
-
+    top: 76px;
+    left: 507px;
+    position: relative;
     cursor: pointer;
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 25px;
+    color: rgba(0, 0, 0, 0.6);
 
 
 }
 
 .profile__title {
 
+    position: relative;
 
+    left: 377px;
+    top: 120px;
 
 
     font-family: 'Cabinet Grotesk';

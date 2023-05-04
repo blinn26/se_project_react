@@ -10,6 +10,8 @@
     flex-wrap: wrap;
     gap: 17px 17px;
     align-content: flex-end;
+    position: relative;
+    right: 15px;
 
 }
 
