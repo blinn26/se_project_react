@@ -9,13 +9,9 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToLogin }) {
   const [password, setPassword] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
 
-  /*  useEffect(() => {
-    setIsFormValid(email.includes('@') && email.includes('.com') && password.length >= 4 && name.length > 0);
-  }, [email, password, name]); */
-
   useEffect(() => {
-    // setIsFormValid(email.includes('@') && email.includes('.com') && password.length >= 4);
-    console.log(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gim.test(email));
+    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim.test(email);
+
     setIsFormValid(Validation(email));
   }, [email, password, name]);
 

@@ -8,8 +8,8 @@ function LoginModal({ isOpen, onClose, onLogin, switchToRegister }) {
   const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
-    // setIsFormValid(email.includes('@') && email.includes('.com') && password.length >= 4);
-    console.log(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gim.test(email));
+    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim.test(email);
+
     setIsFormValid(Validation(email));
   }, [email, password]);
 
@@ -36,7 +36,7 @@ function LoginModal({ isOpen, onClose, onLogin, switchToRegister }) {
         required
         minLength={1}
         maxLength={30}
-        autoComplete='new-password'
+        autoComplete='email-password'
       />
       <label className='login__label'>Password</label>
       <input
