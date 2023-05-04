@@ -31,7 +31,6 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(itemName, itemLink, weatherType);
     onAddItem(itemName, itemLink, weatherType);
   }
 

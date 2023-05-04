@@ -15,6 +15,7 @@
 
 
 .modal__form {
+    width: 440px;
     border-radius: 20px;
     flex-direction: column;
     font-family: "Cabinet-Grotesk";
@@ -84,9 +85,6 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-
-
-
 }
 
 .modal__input_type-url {
@@ -102,11 +100,20 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
+}
 
+.modal.add-item-modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.25s, opacity 0.25s;
+}
+
+.modal.add-item-modal.modal_open {
+    visibility: visible;
+    opacity: 1;
 }
 
 .register__label {
-
     font-family: 'Cabinet Grotesk';
     font-style: normal;
     font-weight: 700;
@@ -129,9 +136,6 @@
     color: rgba(0, 0, 0, 0.5);
     padding-bottom: 2px;
     padding-top: 18px;
-
-
-
 }
 
 .login__label {
@@ -161,12 +165,7 @@
     line-height: 20px;
     padding-bottom: 2px;
     padding-top: 18px;
-
-
 }
-
-
-
 
 .or__register {
     color: rgba(0, 0, 0, 0.5);
@@ -233,7 +232,6 @@
 }
 
 .edit-profile-modal__input-label {
-
     font-size: 14px;
     margin-bottom: 10px;
     font-family: 'Cabinet Grotesk';
@@ -241,6 +239,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
+    padding-top: 10px;
 }
 
 .edit-profile-modal__input {
@@ -251,15 +250,5 @@
     outline: none;
     background-color: transparent;
     padding: 3px 0;
-}
-
-.modal.add-item-modal {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0.25s, opacity 0.25s;
-}
-
-.modal.add-item-modal.modal_open {
-    visibility: visible;
-    opacity: 1;
+    margin-bottom: 20px;
 }

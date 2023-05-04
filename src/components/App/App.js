@@ -220,7 +220,6 @@ const App = () => {
               openRegisterModal={() => setIsRegisterModalOpen(true)}
               setUser={setUser}
             />
-
             {isLoading ? (
               <div>Loading...</div>
             ) : (
@@ -238,7 +237,6 @@ const App = () => {
                     handleEditProfileOpen={handleEditProfileOpen}
                     handleSignOut={handleSignOut}
                   />
-
                   <Route path='/'>
                     <Main weatherData={weatherData} cards={cards} onCardClick={onCardClick} onCardLike={handleLike} />
                   </Route>
@@ -289,7 +287,6 @@ const App = () => {
                 )}
               </>
             )}
-
             {isEditProfileModalOpen && (
               <EditProfileModal
                 isOpen={isEditProfileModalOpen}
@@ -303,5 +300,4 @@ const App = () => {
     </CurrentUserContext.Provider>
   );
 };
-
 export default App;

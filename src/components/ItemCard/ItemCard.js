@@ -16,7 +16,6 @@ const ItemCard = ({ card, onCardClick, onCardLike }) => {
         className={`card__like-button ${card.isLiked ? 'card__like-button_filled' : ''}`}
         onClick={handleLikeClick}
         style={{ background: 'none' }}>
-        {' '}
         {/* Remove background image */}
         {card.isLiked ? <img src={HeartLiked} alt='Heart Liked' /> : <img src={HeartNotLiked} alt='Heart Not Liked' />}
       </button>

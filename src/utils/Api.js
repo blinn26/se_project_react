@@ -25,7 +25,6 @@ const Api = {
   },
 
   addCard: async ({ name, imageUrl, weather }) => {
-    console.log('API', { name, imageUrl, weather });
     const token = localStorage.getItem('token');
     const url = `${BASE_URL}/items`;
     const options = {
