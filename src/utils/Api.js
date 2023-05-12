@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NODE_ENV === 'production' ? 'https://wtwr.crabdance.com' : 'http://localhost:3001';
+const BASE_URL = process.env.NODE_ENV === 'production' ? 'https://wtwr.crabdance.com/api' : 'http://localhost:3001';
 
 const Api = {
   request: async (url, options = {}) => {
