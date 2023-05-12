@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL = process.env.NODE_ENV === 'production' ? 'deployed-backend-url' : 'http://localhost:3001';
 
 const handleResponse = (res) => {
   if (!res.ok) {
