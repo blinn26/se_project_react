@@ -135,7 +135,6 @@ const App = () => {
     setIsDeleting(true);
     Api.deleteCard(selectCard._id, token)
       .then(() => {
-        console.log('Deleted successfuly', selectCard);
         setCards(
           cards.filter((item) => {
             return item._id !== selectCard._id;
