@@ -72,7 +72,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
           type='radio'
           id='choiceHot'
           name='weatherType'
-          value='hot'
+          value='Hot'
           checked={weatherType.toLowerCase() === 'hot'}
           onChange={handleWeatherTypeChange}
         />
@@ -80,6 +80,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
           Hot
         </label>
       </div>
+
       <div className='modal__input modal__input_type_radio warm'>
         <input
           type='radio'
