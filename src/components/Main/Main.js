@@ -18,9 +18,7 @@ function Main({ cards, weatherData, onCardClick, onCardLike }) {
     }
   };
 
-  const filterCard = cards.filter((item) => {
-    return item.weather && item.weather.toLowerCase() === weatherType();
-  });
+  const filterCard = cards;
 
   return (
     <main className='main'>
