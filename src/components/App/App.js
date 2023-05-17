@@ -138,8 +138,6 @@ const App = () => {
         console.log('Deleted successfuly', selectCard);
         setCards(
           cards.filter((item) => {
-            console.log(item, selectCard);
-
             return item._id !== selectCard._id;
           })
         );
