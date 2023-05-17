@@ -10,7 +10,6 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
 
   useEffect(() => {
     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim.test(itemLink, itemName, weatherType);
-
     setIsFormValid(NewItemValidation(itemLink, itemName, weatherType));
   }, [itemLink, itemName, weatherType]);
 
@@ -28,7 +27,8 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    onAddItem(itemName, itemLink, weatherType);
+    // Ensure that weatherType is in lowercase before calling onAddItem
+    onAddItem(itemName, itemLink, weatherType.toLowerCase());
   }
 
   return (
@@ -41,7 +41,6 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
       onClose={onClose}
       isValid={isFormValid}
       additionalClass='add-item-modal'>
-      {' '}
       <label className='modal__label'>Name</label>
       <input
         type='text'
@@ -73,8 +72,8 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
           type='radio'
           id='choiceHot'
           name='weatherType'
-          value='Hot'
-          checked={weatherType === 'Hot'}
+          value='hot'
+          checked={weatherType.toLowerCase() === 'hot'}
           onChange={handleWeatherTypeChange}
         />
         <label className='modal__label-hot' htmlFor='choiceHot'>
@@ -87,7 +86,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
           id='choiceWarm'
           name='weatherType'
           value='warm'
-          checked={weatherType === 'warm'}
+          checked={weatherType.toLowerCase() === 'warm'}
           onChange={handleWeatherTypeChange}
         />
         <label className='modal__label-warm' htmlFor='choiceWarm'>
@@ -100,7 +99,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
           id='choiceCold'
           name='weatherType'
           value='cold'
-          checked={weatherType === 'cold'}
+          checked={weatherType.toLowerCase() === 'cold'}
           onChange={handleWeatherTypeChange}
         />
         <label className='modal__label-cold' htmlFor='choiceCold'>
