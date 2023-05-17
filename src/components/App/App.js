@@ -135,7 +135,14 @@ const App = () => {
     setIsDeleting(true);
     Api.deleteCard(selectCard._id, token)
       .then(() => {
-        setCards(cards.filter((item) => item._id !== selectCard._id));
+        console.log('Deleted successfuly', selectCard);
+        setCards(
+          cards.filter((item) => {
+            console.log(item, selectCard);
+
+            return item._id !== selectCard._id;
+          })
+        );
         setActiveModal('');
         setDeleteModalOpen(false);
       })
