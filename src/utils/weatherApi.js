@@ -1,4 +1,4 @@
-const APIkey = '0d380440b18ef6ce22ce3d3435ae1745';
+const APIkey = process.env.REACT_APP_OPENWEATHER_API_KEY;
 const getForecastWeather = async () => {
   const res = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=36.471&lon=-119.4432&appid=${APIkey}&units=metric`
